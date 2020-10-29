@@ -1,7 +1,24 @@
 # FajnaFuraPL
+
+## General info
+
 A student project about renting cars.
 
-## to start server
-clone code
-npm install
-npm run server
+## Setup
+
+To run server
+
+```
+$ npm install
+$ npm run server
+```
+
+## Technologies
+
+Project is created with:
+
+- JavaScript
+- HTML, CSS
+- MongoDB
+- Mongoose
+- tbc
