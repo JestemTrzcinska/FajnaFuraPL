@@ -8,6 +8,7 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 4. Pobierz gita i korzystaj z basha, albo pobierz GitHub Desktop
 5. Jeżeli korzystasz z git basha, korzystasz z Windowsa i chcesz mieć terminal basha w VS Code to dodaj to w settings.json:
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
