@@ -4,6 +4,7 @@ const DefectSchema = new mongoose.Schema({
   rent: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'rent',
+    required: true,
   },
   about: {
     type: String,
@@ -12,6 +13,7 @@ const DefectSchema = new mongoose.Schema({
   status: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'status',
+    required: true,
   },
 });
 
