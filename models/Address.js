@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const AddressSchema = new mongoose.Schema({
   city: {
     type: String,
-    reqired: true,
+    required: true,
   },
   street: {
     type: String,
-    reqired: true,
+    required: true,
   },
   bulding: {
     type: String,
@@ -17,11 +17,11 @@ const AddressSchema = new mongoose.Schema({
   },
   zipCode: {
     type: String,
-    reqired: true,
+    required: true,
   },
   country: {
     type: String,
-    reqired: true,
+    required: true,
   },
 });
 
