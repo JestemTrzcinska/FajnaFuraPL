@@ -40,7 +40,7 @@ router.post(
 
     try {
       // See if the car exists
-      let car = await car.findOne({ licenseNumber });
+      let car = await Car.findOne({ licenseNumber });
       if (car) {
         return res.status(400).json({
           errors: [{ msg: 'Samochód o podanym numerze rejestracyjnym istnieje.' }],
