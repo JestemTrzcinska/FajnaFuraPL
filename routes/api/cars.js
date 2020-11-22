@@ -47,7 +47,10 @@ router.post(
         });
       }
 
+      const status = '5fba6804cb6fc93abce4c728'; // niewypozyczony
+
       car = new Car({
+        status,
         brand,
         model,
         year,

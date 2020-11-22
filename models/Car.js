@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const CarSchema = new mongoose.Schema({
+  status: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'status',
+  },
   brand: {
     type: String,
     required: true,
