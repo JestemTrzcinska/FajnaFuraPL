@@ -82,7 +82,7 @@
 #cssmenu ul li:last-child > a:after {
   display: none;
 }
-#body 
+body 
 {
     margin: 0px;
 }
@@ -120,5 +120,16 @@
   }
   #cssmenu ul li a:before {
     display: none;
+    
+  }
+  #cssmenu > li:last-child
+  {
+    float:right;
+  }
+  #zmiana 
+  {
+    float:right;
+    position: absolute;
+    left:5px;
   }
 }
