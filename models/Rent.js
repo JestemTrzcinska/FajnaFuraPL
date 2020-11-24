@@ -8,7 +8,7 @@ const RentSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'car',
+    ref: 'user',
     required: true,
   },
   dateFrom: {

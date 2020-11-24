@@ -1,25 +1,29 @@
 const mongoose = require('mongoose');
 
 const CarSchema = new mongoose.Schema({
+  status: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'status',
+  },
   brand: {
     type: String,
-    reqired: true,
+    required: true,
   },
   model: {
     type: String,
-    reqired: true,
+    required: true,
   },
   year: {
     type: Number,
-    reqired: true,
+    required: true,
   },
   sits: {
     type: Number,
-    reqired: true,
+    required: true,
   },
   licenseNumber: {
     type: String,
-    reqired: true,
+    required: true,
   },
   about: {
     type: String,
