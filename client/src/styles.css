@@ -101,9 +101,9 @@ body
 }
 
 #cssmenu ul li:last-child{
-  position: relative;
-  right:0;
+  float:right;
 }
+
 @media screen and (max-width: 768px) {
   #cssmenu ul li {
     float: none;
