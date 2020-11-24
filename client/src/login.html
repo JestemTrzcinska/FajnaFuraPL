@@ -3,10 +3,19 @@
 <head>
   <title>Logowanie/Rejestracja</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="login.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <div id='cssmenu'>
+  <ul>
+     <li class='active'><a href='#'><span>Cennik</span></a></li>
+     <li><a href='carlist.html'><span>Samochody</span></a></li>
+     <li><a href='kontakt.html'><span>Kontakt</span></a></li>
+     <li id="zmiana"><a href='login.html'><span>Zaloguj się/Zarejestruj się</span></a></li>
+  </ul>
+  </div>
   <div id="formularze">
     <form class="" action="index.html" method="post" id="form_login">
       <h3>Logowanie</h3>
@@ -22,7 +31,7 @@
       <input type="password" name="password2" value="" placeholder="Powtórz hasło" required>
       <input type="text" name="name" value="" placeholder="Podaj imię" required>
       <input type="text" name="surname" value="" placeholder="Podaj nazwisko" required>
-      <input type="tel" name="phone" value="" placeholder="Podaj numer telefonu" pattern="[0-9]{9}" required>
+      <input type="tel" name="phone" value="" placeholder="Podaj numer telefonu" required>
       <input type="checkbox" name="rodo" value="" required> Akceptuj <a href="/rodo">RODO</a>
       <input type="submit" name="" value="Zarejestruj">
     </form>
