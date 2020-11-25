@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://fajnafura:fajnafura@fajnafurapl.sx4cs.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://fajnafura:fajnafura@fajnafurapl.sx4cs.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecretToken"
 }
