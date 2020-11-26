@@ -148,7 +148,7 @@ body
   padding:0px;
   border:2px solid black;
   position: absolute;
-  left: 1000px;
+  left: 750px;
   top: 300px;
   text-align: left;
   
@@ -160,7 +160,7 @@ body
   padding:0px;
   border:2px solid black;
   position: absolute;
-  left: 300px;
+  left: 200px;
   top: 300px;
   text-align: left;
 }
