@@ -6,12 +6,28 @@ const Status = require('../../models/Status');
 
 
 // @route   GET api/status
-// @desc    Test route
+// @desc    Get status
 // @access  Public
-router.get('/', (req, res) => res.send('Status route'));
+router.get('/', async (req, res) => {
+    try {
+      const statuses = await Status.find();
+  
+      res.json(statuses);
+  
+      if (!statuses) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: 'Nie ma wypożyczeń w bazie danych' }] });
+      }
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  }
+);
 
 // @route   POST api/status
-// @desc    Add cars
+// @desc    Add status
 // @access  Public
 router.post(
     '/',
@@ -40,6 +56,7 @@ router.post(
             });
 
             await status.save();
+            res.json(status);
 
         } catch (err) {
             console.error(err.message);
