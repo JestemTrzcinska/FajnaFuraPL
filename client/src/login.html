@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="login.css">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -17,24 +18,28 @@
   </ul>
   </div>
   <div id="formularze">
-    <form class="" action="index.html" method="post" id="form_login">
+    <form action="#" method="post" id="form_login">
       <h3>Logowanie</h3>
-      <input type="email" name="email" value="" placeholder="Podaj email" required>
-      <input type="password" name="password" value="" placeholder="Podaj hasło" required>
+      <input type="email" id="login_email" placeholder="Podaj email" autofocus required>
+      <input type="password" id="login_password" placeholder="Podaj hasło" minlength="6" required>
       <a href="/forgot">Zapomniałeś hasła?</a><br>
-      <input type="submit" name="" value="Zaloguj">
+      <input type="button" id="login_submit" value="Zaloguj">
     </form>
-    <form class="" action="index.html" method="post" id="form_register">
+    <form action="#" method="post" id="form_register">
       <h3>Rejestracja</h3>
-      <input type="email" name="email" value="" placeholder="Podaj email" required>
-      <input type="password" name="password" value="" placeholder="Podaj hasło" required>
-      <input type="password" name="password2" value="" placeholder="Powtórz hasło" required>
-      <input type="text" name="name" value="" placeholder="Podaj imię" required>
-      <input type="text" name="surname" value="" placeholder="Podaj nazwisko" required>
-      <input type="tel" name="phone" value="" placeholder="Podaj numer telefonu" required>
-      <input type="checkbox" name="rodo" value="" required> Akceptuj <a href="/rodo">RODO</a>
-      <input type="submit" name="" value="Zarejestruj">
+      <div class="">
+        <input type="email" id="register_email" placeholder="Podaj email" required>
+      </div>
+
+      <input type="password" id="register_password" placeholder="Podaj hasło" minlength="6" required>
+      <input type="password" id="register_password2" placeholder="Powtórz hasło" minlength="6" required>
+      <input type="text" id="name" placeholder="Podaj imię" required>
+      <input type="text" id="surname" placeholder="Podaj nazwisko" required>
+      <input type="tel" id="phone" placeholder="Podaj numer telefonu" required>
+      <input type="checkbox" id="rodo" required> Akceptuj <a href="/rodo">RODO</a>
+      <input type="button" id="register_submit" value="Zarejestruj">
     </form>
   </div>
+  <script src="login.js"></script>
 </body>
 </html>

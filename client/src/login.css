@@ -27,3 +27,7 @@ button, input, optgroup, select, textarea {
   border: 2px solid black;
   padding: 20px;
 }
+
+.error {
+  border: 2px solid red;
+}
