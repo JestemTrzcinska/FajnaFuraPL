@@ -138,6 +138,29 @@ body
     display: none;
     
   }
+ 
   
+}
+#pokaz_slajdow
+{
+  width:300px;
+  height:300px;
+  padding:0px;
+  border:2px solid black;
+  position: absolute;
+  left: 1000px;
+  top: 300px;
+  text-align: left;
   
+}
+#dane_konta
+{
+  width:300px;
+  height:200px;
+  padding:0px;
+  border:2px solid black;
+  position: absolute;
+  left: 300px;
+  top: 300px;
+  text-align: left;
 }
