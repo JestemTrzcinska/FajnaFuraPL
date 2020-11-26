@@ -59,14 +59,14 @@ router.post(
         });
       }
 
-      defect = new Defect({
+      const defect = new Defect({
         rent: rentFromDB.id,
         about,
         status: statusFromDB.id,
       });
 
-      await status.save();
-      res.json(status);
+      await defect.save();
+      res.json(defect);
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server error.');
