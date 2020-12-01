@@ -40,9 +40,9 @@ router.post(
     try {
       // See if the status exists
       let status = await Status.findOne({ name });
-      if (!status) {
+      if (status) {
         return res.status(400).json({
-          errors: [{ msg: 'Podany status nie istnieje.' }],
+          errors: [{ msg: 'Podany status już istnieje.' }],
         });
       }
 
