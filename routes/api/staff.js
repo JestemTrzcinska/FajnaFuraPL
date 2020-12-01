@@ -40,9 +40,9 @@ router.post(
     try {
       // See if the staff exists
       let staff = await Staff.findOne({ name });
-      if (!staff) {
+      if (staff) {
         return res.status(400).json({
-          errors: [{ msg: 'Podane uprawnienie nie istnieje.' }],
+          errors: [{ msg: 'Podane uprawnienie już istnieje.' }],
         });
       }
 
