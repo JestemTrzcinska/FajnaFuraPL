@@ -59,7 +59,19 @@ router.post(
         });
       }
 
-      const defect = new Defect({
+      // See if the defect already exists
+      let defect = await Defect.findOne({
+        rent: rentFromDB._id,
+        about,
+        status,
+      });
+      if (defect) {
+        return res.status(400).json({
+          errors: [{ msg: 'Taki defekt jest już zgłoszony.' }],
+        });
+      }
+
+      defect = new Defect({
         rent: rentFromDB.id,
         about,
         status: statusFromDB.id,
