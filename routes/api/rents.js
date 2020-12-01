@@ -80,6 +80,19 @@ router.post(
         });
       }
 
+      // See if the rent already exists
+      let rent = await Rent.findOne({ car: carFromDB._id, dateFrom, dateTo });
+      if (rent) {
+        return res.status(400).json({
+          errors: [
+            {
+              // use moment.js or other npm to show date
+              msg: `Dane auto jest wypożyczone w terminie od ${dateFrom} do ${dateTo}.`,
+            },
+          ],
+        });
+      }
+
       rent = new Rent({
         car: carFromDB.id,
         user: req.user.id,
