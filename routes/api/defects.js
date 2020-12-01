@@ -45,14 +45,14 @@ router.post(
 
     try {
       // See if the rent exists
-      let rentFromDB = await Rent.findOne({ rent });
+      let rentFromDB = await Rent.findOne({ _id: rent });
       if (!rentFromDB) {
         return res.status(400).json({
           errors: [{ msg: 'Takie wypożyczenie nie istnieje.' }],
         });
       }
       // See if the status exists
-      let statusFromDB = await Status.findOne({ status });
+      let statusFromDB = await Status.findOne({ name: status });
       if (!statusFromDB) {
         return res.status(400).json({
           errors: [{ msg: 'Taki status nie istnieje.' }],
@@ -63,7 +63,7 @@ router.post(
       let defect = await Defect.findOne({
         rent: rentFromDB._id,
         about,
-        status,
+        status: statusFromDB._id,
       });
       if (defect) {
         return res.status(400).json({
