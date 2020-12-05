@@ -17,6 +17,7 @@ button, input, optgroup, select, textarea {
   margin-left: 30%;
   border: 2px solid black;
   padding: 20px;
+  background-color: white;
 }
 
 #form_register {
@@ -26,6 +27,7 @@ button, input, optgroup, select, textarea {
   margin-right: 30%;
   border: 2px solid black;
   padding: 20px;
+  background-color: white;
 }
 
 .error {
