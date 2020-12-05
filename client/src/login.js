@@ -29,12 +29,19 @@ const init = function(){
 
 const register_send = function(ev){
   document.getElementById('register_email').classList.remove('error');
+	document.getElementById('register_email').parentElement.classList.remove('error-msg2');
   document.getElementById('register_password').classList.remove('error');
+	document.getElementById('register_password').parentElement.classList.remove('error-msg2');
   document.getElementById('register_password2').classList.remove('error');
+	document.getElementById('register_password2').parentElement.classList.remove('error-msg2');
   document.getElementById('name').classList.remove('error');
+	document.getElementById('name').parentElement.classList.remove('error-msg2');
   document.getElementById('surname').classList.remove('error');
+	document.getElementById('surname').parentElement.classList.remove('error-msg2');
   document.getElementById('phone').classList.remove('error');
+	document.getElementById('phone').parentElement.classList.remove('error-msg2');
   document.getElementById('rodo').classList.remove('error');
+	document.getElementById('rodo').parentElement.classList.remove('error-msg2');
 
   let fails = register_validate();
 
@@ -45,13 +52,17 @@ const register_send = function(ev){
     fails.forEach(function(obj){
       let field = document.getElementById(obj.input);
       field.classList.add('error');
+			field.parentElement.classList.add('error-msg2');
+			field.parentElement.setAttribute('data-errormsg', obj.msg);
     })
   }
 }
 
 const login_send = function(ev){
-  let email = document.getElementById('login_email').classList.remove('error');
-  let password = document.getElementById('login_password').classList.remove('error');
+  document.getElementById('login_email').classList.remove('error');
+	document.getElementById('login_email').parentElement.classList.remove('error-msg2');
+  document.getElementById('login_password').classList.remove('error');
+	document.getElementById('login_password').parentElement.classList.remove('error-msg2');
 
   let fails = login_validate();
 
@@ -62,6 +73,8 @@ const login_send = function(ev){
     fails.forEach(function(obj){
       let field = document.getElementById(obj.input);
       field.classList.add('error');
+			field.parentElement.classList.add('error-msg2');
+			field.parentElement.setAttribute('data-errormsg', obj.msg);
     })
   }
 }
@@ -86,7 +99,7 @@ const register_validate = function(ev){
     failures.push({input:'register_password2', msg:'Hasło za krótkie!'})
   }
   if(password.value != password2.value){
-    failures.push({input:'register_password2', msg:'Hasła są różne'})
+    failures.push({input:'register_password2', msg:'Hasła są różne!'})
   }
   if(name.value === "" || !name.value.match(/[a-z]/i)){
     failures.push({input:'name', msg:'Pole wymagane!'})
@@ -115,6 +128,10 @@ const login_validate = function(ev){
   if(password.value === ""){
     failures.push({input:'login_password', msg:'Pole wymagane!'})
   }
+
+	if(failures.length != 0){
+		return failures;
+	}
 
   var success = 0;
   for(var i = 0; i < objUsers.length; i++) {
