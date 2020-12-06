@@ -275,6 +275,8 @@ progress {
 
 #formularze {
   margin-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 #formularze h3{
@@ -311,20 +313,18 @@ progress {
 }
 
 #form_login {
-  width: 25%;
-  min-width: 200px;
+  width: 35%;
+  min-width: 300px;
   float: left;
-  margin-left: 20%;
   border: 2px solid black;
   padding: 20px;
   background-color: white;
 }
 
 #form_register {
-  width: 25%;
-  min-width: 200px;
+  width: 35%;
+  min-width: 300px;
   float: right;
-  margin-right: 20%;
   border: 2px solid black;
   padding: 20px;
   background-color: white;

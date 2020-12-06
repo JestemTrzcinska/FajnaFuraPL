@@ -89,9 +89,19 @@ const register_validate = function(ev){
   let phone = document.getElementById('phone');
   let rodo = document.getElementById('rodo');
 
-  if(email.value === "" || email.value.indexOf("@") == -1){
+  if(email.value === ""){
     failures.push({input:'register_email', msg:'Pole wymagane!'})
   }
+	else if(email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
+		failures.push({input:'register_email', msg:'Nieprawidłowe dane!'})
+	}
+	else{
+		for(var i = 0; i < objUsers.length; i++) {
+			if(email.value == objUsers[i].email) {
+				failures.push({input:'register_email', msg:'Email zajęty!'})
+			}
+		}
+	}
   if(password.value.length < 6){
     failures.push({input:'register_password', msg:'Hasło za krótkie!'})
   }
@@ -101,12 +111,18 @@ const register_validate = function(ev){
   if(password.value != password2.value){
     failures.push({input:'register_password2', msg:'Hasła są różne!'})
   }
-  if(name.value === "" || !name.value.match(/[a-z]/i)){
+  if(name.value === ""){
     failures.push({input:'name', msg:'Pole wymagane!'})
   }
-  if(surname.value === "" || !surname.value.match(/[a-z]/i)){
+	else if(!name.value.match(/[a-z]/i)){
+		failures.push({input:'name', msg:'Nieprawidłowe dane!'})
+	}
+  if(surname.value === ""){
     failures.push({input:'surname', msg:'Pole wymagane!'})
   }
+	else if(!surname.value.match(/[a-z]/i)){
+		failures.push({input:'surname', msg:'Nieprawidłowe dane!'})
+	}
   if(phone.value === ""){
     failures.push({input:'phone', msg:'Pole wymagane!'})
   }
@@ -122,9 +138,12 @@ const login_validate = function(ev){
   let email = document.getElementById('login_email');
   let password = document.getElementById('login_password');
 
-  if(email.value === "" || email.value.indexOf("@") == -1){
+	if(email.value === ""){
     failures.push({input:'login_email', msg:'Pole wymagane!'})
   }
+	else if(email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
+		failures.push({input:'login_email', msg:'Nieprawidłowe dane!'})
+	}
   if(password.value === ""){
     failures.push({input:'login_password', msg:'Pole wymagane!'})
   }
