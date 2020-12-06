@@ -278,7 +278,7 @@ progress {
   padding-left: 10%;
   padding-right: 10%;
   height: 400px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.863);
   border: 2px solid black;
 }
 
@@ -364,4 +364,33 @@ progress {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+}
+
+#kontakt {
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 50px;
+  font-size: 22px;
+  padding: 2%;
+  height: 650px;
+  background-color: rgba(255, 255, 255, 0.863);
+}
+
+#kontakt img {
+  width: 50%;
+}
+
+#kontakt_tresc {
+  margin-top: 5%;
+  width: 60%;
+  min-width: 750px;
+}
+
+#kontakt_tresc_lewo {
+  float: left;
+}
+
+#kontakt_tresc_prawo {
+  float: right;
 }
