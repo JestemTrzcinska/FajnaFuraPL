@@ -25,16 +25,22 @@
       <input type="button" id="login_submit" value="Zaloguj">
     </form>
     <form action="address.html" method="post" id="form_register">
-      <h3>Rejestracja</h3>    
+      <h3>Rejestracja</h3>
       <div class="error-msg" data-errormsg=""><input type="text" id="name" placeholder="Podaj imię" required></div>
       <div class="error-msg" data-errormsg=""><input type="text" id="surname" placeholder="Podaj nazwisko" required></div>
       <div class="error-msg" data-errormsg=""><input type="email" id="register_email" placeholder="Podaj email" required></div>
       <div class="error-msg" data-errormsg=""><input type="tel" id="phone" placeholder="Podaj numer telefonu" required></div>
       <div class="error-msg" data-errormsg=""><input type="password" id="register_password" placeholder="Podaj hasło" minlength="6" required></div>
       <div class="error-msg" data-errormsg=""><input type="password" id="register_password2" placeholder="Powtórz hasło" minlength="6" required></div>
-      <div class="error-msg" data-errormsg=""><input type="checkbox" id="rodo" required><span> Akceptuj <a href="/rodo">RODO</a> (wymagane)</span></div>
+      <div class="error-msg" data-errormsg=""><input type="checkbox" id="rodo" required><span> Akceptuj <a href="#" id="rodo_link" onclick="rodo_show()">RODO</a> (wymagane)</span></div>
       <input type="button" id="register_submit" value="Zarejestruj">
     </form>
+  </div>
+  <div id="rodo_div">
+    <h3>RODO</h3>
+    <iframe id="rodo_text" src="rodo.html"></iframe>
+    <button type="button" onclick="rodo_check()">Akceptuj</button>
+    <button type="button" onclick="rodo_hide()">Anuluj</button>
   </div>
   <script src="login.js"></script>
 </body>

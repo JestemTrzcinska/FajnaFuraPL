@@ -28,6 +28,7 @@ const init = function(){
 }
 
 const register_send = function(ev){
+	//Czyszczenie poprzednich błędów
   document.getElementById('name').classList.remove('error');
 	document.getElementById('name').parentElement.classList.remove('error-msg2');
   document.getElementById('surname').classList.remove('error');
@@ -43,12 +44,23 @@ const register_send = function(ev){
   document.getElementById('rodo').classList.remove('error');
 	document.getElementById('rodo').parentElement.classList.remove('error-msg2');
 
+	//Potwierdzenie opuszczenia strony
+	window.onbeforeunload = function (e) {
+		var message = "Strona prosi o potwierdzenie decyzji jej opuszczenia",
+		e = e || window.event;
+		if (e) {
+			e.returnValue = message;
+		}
+		return message;
+	};
+
   let fails = register_validate();
 
   if(fails.length === 0){
     document.getElementById('form_register').submit();
   }
   else{
+		//Wyświetlenie błędów (ramki + wiadomości)
     fails.forEach(function(obj){
       let field = document.getElementById(obj.input);
       field.classList.add('error');
@@ -59,6 +71,7 @@ const register_send = function(ev){
 }
 
 const login_send = function(ev){
+	//Czyszczenie poprzednich błędów
   document.getElementById('login_email').classList.remove('error');
 	document.getElementById('login_email').parentElement.classList.remove('error-msg2');
   document.getElementById('login_password').classList.remove('error');
@@ -70,6 +83,7 @@ const login_send = function(ev){
     document.getElementById('form_login').submit();
   }
   else{
+		//Wyświetlenie błędów (ramki + wiadomości)
     fails.forEach(function(obj){
       let field = document.getElementById(obj.input);
       field.classList.add('error');
@@ -167,6 +181,19 @@ const login_validate = function(ev){
   }
 
   return failures;
+}
+
+const rodo_show = function(ev){
+	document.getElementById('rodo_div').style.visibility = "visible";
+}
+
+const rodo_hide = function(ev){
+	document.getElementById('rodo_div').style.visibility = "hidden";
+}
+
+const rodo_check = function(ev){
+	rodo_hide();
+	document.getElementById('rodo').checked = true;
 }
 
 document.addEventListener('DOMContentLoaded', init);

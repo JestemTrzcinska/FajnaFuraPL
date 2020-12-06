@@ -277,6 +277,7 @@ progress {
   margin-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
+  height: 400px;
 }
 
 #formularze h3{
@@ -292,6 +293,10 @@ progress {
   width: auto;
   margin-right: 0;
   margin-top: 2%;
+}
+
+#formularze [type=button]{
+  height: 28px;
 }
 
 #formularze .error {
@@ -328,6 +333,27 @@ progress {
   border: 2px solid black;
   padding: 20px;
   background-color: white;
+}
+
+#rodo_div {
+  background-color: white;
+  border: 2px solid black;
+  height: 350px;
+  padding: 0px 20px 20px 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  visibility: hidden;
+}
+
+#rodo_div button{
+  height: 28px;
+}
+
+#rodo_text {
+  border: 2px solid black;
+  padding: 10px;
+  height: 65%;
+  width: 98%;
 }
 
 #form_address {
