@@ -28,18 +28,18 @@ const init = function(){
 }
 
 const register_send = function(ev){
-  document.getElementById('register_email').classList.remove('error');
-	document.getElementById('register_email').parentElement.classList.remove('error-msg2');
-  document.getElementById('register_password').classList.remove('error');
-	document.getElementById('register_password').parentElement.classList.remove('error-msg2');
-  document.getElementById('register_password2').classList.remove('error');
-	document.getElementById('register_password2').parentElement.classList.remove('error-msg2');
   document.getElementById('name').classList.remove('error');
 	document.getElementById('name').parentElement.classList.remove('error-msg2');
   document.getElementById('surname').classList.remove('error');
 	document.getElementById('surname').parentElement.classList.remove('error-msg2');
+	document.getElementById('register_email').classList.remove('error');
+	document.getElementById('register_email').parentElement.classList.remove('error-msg2');
   document.getElementById('phone').classList.remove('error');
 	document.getElementById('phone').parentElement.classList.remove('error-msg2');
+	document.getElementById('register_password').classList.remove('error');
+	document.getElementById('register_password').parentElement.classList.remove('error-msg2');
+	document.getElementById('register_password2').classList.remove('error');
+	document.getElementById('register_password2').parentElement.classList.remove('error-msg2');
   document.getElementById('rodo').classList.remove('error');
 	document.getElementById('rodo').parentElement.classList.remove('error-msg2');
 
@@ -81,14 +81,26 @@ const login_send = function(ev){
 
 const register_validate = function(ev){
   let failures = [];
-  let email = document.getElementById('register_email');
-  let password = document.getElementById('register_password');
-  let password2 = document.getElementById('register_password2');
   let name = document.getElementById('name');
   let surname = document.getElementById('surname');
+	let email = document.getElementById('register_email');
   let phone = document.getElementById('phone');
+  let password = document.getElementById('register_password');
+  let password2 = document.getElementById('register_password2');
   let rodo = document.getElementById('rodo');
 
+	if(name.value === ""){
+    failures.push({input:'name', msg:'Pole wymagane!'})
+  }
+	else if(!name.value.match(/[a-z]/i)){
+		failures.push({input:'name', msg:'Nieprawidłowe dane!'})
+	}
+  if(surname.value === ""){
+    failures.push({input:'surname', msg:'Pole wymagane!'})
+  }
+	else if(!surname.value.match(/[a-z]/i)){
+		failures.push({input:'surname', msg:'Nieprawidłowe dane!'})
+	}
   if(email.value === ""){
     failures.push({input:'register_email', msg:'Pole wymagane!'})
   }
@@ -102,6 +114,9 @@ const register_validate = function(ev){
 			}
 		}
 	}
+	if(phone.value === ""){
+		failures.push({input:'phone', msg:'Pole wymagane!'})
+	}
   if(password.value.length < 6){
     failures.push({input:'register_password', msg:'Hasło za krótkie!'})
   }
@@ -110,21 +125,6 @@ const register_validate = function(ev){
   }
   if(password.value != password2.value){
     failures.push({input:'register_password2', msg:'Hasła są różne!'})
-  }
-  if(name.value === ""){
-    failures.push({input:'name', msg:'Pole wymagane!'})
-  }
-	else if(!name.value.match(/[a-z]/i)){
-		failures.push({input:'name', msg:'Nieprawidłowe dane!'})
-	}
-  if(surname.value === ""){
-    failures.push({input:'surname', msg:'Pole wymagane!'})
-  }
-	else if(!surname.value.match(/[a-z]/i)){
-		failures.push({input:'surname', msg:'Nieprawidłowe dane!'})
-	}
-  if(phone.value === ""){
-    failures.push({input:'phone', msg:'Pole wymagane!'})
   }
   if(!rodo.checked){
     failures.push({input:'rodo', msg:'Pole wymagane!'})
