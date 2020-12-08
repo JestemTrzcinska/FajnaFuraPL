@@ -57,6 +57,7 @@ const register_send = function(ev){
   let fails = register_validate();
 
   if(fails.length === 0){
+		window.onbeforeunload = 0;
     document.getElementById('form_register').submit();
   }
   else{
