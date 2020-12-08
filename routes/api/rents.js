@@ -17,13 +17,13 @@ router.get('/', async (req, res) => {
       .populate('car')
       .populate('user', ['firstName', 'lastName', 'email', 'phone']);
 
-    res.json(rents);
-
     if (!rents) {
       return res
         .status(400)
         .json({ errors: [{ msg: 'Nie ma wypożyczeń w bazie danych' }] });
     }
+
+    res.json(rents);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -70,13 +70,6 @@ router.post(
         { _id: carFromDB.id },
         { $set: { status: '5fb4fb37afc856316849d9ee' } }, // wypozyczony
         { new: true, useFindAndModify: false }
-        // (err, obj) => {
-        //   if (err) {
-        //     res.json(err);
-        //   } else {
-        //     res.json(obj);
-        //   }
-        // }
       );
 
       // See if the status exists
@@ -84,6 +77,19 @@ router.post(
       if (!statusFromDB) {
         return res.status(400).json({
           errors: [{ msg: 'Status o podanym id nie istnieje.' }],
+        });
+      }
+
+      // See if the rent already exists
+      let rent = await Rent.findOne({ car: carFromDB._id, dateFrom, dateTo });
+      if (rent) {
+        return res.status(400).json({
+          errors: [
+            {
+              // use moment.js or other npm to show date
+              msg: `Dane auto jest wypożyczone w terminie od ${dateFrom} do ${dateTo}.`,
+            },
+          ],
         });
       }
 
