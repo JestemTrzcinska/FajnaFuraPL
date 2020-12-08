@@ -1,11 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
-body{
-    background-image: url("../img/bg.png");
-    margin: 0px;
+body {
+  background-image: url('../img/bg.png');
+  margin: 0px;
 }
 
-html, * {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
+html,
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu,
+    'Helvetica Neue', Helvetica, sans-serif;
 }
 
 h1 {
@@ -24,11 +26,14 @@ pre {
   font-size: 1em;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
-code, kbd, samp {
+code,
+kbd,
+samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -37,7 +42,8 @@ small {
   font-size: 80%;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -52,7 +58,11 @@ sup {
   top: -0.5em;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -60,20 +70,30 @@ button, input, optgroup, select, textarea {
   margin-bottom: 4px;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-button, [type="button"], [type="reset"], [type="submit"] {
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
-button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -89,16 +109,17 @@ progress {
   vertical-align: baseline;
 }
 
-[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -122,10 +143,9 @@ progress {
   line-height: 1;
   display: block;
   zoom: 1;
-
 }
 #cssmenu ul:after {
-  content: " ";
+  content: ' ';
   display: block;
   font-size: 0;
   height: 0;
@@ -136,10 +156,8 @@ progress {
   display: inline-block;
   padding: 0;
   margin: 0;
-
 }
-#zaloguj ul li
-{
+#zaloguj ul li {
   display: inline-block;
   padding: 0;
   margin: 0;
@@ -163,11 +181,11 @@ progress {
   text-transform: uppercase;
   font-size: 14px;
   position: relative;
-  -webkit-transition: color .25s;
-  -moz-transition: color .25s;
-  -ms-transition: color .25s;
-  -o-transition: color .25s;
-  transition: color .25s;
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  -ms-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  transition: color 0.25s;
 }
 #cssmenu ul li a:hover {
   color: #128aec;
@@ -176,7 +194,7 @@ progress {
   width: 100%;
 }
 #cssmenu ul li a:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   right: -3px;
@@ -184,10 +202,10 @@ progress {
   height: 6px;
   width: 6px;
   background: #ffffff;
-  opacity: .5;
+  opacity: 0.5;
 }
 #cssmenu ul li a:before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   left: 0;
@@ -195,11 +213,11 @@ progress {
   height: 3px;
   width: 0;
   background: #333333;
-  -webkit-transition: width .25s;
-  -moz-transition: width .25s;
-  -ms-transition: width .25s;
-  -o-transition: width .25s;
-  transition: width .25s;
+  -webkit-transition: width 0.25s;
+  -moz-transition: width 0.25s;
+  -ms-transition: width 0.25s;
+  -o-transition: width 0.25s;
+  transition: width 0.25s;
 }
 #cssmenu ul li.last > a:after,
 #cssmenu ul li:last-child > a:after {
@@ -219,8 +237,8 @@ progress {
   display: none;
 }
 
-#cssmenu ul li:last-child{
-  float:right;
+#cssmenu ul li:last-child {
+  float: right;
 }
 
 @media screen and (max-width: 768px) {
@@ -244,29 +262,23 @@ progress {
   }
   #cssmenu ul li a:before {
     display: none;
-
   }
-
-
 }
-#pokaz_slajdow
-{
-  width:300px;
-  height:300px;
-  padding:0px;
-  border:2px solid black;
+#pokaz_slajdow {
+  width: 300px;
+  height: 300px;
+  padding: 0px;
+  border: 2px solid black;
   position: absolute;
   left: 750px;
   top: 300px;
   text-align: left;
-
 }
-#dane_konta
-{
-  width:300px;
-  height:200px;
-  padding:0px;
-  border:2px solid black;
+#dane_konta {
+  width: 300px;
+  height: 200px;
+  padding: 0px;
+  border: 2px solid black;
   position: absolute;
   left: 200px;
   top: 300px;
@@ -282,22 +294,23 @@ progress {
   border: 2px solid black;
 }
 
-#formularze h3{
+#formularze h3 {
   text-align: left;
 }
 
-#formularze input{
+#formularze input {
   width: 50%;
   margin-right: 2%;
 }
 
-#formularze [type=checkbox], #formularze [type=button]{
+#formularze [type='checkbox'],
+#formularze [type='button'] {
   width: auto;
   margin-right: 0;
   margin-top: 2%;
 }
 
-#formularze [type=button]{
+#formularze [type='button'] {
   height: 28px;
 }
 
@@ -305,7 +318,7 @@ progress {
   border: 2px solid red;
 }
 
-#formularze .error-msg2::after{
+#formularze .error-msg2::after {
   content: attr(data-errormsg);
 }
 
@@ -314,7 +327,7 @@ progress {
   color: red;
 }
 
-#formularze .error-msg span{
+#formularze .error-msg span {
   color: black;
   margin-right: 1%;
 }
@@ -344,7 +357,7 @@ progress {
   visibility: hidden;
 }
 
-#rodo_div button{
+#rodo_div button {
   height: 28px;
 }
 
