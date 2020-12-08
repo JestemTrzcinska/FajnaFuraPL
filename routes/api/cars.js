@@ -10,7 +10,7 @@ const Car = require('../../models/Car');
 
 router.get('/', async (req, res) => {
   try {
-    const cars = await Car.find();
+    const cars = await Car.find().populate('status');
     res.json(cars);
   } catch (err) {
     console.error(err.message);
@@ -27,8 +27,12 @@ router.post(
     check('brand', 'Proszę o podanie marki samochodu').not().isEmpty(),
     check('model', 'Proszę o podanie modelu samochodu').not().isEmpty(),
     check('year', 'Proszę o podanie roku produkcji samochodu').not().isEmpty(),
-    check('sits', 'Proszę o podanie liczby siedzen w samochodzie').not().isEmpty(),
-    check('licenseNumber', 'Proszę o podanie numeru rejestracyjnego samochodu').not().isEmpty(),
+    check('sits', 'Proszę o podanie liczby siedzen w samochodzie')
+      .not()
+      .isEmpty(),
+    check('licenseNumber', 'Proszę o podanie numeru rejestracyjnego samochodu')
+      .not()
+      .isEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -36,14 +40,28 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { brand, model, year, sits, licenseNumber, about, mileage, conditionOil, conditionTires, tirePressure, multiplerPrice } = req.body;
+    const {
+      brand,
+      model,
+      year,
+      sits,
+      licenseNumber,
+      about,
+      mileage,
+      conditionOil,
+      conditionTires,
+      tirePressure,
+      multiplerPrice,
+    } = req.body;
 
     try {
       // See if the car exists
       let car = await Car.findOne({ licenseNumber });
       if (car) {
         return res.status(400).json({
-          errors: [{ msg: 'Samochód o podanym numerze rejestracyjnym istnieje.' }],
+          errors: [
+            { msg: 'Samochód o podanym numerze rejestracyjnym istnieje.' },
+          ],
         });
       }
 
@@ -65,7 +83,7 @@ router.post(
       });
 
       await car.save();
-
+      res.json(car);
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server error.');
