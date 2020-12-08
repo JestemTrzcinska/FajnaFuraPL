@@ -81,6 +81,7 @@ const login_send = function(ev){
   let fails = login_validate();
 
   if(fails.length === 0){
+		window.onbeforeunload = 0;
     document.getElementById('form_login').submit();
   }
   else{
