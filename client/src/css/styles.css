@@ -352,6 +352,8 @@ progress {
   padding: 10px;
   height: 65%;
   width: 98%;
+  overflow: auto;
+  margin-bottom: 1%;
 }
 
 #form_address {
