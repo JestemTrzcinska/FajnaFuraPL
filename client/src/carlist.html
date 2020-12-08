@@ -2,98 +2,39 @@
 <html lang="pl">
 <head>
   <title>Lista samochodów - FajnaFura.pl</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="carlist.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/carlist.css">
+  <link rel="stylesheet" href="css/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 </head>
 <body>
-  <div id='cssmenu'>
-    <ul>
-       <li class='active'><a href='#'><span>Cennik</span></a></li>
-       <li><a href='carlist.html'><span>Samochody</span></a></li>
-       <li><a href='kontakt.html'><span>Kontakt</span></a></li>
-       <li id="zmiana"><a href='login.html'><span>Zaloguj się/Zarejestruj się</span></a></li>
-    </ul>
+    <div id='cssmenu'>
+        <ul>
+            <li><a href='cennik.html'><span>Cennik</span></a></li>
+            <li class='active'><a href='carlist.html'><span>Samochody</span></a></li>
+            <li><a href='kontakt.html'><span>Kontakt</span></a></li>
+            <li><a href='profil.html'><span>Profil</span></a></li>
+            <li id="zmiana"><a href='login.html'><span>Zaloguj się/Zarejestruj się</span></a></li>
+        </ul>
     </div>
-<h1>Cennik</h1>
-  <table>
-    <thead>
-      <td>Model</td>
-      <td>Nadwozie</td>
-      <td>Rok</td>
-      <td>Cena za dobę</td>
-      <td>Cena za miesiąc</td>
-      <td></td>
-    </thead>
 
-    <tr>
-      <td>Ford Mondeo</td>
-      <td>Kombi</td>
-      <td>2001</td>
-      <td>250 zł</td>
-      <td>2000 zł</td>
-      <td><button>Szczegóły</button></td>
-    </tr>
+    <h1>Nasze samochody</h1>
 
-    <tr>
-      <td>Fiat Punto</td>
-      <td>Hatchback</td>
-      <td>2005</td>
-      <td>230 zł</td>
-      <td>1999 zł</td>
-      <td><button>Szczegóły</button></td>
-    </tr>
+    <div id="carbox">
+        <img src="cartemp.png" alt="Car Image">
+        <div id="info">
+            <h2>Ford Focus</h2>
+            <p>Rok: 2020</p>
+            <p>Napęd: na 4 koła</p>
+            <p>Silnik: 2.0L 222KM Diesel</p>
+            <p>Opis samochodu: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.</p>
+            <button>Zarezerwuj</button>
+        </div>
+    </div>
 
-    <tr>
-      <td>Ford S-Max</td>
-      <td>SUV</td>
-      <td>2007</td>
-      <td>350 zł</td>
-      <td>2500 zł</td>
-      <td><button>Szczegóły</button></td>
-    </tr>
-
-    <tr>
-      <td>Ford S-Max</td>
-      <td>SUV</td>
-      <td>2007</td>
-      <td>350 zł</td>
-      <td>2500 zł</td>
-      <td><button>Szczegóły</button></td>
-    </tr>
-
-    <tr>
-      <td>Ford S-Max</td>
-      <td>SUV</td>
-      <td>2007</td>
-      <td>350 zł</td>
-      <td>2500 zł</td>
-      <td><button>Szczegóły</button></td>
-    </tr>
-
-    <tr>
-      <td>Ford S-Max</td>
-      <td>SUV</td>
-      <td>2007</td>
-      <td>350 zł</td>
-      <td>2500 zł</td>
-      <td><button>Szczegóły</button></td>
-    </tr>
-
-    <tr>
-      <td>Ford S-Max</td>
-      <td>SUV</td>
-      <td>2007</td>
-      <td>350 zł</td>
-      <td>2500 zł</td>
-      <td><button>Szczegóły</button></td>
-    </tr>
-
-  </table>
   <div id="stopka">
-    
+
   </div>
 </body>
 </html>

@@ -1,0 +1,35 @@
+div#carbox{
+    width:70%;
+    border: none;
+    border-radius: 15%;
+    margin-top: 30px;
+    height:500px;
+    margin-left: 15%;
+    background-color: rgba(255, 255, 255, 0.863);
+}
+
+div#carbox img{
+    position: relative;
+    left: 5px;
+    top: 5px;
+    border: 1px black solid;
+    width: 45%;
+    height: 80%;
+    display: inline-block;
+}
+
+div#carbox p, h2{
+    float: right;
+    width: 90%;
+    text-align: center;
+
+}
+
+div#carbox #info{
+    float: right;
+    width: 54%;
+}
+
+div#carbox button{
+    float: center;
+}
