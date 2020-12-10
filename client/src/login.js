@@ -45,27 +45,27 @@ const register_send = function(ev){
 
   //Potwierdzenie opuszczenia strony
   window.onbeforeunload = function (e) {
-  	var message = "Strona prosi o potwierdzenie decyzji jej opuszczenia",
-  	e = e || window.event;
-  	if (e) {
-  		e.returnValue = message;
-  	}
-  	return message;
+    var message = "Strona prosi o potwierdzenie decyzji jej opuszczenia",
+    e = e || window.event;
+    if (e) {
+    	e.returnValue = message;
+    }
+    return message;
   };
 
   let fails = register_validate();
 
   if(fails.length === 0){
-  	window.onbeforeunload = 0;
+    window.onbeforeunload = 0;
     document.getElementById('form_register').submit();
   }
   else{
-  	//Wyświetlenie błędów (ramki + wiadomości)
+    //Wyświetlenie błędów (ramki + wiadomości)
     fails.forEach(function(obj){
       let field = document.getElementById(obj.input);
       field.classList.add('error');
-  		field.parentElement.classList.add('error-msg2');
-  		field.parentElement.setAttribute('data-errormsg', obj.msg);
+      field.parentElement.classList.add('error-msg2');
+      field.parentElement.setAttribute('data-errormsg', obj.msg);
     })
   }
 }
@@ -80,11 +80,11 @@ const login_send = function(ev){
   let fails = login_validate();
 
   if(fails.length === 0){
-  	window.onbeforeunload = 0;
+    window.onbeforeunload = 0;
     document.getElementById('form_login').submit();
   }
   else{
-  	//Wyświetlenie błędów (ramki + wiadomości)
+    //Wyświetlenie błędów (ramki + wiadomości)
     fails.forEach(function(obj){
       let field = document.getElementById(obj.input);
       field.classList.add('error');
@@ -108,29 +108,29 @@ const register_validate = function(ev){
     failures.push({input:'name', msg:'Pole wymagane!'})
   }
   else if(!name.value.match(/[a-z]/i)){
-  	failures.push({input:'name', msg:'Nieprawidłowe dane!'})
+    failures.push({input:'name', msg:'Nieprawidłowe dane!'})
   }
   if(surname.value === ""){
     failures.push({input:'surname', msg:'Pole wymagane!'})
   }
   else if(!surname.value.match(/[a-z]/i)){
-  	failures.push({input:'surname', msg:'Nieprawidłowe dane!'})
+    failures.push({input:'surname', msg:'Nieprawidłowe dane!'})
   }
   if(email.value === ""){
     failures.push({input:'register_email', msg:'Pole wymagane!'})
   }
   else if(email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
-  	failures.push({input:'register_email', msg:'Nieprawidłowe dane!'})
+    failures.push({input:'register_email', msg:'Nieprawidłowe dane!'})
   }
   else{
-  	for(var i = 0; i < objUsers.length; i++) {
-  		if(email.value == objUsers[i].email) {
-  			failures.push({input:'register_email', msg:'Email zajęty!'})
-  		}
-  	}
+    for(var i = 0; i < objUsers.length; i++) {
+      if(email.value == objUsers[i].email) {
+        failures.push({input:'register_email', msg:'Email zajęty!'})
+      }
+    }
   }
   if(phone.value === ""){
-  	failures.push({input:'phone', msg:'Pole wymagane!'})
+    failures.push({input:'phone', msg:'Pole wymagane!'})
   }
   if(password.value.length < 6){
     failures.push({input:'register_password', msg:'Hasło za krótkie!'})
@@ -157,22 +157,22 @@ const login_validate = function(ev){
     failures.push({input:'login_email', msg:'Pole wymagane!'})
   }
   else if(email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
-  	failures.push({input:'login_email', msg:'Nieprawidłowe dane!'})
+    failures.push({input:'login_email', msg:'Nieprawidłowe dane!'})
   }
   if(password.value === ""){
     failures.push({input:'login_password', msg:'Pole wymagane!'})
   }
 
   if(failures.length != 0){
-  	return failures;
+    return failures;
   }
 
   var success = 0;
   for(var i = 0; i < objUsers.length; i++) {
-  	if(email.value == objUsers[i].email && password.value == objUsers[i].password) {
-  		alert(email.value + " zalogowany/zalogowana")
+    if(email.value == objUsers[i].email && password.value == objUsers[i].password) {
+      alert(email.value + " zalogowany/zalogowana")
       success = 1;
-  	}
+    }
   }
 
   if(!success){
