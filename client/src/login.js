@@ -48,7 +48,7 @@ const register_send = function(ev){
     var message = "Strona prosi o potwierdzenie decyzji jej opuszczenia",
     e = e || window.event;
     if (e) {
-    	e.returnValue = message;
+      e.returnValue = message;
     }
     return message;
   };
