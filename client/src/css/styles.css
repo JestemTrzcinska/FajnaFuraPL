@@ -432,15 +432,19 @@ div#carbox #info2{
   margin-left: 5%;
 }
 
-div#carbox button{
-  display: inline-block;
-  border: 1px black solid;
+div#carbox a{
+  display: block;
   width: 30%;
   height: 35px;
   font-weight: bold;
   font-size: 14px;
   margin-left: 30%;
   margin-top: 20px;
+  text-decoration: none;
+}
+
+h1#carlistheader{
+  text-align: center;
 }
 
 
