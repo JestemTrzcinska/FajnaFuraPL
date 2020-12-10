@@ -16,14 +16,16 @@ $ npm run server
 To run client (localhost: 8080)
 
 ```
-$ npm install
 $ cd client
+$ npm install
 $ npm start
 ```
 
 To run both
 
 ```
+$ npm install
+$ cd client
 $ npm install
 $ npm run dev
 ```
