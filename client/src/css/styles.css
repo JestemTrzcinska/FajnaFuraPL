@@ -367,6 +367,16 @@ progress {
   background-color: white;
 }
 
+#form_rent {
+  width: 20%;
+  float: left;
+}
+
+#rent_car {
+  float: right;
+  width: 40%;
+}
+
 #kontakt {
   margin-top: 4%;
   margin-left: 5%;
