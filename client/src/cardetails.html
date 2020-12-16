@@ -18,22 +18,82 @@
       </ul>
     </div>
 
-    <h1 id="carlistheader">Szczegóły samochodu</h1>
-
-    <div id="kontakt">
-      <img src="img/fordfocus.jpg" alt="Car Image">
-      <div id="info">
-        <h2>Ford Focus</h2>
-        <p>Rok: 2020</p>
-        <p>Napęd: na 4 koła</p>
-        <p>Silnik: 2.0L 222KM Diesel</p>
-        <p style="margin-bottom: 1%"><input type="date" name="data_from" value=""></p>
-        <p style="margin-bottom: 1%"><input type="date" name="data_to" value=""></p>
-        <p>W tym terminie:</p>
-        <a href="rent.html">Zarezerwuj</a>
+    <div id="cardetails">
+      <h1>Ford Focus</h1>
+      <div id="cardetails_photos">
+        <img src="img/fordfocus.jpg" alt="Front Image">
+        <img src="img/fordfocus_rear.jpg" alt="Rear Image">
       </div>
-      <div id="info2">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis.</p>
+      <div id="cardetails_info">
+        <div id="cardetails_info_div">
+          <h2>Dane techniczne:</h2>
+          <div>
+            <span id="info_left">Skrzynia biegów:</span>
+            <span id="info_right">manualna</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Zasięg (cykl mieszany):</span>
+            <span id="info_right"> 964 km</span>
+          </div>
+          <div>
+            <span id="info_left">Klimatyzacja:</span>
+            <span id="info_right"> tak</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Liczba miejsc:</span>
+            <span id="info_right">5</span>
+          </div>
+          <div>
+            <span id="info_left">Drzwi:</span>
+            <span id="info_right">5</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Paliwo:</span>
+            <span id="info_right">diesel</span>
+          </div>
+          <h4>Więcej szczegółów:</h4>
+          <div>
+            <span id="info_left">Rok:</span>
+            <span id="info_right">2008</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Rodzaj napędu:</span>
+            <span id="info_right"> na przednią oś</span>
+          </div>
+          <div>
+            <span id="info_left">Silnik:</span>
+            <span id="info_right">2.0 TDCi 136KM</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Przyspieszenie (0 -> 100km/h):</span>
+            <span id="info_right">9.3 s</span>
+          </div>
+          <div>
+            <span id="info_left">Prędkość maksymalna:</span>
+            <span id="info_right">203 km/h</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Zasięg (autostrada):</span>
+            <span id="info_right">1178 km</span>
+          </div>
+          <div>
+            <span id="info_left">Zasięg (miasto):</span>
+            <span id="info_right">757 km</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Średnie spalanie (cykl mieszany):</span>
+            <span id="info_right">5.5 l/100km</span>
+          </div>
+        </div>
+      </div>
+      <div id="form_cardetails">
+        <h2>Wybierz termin:</h2>
+        <form action="rent.html" method="post">
+          <input type="date" name="data_from">
+          <input type="date" name="data_to">
+          <p>Dostępność:</p>
+          <input type="submit" name="rent" value="Zarezerwuj">
+        </form>
       </div>
     </div>
   </body>
