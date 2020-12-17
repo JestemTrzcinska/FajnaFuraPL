@@ -1,8 +1,9 @@
 div.category{
-  width: 80%;
-  height: auto;
-  margin-left: 10%;
+  width: 960px;
+  height: 500px;
+  margin: 0 auto 0 auto;
   display: none;
+
 }
 
 div.activecat{
@@ -45,6 +46,10 @@ div#carbox{
   height:300px;
   float: left;
   background-color: rgba(255, 255, 255, 0.863);
+}
+
+div#carbox:first-child{
+  margin-left: 0;
 }
 
 div#carbox img{
