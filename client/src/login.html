@@ -33,7 +33,7 @@
         <div class="error-msg" data-errormsg=""><input type="tel" id="phone" placeholder="Podaj numer telefonu" required></div>
         <div class="error-msg" data-errormsg=""><input type="password" id="register_password" placeholder="Podaj hasło" minlength="6" required></div>
         <div class="error-msg" data-errormsg=""><input type="password" id="register_password2" placeholder="Powtórz hasło" minlength="6" required></div>
-        <div class="error-msg" data-errormsg=""><input type="checkbox" id="rodo" required><span> Akceptuj <a href="#" id="rodo_link" onclick="rodo_show()">RODO</a> (wymagane)</span></div>
+        <div class="error-msg" data-errormsg=""><input type="checkbox" id="rodo" required><span> Akceptuj <a href="#" id="rodo_link">RODO</a> (wymagane)</span></div>
         <input type="button" id="register_submit" value="Zarejestruj">
       </form>
     </div>
@@ -62,8 +62,8 @@
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum id elit eros. Pellentesque quis rutrum magna. Cras at congue tellus, facilisis egestas sapien. Nam at dui ut purus posuere elementum. Donec mollis ipsum eu dolor convallis, sed tristique turpis luctus. Etiam consequat ornare mi. Ut tincidunt, tortor eget ultricies pulvinar, justo magna sodales est, eu volutpat nisi lacus eu neque. Praesent posuere sagittis nisl id mattis. Aenean sapien risus, facilisis at elit sit amet, sagittis aliquet libero.<br>
         </div>
-        <button type="button" onclick="rodo_check()">Akceptuj</button>
-        <button type="button" onclick="rodo_hide()">Anuluj</button>
+        <button type="button" id="rodo_button_accept">Akceptuj</button>
+        <button type="button" id="rodo_button_cancel">Anuluj</button>
     </div>
     <script src="login.js"></script>
   </body>

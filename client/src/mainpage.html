@@ -1,78 +1,75 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="http://code.jquery.com/jquery-latest.min.js"
+      type="text/javascript"
+    ></script>
+    <title>Fajna fura</title>
+  </head>
+  <body>
+    <div id="cssmenu">
+      <ul>
+        <li class="active">
+          <a href="mainpage.html"><span><b>FajnaFura.pl</b></span></a>
+        </li>
+        <li>
+          <a href="cennik.html"><span>Cennik</span></a>
+        </li>
+        <li>
+          <a href="carlist.html"><span>Samochody</span></a>
+        </li>
+        <li>
+          <a href="kontakt.html"><span>Kontakt</span></a>
+        </li>
+        <li>
+          <a href='profil.html'><span>Profil</span></a>
+        </li>
+        <li id="zmiana">
+          <a href="login.html"><span>Zaloguj się/Zarejestruj się</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="cos">
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
+      <div class="slideshow-container">
 
-  </style>
-  <link rel="stylesheet" href="css/styles.css" />
-  <script
-    src="http://code.jquery.com/jquery-latest.min.js"
-    type="text/javascript"
-  ></script>
-  <title>Fajna fura</title>
-</head>
-<body>
-  <div id="cssmenu">
-    <ul>
-      <li>
-        <a href="mainpage.html"><span><b>FajnaFura.pl</b></span></a>
-      </li>
-      <li>
-        <a href="cennik.html"><span>Cennik</span></a>
-      </li>
-      <li>
-        <a href="carlist.html"><span>Samochody</span></a>
-      </li>
-      <li>
-        <a href="kontakt.html"><span>Kontakt</span></a>
-      </li>
-      <li>
-        <a href='profil.html'><span>Profil</span></a>
-      </li>
-      <li id="zmiana">
-        <a href="login.html"><span>Zaloguj się/Zarejestruj się</span></a>
-      </li>
-    </ul>
-  </div>
-  <div class="cos">
-      
-  <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="img/main_car_1.jpg" style="width:100%">
+          <div class="text">Lamborgini</div>
+        </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext"></div>
-    <img src="img/main_car_1.jpg" style="width:100%">
-    <div class="text">Lamborgini</div>
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="numbertext"></div>
-    <img src="img/main_car_4.jpg" style="width:100%">
-    <div class="text">BMW</div>
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="numbertext"></div>
-    <img src="img/main_car_3.jpg" style="width:100%">
-    <div class="text">Alpha Romeo</div>
-  </div>
-  
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-  </div>
-  <br>
-  
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span> 
-    <span class="dot" onclick="currentSlide(2)"></span> 
-    <span class="dot" onclick="currentSlide(3)"></span> 
-  </div>
-  
-  <script src="slide.js"> </script>
-  
-  </div>
-</body>
-<html></html>
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="img/main_car_4.jpg" style="width:100%">
+          <div class="text">BMW</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="img/main_car_3.jpg" style="width:100%">
+          <div class="text">Alpha Romeo</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+
+      <script src="slide.js"> </script>
+
+    </div>
+  </body>
+</html>

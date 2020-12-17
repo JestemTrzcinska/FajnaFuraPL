@@ -24,6 +24,9 @@ var objUsers = [
 const init = function(){
   document.getElementById('register_submit').addEventListener('click', register_send);
   document.getElementById('login_submit').addEventListener('click', login_send);
+  document.getElementById('rodo_link').addEventListener('click', rodo_show);
+  document.getElementById('rodo_button_accept').addEventListener('click', rodo_check);
+  document.getElementById('rodo_button_cancel').addEventListener('click', rodo_hide);
 }
 
 const register_send = function(ev){
