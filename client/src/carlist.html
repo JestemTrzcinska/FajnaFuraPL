@@ -3,6 +3,7 @@
   <head>
     <title>Lista samochodów - FajnaFura.pl</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carlist.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -21,53 +22,152 @@
 
     <h1 id="carlistheader">Nasze samochody</h1>
 
-    <div id="carlist">
+    <div id="categories">
+      <a class="categorybutton activebut" onclick="changecars(this)" href="#">Kombi</a>
+      <a class="categorybutton" onclick="changecars(this)" href="#">SUV</a>
+      <a class="categorybutton" onclick="changecars(this)" href="#">Hatchback</a>
+      <a class="categorybutton" onclick="changecars(this)" href="#">Sedan</a>
+      <a class="categorybutton" onclick="changecars(this)" href="#">Coupe</a>
+    </div>
+
+
+    <!-- Kombi     default view -->
+    <div id="Kombicat" class="category activecat">
       <div id="carbox">
         <img src="img/fordfocus.jpg" alt="Car Image">
         <div id="info">
-          <h2>Ford Focus</h2>
+          <h2>Kombi car</h2>
           <a href="cardetails.html">Sprawdź</a>
         </div>
       </div>
       <div id="carbox">
         <img src="img/fordfocus.jpg" alt="Car Image">
         <div id="info">
-          <h2>Ford Focus</h2>
+          <h2>Kombi car</h2>
           <a href="cardetails.html">Sprawdź</a>
         </div>
       </div>
       <div id="carbox">
         <img src="img/fordfocus.jpg" alt="Car Image">
         <div id="info">
-          <h2>Ford Focus</h2>
-          <a href="cardetails.html">Sprawdź</a>
-        </div>
-      </div>
-      <div id="carbox">
-        <img src="img/fordfocus.jpg" alt="Car Image">
-        <div id="info">
-          <h2>Ford Focus</h2>
-          <a href="cardetails.html">Sprawdź</a>
-        </div>
-      </div>
-      <div id="carbox">
-        <img src="img/fordfocus.jpg" alt="Car Image">
-        <div id="info">
-          <h2>Ford Focus</h2>
-          <a href="cardetails.html">Sprawdź</a>
-        </div>
-      </div>
-      <div id="carbox">
-        <img src="img/fordfocus.jpg" alt="Car Image">
-        <div id="info">
-          <h2>Ford Focus</h2>
+          <h2>Kombi car</h2>
           <a href="cardetails.html">Sprawdź</a>
         </div>
       </div>
     </div>
+    <!-- End Kombi -->
+
+
+    <!-- SUV -->
+    <div id="SUVcat" class="category">
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>SUV car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>SUV car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>SUV car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+    </div>
+    <!-- End SUV -->
+
+
+    <!-- Hatchback -->
+    <div id="Hatchbackcat" class="category">
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Hatchback car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Hatchback car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Hatchback car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Hatchback -->
+
+
+    <!-- Sedan -->
+    <div id="Sedancat" class="category">
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Sedan car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Sedan car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Sedan car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Sedan -->
+
+
+    <!-- Coupe -->
+    <div id="Coupecat" class="category">
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Coupe car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Coupe car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+      <div id="carbox">
+        <img src="img/fordfocus.jpg" alt="Car Image">
+        <div id="info">
+          <h2>Coupe car</h2>
+          <a href="cardetails.html">Sprawdź</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Coupe -->
 
     <div id="stopka">
 
     </div>
   </body>
+  <script type="text/javascript" src="carlist.js"></script>
 </html>
