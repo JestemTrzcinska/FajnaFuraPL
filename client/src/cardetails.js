@@ -10,7 +10,24 @@ const date_send = function(ev){
   let fails = date_validate();
 
   if(fails.length === 0){
-    document.getElementById('form_cardetails2').submit();
+    //document.getElementById('form_cardetails2').submit();
+    /*axios({
+      method: 'post',
+      url: '/rent.html',
+      data: {
+        date_from: document.getElementById('date_from').value,
+        date_to: document.getElementById('date_to').value
+      }
+    })*/
+    axios.post('/rent.html', {
+      firstName: document.getElementById('date_from').value,
+      lastName: document.getElementById('date_to').value
+    })
+    .then((response) => {
+      console.log(response.data);
+    }, (error) => {
+      console.log(error);
+    });
   }
   else{
     //Wyświetlenie błędów (ramki + wiadomości)
@@ -32,8 +49,6 @@ const date_validate = function(ev){
   var year = today.getFullYear();
 
   today = year + '-' + month + '-' + day;
-  console.log(date_from.value);
-  console.log(Date.now());
 
   if(date_from.value === ""){
     failures.push({input:'date_from', msg:'Pole wymagane!'})
