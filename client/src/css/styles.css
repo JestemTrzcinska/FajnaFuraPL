@@ -326,7 +326,7 @@ progress {
   height: 28px;
 }
 
-#formularze .error {
+#formularze .error, #form_cardetails .error {
   border: 2px solid red;
 }
 

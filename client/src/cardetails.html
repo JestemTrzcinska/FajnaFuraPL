@@ -88,13 +88,14 @@
       </div>
       <div id="form_cardetails">
         <h2>Wybierz termin:</h2>
-        <form action="rent.html" method="post">
-          <input type="date" name="data_from">
-          <input type="date" name="data_to">
+        <form action="rent.html" method="post" id="form_cardetails2">
+          <input type="date" name="date_from" id="date_from" required>
+          <input type="date" name="date_to" id="date_to" required>
           <p>Dostępność:</p>
-          <input type="submit" name="rent" value="Zarezerwuj">
+          <input type="button" name="rent" value="Zarezerwuj" id="date_submit">
         </form>
       </div>
     </div>
+    <script src="cardetails.js"></script>
   </body>
 </html>
