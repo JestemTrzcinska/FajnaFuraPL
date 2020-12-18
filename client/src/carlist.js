@@ -1,27 +1,25 @@
 "use strict";
 
-let buttons = document.querySelectorAll(".categorybutton");
-let sections = document.querySelectorAll(".category");
+let buttons = $(".categorybutton");
+let sections = $(".category");
 
-window.onload() = function(){
-    buttons.forEach(function(element){
-        element.addEventListener('click', changecars(element));
-    });
-};
-
-function changecars(el){
-    buttons.forEach(function(element) {
-        if(element.classList.contains("activebut")){
-            element.classList.remove("activebut");
+let changecars = function(el) {
+    $(buttons).each(function() {
+        if($(this).hasClass("activebut")){
+            $(this).removeClass("activebut");
         }
     });
-    el.classList.add("activebut");
+    $(el).addClass("activebut");
 
-    sections.forEach(function(element) {
-        if(element.classList.contains("activecat"))
-            element.classList.remove("activecat");
+    $(sections).each(function() {
+        if($(this).hasClass("activecat"))
+            $(this).removeClass("activecat");
     });
     
-    let temp = el.innerHTML+"cat";
-    document.getElementById(temp).classList.add("activecat");
-}
+    let temp = $(el).html()+"cat";
+    $("#"+temp).addClass("activecat");
+};
+
+buttons.each(function(){
+    $(this).click(changecars($(this)));
+});
