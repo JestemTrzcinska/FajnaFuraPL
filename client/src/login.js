@@ -1,26 +1,3 @@
-var objUsers = [
-  { // Object @ 0 index
-    email: "konrad@fura.pl",
-    password: "12345678"
-  },
-  { // Object @ 1 index
-    email: "jakub@fura.pl",
-    password: "12345678"
-  },
-  { // Object @ 2 index
-    email: "maciej@fura.pl",
-    password: "12345678"
-  },
-  { // Object @ 3 index
-    email: "patrycja@fura.pl",
-    password: "12345678"
-  },
-  { // Object @ 4 index
-    email: "mateusz@fura.pl",
-    password: "12345678"
-  }
-]
-
 const init = function(){
   document.getElementById('register_submit').addEventListener('click', register_send);
   document.getElementById('login_submit').addEventListener('click', login_send);
@@ -60,7 +37,14 @@ const register_send = function(ev){
 
   if(fails.length === 0){
     window.onbeforeunload = 0;
-    document.getElementById('form_register').submit();
+    //document.getElementById('form_register').submit();
+    axios.post('http://localhost:5000/api/users', {
+      firstName: document.getElementById('name').value,
+      lastName: document.getElementById('surname').value,
+      email: document.getElementById('register_email').value,
+      phone: document.getElementById('phone').value,
+      password: document.getElementById('register_password').value
+    });
   }
   else{
     //Wyświetlenie błędów (ramki + wiadomości)
@@ -84,7 +68,11 @@ const login_send = function(ev){
 
   if(fails.length === 0){
     window.onbeforeunload = 0;
-    document.getElementById('form_login').submit();
+    //document.getElementById('form_login').submit();
+    axios.post('http://localhost:5000/api/auth', {
+      email: document.getElementById('login_email').value,
+      password: document.getElementById('login_password').value
+    });
   }
   else{
     //Wyświetlenie błędów (ramki + wiadomości)
@@ -125,13 +113,6 @@ const register_validate = function(ev){
   else if(email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
     failures.push({input:'register_email', msg:'Nieprawidłowe dane!'})
   }
-  else{
-    for(var i = 0; i < objUsers.length; i++) {
-      if(email.value == objUsers[i].email) {
-        failures.push({input:'register_email', msg:'Email zajęty!'})
-      }
-    }
-  }
   if(phone.value === ""){
     failures.push({input:'phone', msg:'Pole wymagane!'})
   }
@@ -164,24 +145,6 @@ const login_validate = function(ev){
   }
   if(password.value === ""){
     failures.push({input:'login_password', msg:'Pole wymagane!'})
-  }
-
-  if(failures.length != 0){
-    return failures;
-  }
-
-  var success = 0;
-  for(var i = 0; i < objUsers.length; i++) {
-    if(email.value == objUsers[i].email && password.value == objUsers[i].password) {
-      alert(email.value + " zalogowany/zalogowana")
-      success = 1;
-    }
-  }
-
-  if(!success){
-    alert("Złe dane logowania!");
-    failures.push({input:'login_email', msg:'Błędne dane!'})
-    failures.push({input:'login_password', msg:'Błędne dane!'})
   }
 
   return failures;
