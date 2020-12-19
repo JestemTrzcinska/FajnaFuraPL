@@ -383,14 +383,22 @@ progress {
 }
 
 #form_address {
-  width: 220px;
+  width: 20%;
+  min-width: 330px;
   text-align: center;
-  border: 2px solid black;
-  padding: 20px;
-  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+}
+
+#address_div {
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 50px;
+  font-size: 22px;
+  padding: 2%;
+  height: 650px;
+  background-color: rgba(255, 255, 255, 0.863);
 }
 
 #form_rent {
