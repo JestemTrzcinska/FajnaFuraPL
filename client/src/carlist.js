@@ -1,25 +1,24 @@
 "use strict";
 
-let buttons = $(".categorybutton");
-let sections = $(".category");
-
 let changecars = function(el) {
-    $(buttons).each(function() {
+    $(".categorybutton").each(function() {
         if($(this).hasClass("activebut")){
             $(this).removeClass("activebut");
         }
     });
     $(el).addClass("activebut");
 
-    $(sections).each(function() {
+    $(".category").each(function() {
         if($(this).hasClass("activecat"))
             $(this).removeClass("activecat");
     });
     
-    let temp = $(el).html()+"cat";
+    let temp = $(el).text()+"cat";
     $("#"+temp).addClass("activecat");
 };
 
-buttons.each(function(){
-    $(this).click(changecars($(this)));
+$(".categorybutton").each(function(){
+    $(this).click(function(){
+        changecars($(this));
+    });
 });
