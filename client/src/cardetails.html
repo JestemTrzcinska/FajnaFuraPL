@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Szczegóły samochodu - FajnaFura.pl</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id='cssmenu'>
+      <ul>
+        <li><a href="mainpage.html"><b>FajnaFura.pl</b></a></li>
+        <li><a href='cennik.html'><span>Cennik</span></a></li>
+        <li><a href='carlist.html'><span>Samochody</span></a></li>
+        <li><a href='kontakt.html'><span>Kontakt</span></a></li>
+        <li><a href='profil.html'><span>Profil</span></a></li>
+        <li id="zmiana"><a href='login.html'><span>Zaloguj się/Zarejestruj się</span></a></li>
+      </ul>
+    </div>
+
+    <div id="cardetails">
+      <h1>Ford Focus</h1>
+      <div id="cardetails_photos">
+        <img src="img/fordfocus.jpg" alt="Front Image">
+        <img src="img/fordfocus_rear.jpg" alt="Rear Image">
+      </div>
+      <div id="cardetails_info">
+        <div id="cardetails_info_div">
+          <h2>Dane techniczne:</h2>
+          <div>
+            <span id="info_left">Skrzynia biegów:</span>
+            <span id="info_right">manualna</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Zasięg (cykl mieszany):</span>
+            <span id="info_right"> 964 km</span>
+          </div>
+          <div>
+            <span id="info_left">Klimatyzacja:</span>
+            <span id="info_right"> tak</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Liczba miejsc:</span>
+            <span id="info_right">5</span>
+          </div>
+          <div>
+            <span id="info_left">Drzwi:</span>
+            <span id="info_right">5</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Paliwo:</span>
+            <span id="info_right">diesel</span>
+          </div>
+          <h4>Więcej szczegółów:</h4>
+          <div>
+            <span id="info_left">Rok:</span>
+            <span id="info_right">2008</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Rodzaj napędu:</span>
+            <span id="info_right"> na przednią oś</span>
+          </div>
+          <div>
+            <span id="info_left">Silnik:</span>
+            <span id="info_right">2.0 TDCi 136KM</span>
+          </div>
+          <div class="change_bg">
+            <span id="info_left">Średnie spalanie (cykl mieszany):</span>
+            <span id="info_right">5.5 l/100km</span>
+          </div>
+        </div>
+      </div>
+      <div id="form_cardetails">
+        <h2>Wybierz termin:</h2>
+        <form action="rent.html" method="post" id="form_cardetails2">
+          <input type="date" name="date_from" id="date_from" required>
+          <input type="date" name="date_to" id="date_to" required>
+          <p>Dostępność:</p>
+          <input type="button" name="rent" value="Zarezerwuj" id="date_submit">
+        </form>
+      </div>
+    </div>
+    <script src="cardetails.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </body>
+</html>
