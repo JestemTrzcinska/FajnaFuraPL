@@ -64,6 +64,10 @@ const register_send = async function (ev) {
         password: document.getElementById('register_password').value,
       });
       console.log(res);
+
+      localStorage.setItem('token', res.data.token);
+      console.log(localStorage.getItem('token'));
+      console.log(res.data.token);
     } catch (err) {
       console.log(err);
       const errors = err.response.data.errors;
