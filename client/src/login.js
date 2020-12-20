@@ -43,6 +43,7 @@ const register_send = function(ev){
       lastName: document.getElementById('surname').value,
       email: document.getElementById('register_email').value,
       phone: document.getElementById('phone').value,
+      drivingLicense: document.getElementById('driver_license').value,
       password: document.getElementById('register_password').value
     });
   }
