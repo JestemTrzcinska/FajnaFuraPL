@@ -1,44 +1,52 @@
 table {
   border: none;
-  width: 60%;
+  width: 80%;
   position: relative;
-  left: 20%;
+  left: 10%;
   top: 20px;
   text-align: center;
   border-collapse: collapse;
 }
 
 td {
-  width: 15%;
+  width: 14%;
   height: 60px;
 }
 
-td:last-child {
+td:last-child,
+td:nth-last-child(2) {
   width: 10%;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: rgba(222, 214, 221, 0.938);
+  background-color: rgba(155, 202, 224, 0.774);
 }
 
 tbody tr:nth-child(even) {
-  background-color: rgba(240, 235, 239, 0.938);
+  background-color: rgba(145, 193, 234, 0.76);
 }
 
 thead {
-  background-color: rgb(238, 143, 131);
+  background-color: #13acf3;
   text-align: center;
-  font-weight: 500;
+  font-weight: bold;
+  color: white;
 }
 
-td button {
+td #tablebutton {
   border: none;
-  background-color: rgb(131, 189, 255);
-  border-radius: 50%;
+  background-color: rgb(41, 55, 187);
+  color: white;
+  border-radius: 10px;
   position: relative;
   width: 80%;
-  height: 30px;
+  height: 23px;
   font-size: 12px;
+  font-weight: bold;
+  border: 1px rgb(104, 8, 8) solid;
+  display: block;
+  padding-top: 7px;
+  text-decoration: none;
 }
 
 h1 {
