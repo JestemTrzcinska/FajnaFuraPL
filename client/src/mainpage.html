@@ -12,28 +12,7 @@
     <title>Fajna fura</title>
   </head>
   <body>
-    <div id="cssmenu">
-      <ul>
-        <li class="active">
-          <a href="mainpage.html"><span><b>FajnaFura.pl</b></span></a>
-        </li>
-        <li>
-          <a href="cennik.html"><span>Cennik</span></a>
-        </li>
-        <li>
-          <a href="carlist.html"><span>Samochody</span></a>
-        </li>
-        <li>
-          <a href="kontakt.html"><span>Kontakt</span></a>
-        </li>
-        <li>
-          <a href='profil.html'><span>Profil</span></a>
-        </li>
-        <li id="zmiana">
-          <a href="login.html"><span>Zaloguj się/Zarejestruj się</span></a>
-        </li>
-      </ul>
-    </div>
+    <div w3-include-html="http://localhost:5000/navbar.html"></div>
     <div class="cos">
 
       <div class="slideshow-container">
@@ -71,5 +50,6 @@
       <script src="slide.js"> </script>
 
     </div>
+    <script type="text/javascript" src="loadnavbar.js"></script>
   </body>
 </html>
