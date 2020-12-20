@@ -26,6 +26,7 @@ app.use('/api/rents', require('./routes/api/rents'));
 app.use('/api/staff', require('./routes/api/staff'));
 app.use('/api/status', require('./routes/api/status'));
 app.use('/api/users', require('./routes/api/users'));
+app.use(express.static(__dirname+'/public'));
 
 const PORT = process.env.PORT || 5000;
 
