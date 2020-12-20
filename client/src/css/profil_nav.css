@@ -1,33 +1,83 @@
-nav
-{
-    width: 100%;
-    background-color: #303030;
-    font-size: 18px;
-    line-height:200%;
-    border-radius: 6px;
-     display:block;
-}
-nav ul{
-  list-style-type:none;
-  padding:10px;
-  background-color:#D3D3D3;
-  border-left: 5px solid #303030;
-  display:block;
-}
-nav ul li{
-   text-align:center;
- display:block;
+div.category{
+  width: 940px;
+  height: 500px;
+  margin: 0 auto 0 auto;
+  display: none;
 
 }
-nav ul li a{
-   text-decoration:none;
-  color:black;
-   display:block;
+
+div.activecat{
+  display: block;
   
 }
 
-nav  ul li:active{
-  background-color:#1F272B;
- 
+div#categories{
+
+}
+
+a.categorybutton
+{
+  text-decoration: none!important;
+  color:black;
+}
+
+a.activebut{
+  
+  text-decoration: none;
+  color: black;
+}
+
+div#carbox{
+  width:300px;
+  border: none;
+  border-radius: 35px;
+  margin-top: 40px;
+  margin-left: 20px;
+  height:300px;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.863);
+}
+
+div#carbox:first-child{
+  margin-left: 0;
+}
+
+div#carbox img{
+  border: 1px black solid;
+  width: 94%;
+  margin-left: 3%;
+  height: 150px;
+  display: block;
+  margin-top: 20px;
+}
+
+div#carbox #info a, h2{
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+
+}
+
+div#carbox #info{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+div#carbox a{
+  display: block;
+  width: 30%;
+  height: 35px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 30%;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+h1#carlistheader{
+  text-align: center;
+}
+
 }
 

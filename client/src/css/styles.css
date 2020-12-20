@@ -256,7 +256,7 @@ progress {
   top: 20%;
   text-align: left;
 }
-#dane_wypo
+#Dane_wypozyczenia
 {
   width:300px;
   height:300px;
@@ -267,7 +267,7 @@ progress {
   top: 20%;
   text-align: left;
 }
-#dane_profilu
+#Dane_personalne
 {
   width:300px;
   height:300px;
@@ -278,9 +278,9 @@ progress {
   top: 20%;
   text-align: left;
 }
-#dane_konta
+#Dane_konta
 {
-  width:100%;
+  width: 300px;
   height:50%;
   padding:0px;
   border:2px solid black;
@@ -288,13 +288,46 @@ progress {
   top: 20%;
   text-align: left;
 }
+#profil_dane
+{
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 50px;
+  font-size: 22px;
+  height: 650px;
+  background-color: rgba(255, 255, 255, 0.863);
+}
 #dane_konta2
 {
-  width: 300px;
-  height: 700px;
+  border-radius: 50px;
+  width: 20%;
+  height: 650px;
+  background-color: #cecece;
   position: absolute;
-  top: 20%;
-  text-align: left;
+  text-align: center;
+}
+#dane_konta2 ul
+{
+  list-style-type:none; 
+  padding: 0px;
+  position: relative;
+  top:30px;
+}
+#dane_konta2 ul li
+{
+  height: 50px;
+}
+#dane_konta2 ul li:hover
+{
+  background-color:#aaacad;
+  border-radius: 15px;
+}
+
+#dane_konta2  ul li:active
+{
+  background-color:#cbcccc;
+
 }
 
 
@@ -522,10 +555,13 @@ progress {
 
  /* Slideshow container */
  @media screen {
- .slideshow-container {
+ .slideshow-container 
+ {
    max-width: 70%;
-   position: relative;
-   top:50px;
+   max-height: 600px;
+   position: absolute;
+   left:15%;
+  
    margin: auto;
  }
 
@@ -559,11 +595,12 @@ progress {
  /* Caption text */
  .text {
    color: #f2f2f2;
-   font-size: 15px;
+   font-size: 43px;
    padding: 8px 12px;
    position: absolute;
-   bottom: 8px;
+   bottom: 50%;
    width: 100%;
+   font-weight: bold;
    text-align: center;
  }
 
