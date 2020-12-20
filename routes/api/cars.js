@@ -24,15 +24,19 @@ router.get('/', async (req, res) => {
 router.post(
   '/',
   [
+    check('licenseNumber', 'Proszę o podanie numeru rejestracyjnego samochodu').not().isEmpty(),
     check('brand', 'Proszę o podanie marki samochodu').not().isEmpty(),
     check('model', 'Proszę o podanie modelu samochodu').not().isEmpty(),
     check('year', 'Proszę o podanie roku produkcji samochodu').not().isEmpty(),
-    check('sits', 'Proszę o podanie liczby siedzen w samochodzie')
-      .not()
-      .isEmpty(),
-    check('licenseNumber', 'Proszę o podanie numeru rejestracyjnego samochodu')
-      .not()
-      .isEmpty(),
+    check('sits', 'Proszę o podanie liczby siedzen w samochodzie').not().isEmpty(),
+    check('typeDrive', 'Proszę o podanie rodzaju skrzyni biegów').not().isEmpty(),
+    check('airConditioning', 'Proszę o podanie rodzaju klimatyzacji').not().isEmpty(),
+    check('typeFuel', 'Proszę o podanie rodzaju paliwa').not().isEmpty(),
+    check('engine', 'Proszę o podanie rodzaju silnika').not().isEmpty(),
+    check('averageRange', 'Proszę o podanie sredniego zasiegu').not().isEmpty(),
+    check('averageConsumption', 'Proszę o podanie sredniego spalania').not().isEmpty(),
+    check('category', 'Proszę o podanie kategorii samochodu').not().isEmpty(),
+    check('multiplierPrice', 'Proszę o podanie mnoznika').not().isEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -41,17 +45,20 @@ router.post(
     }
 
     const {
+      licenseNumber,
       brand,
       model,
       year,
       sits,
-      licenseNumber,
+      typeDrive,
+      airConditioning,
+      typeFuel,
+      engine,
+      averageRange,
+      averageConsumption,
       about,
-      mileage,
-      conditionOil,
-      conditionTires,
-      tirePressure,
-      multiplerPrice,
+      category,
+      multiplierPrice,
     } = req.body;
 
     try {
@@ -68,18 +75,20 @@ router.post(
       const status = '5fba6804cb6fc93abce4c728'; // niewypozyczony
 
       car = new Car({
-        status,
+        licenseNumber,
         brand,
         model,
         year,
         sits,
-        licenseNumber,
+        typeDrive,
+        airConditioning,
+        typeFuel,
+        engine,
+        averageRange,
+        averageConsumption,
         about,
-        mileage,
-        conditionOil,
-        conditionTires,
-        tirePressure,
-        multiplerPrice,
+        category,
+        multiplierPrice,
       });
 
       await car.save();

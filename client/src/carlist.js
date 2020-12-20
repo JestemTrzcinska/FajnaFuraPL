@@ -22,3 +22,22 @@ $(".categorybutton").each(function(){
         changecars($(this));
     });
 });
+
+
+axios.get('http://localhost:5000/api/cars').then(response => {
+    readcars(response.data);
+}).catch(err => {
+    console.log(err);
+});
+
+let readcars = function(data){
+    data.forEach(function(car){
+        let newdiv = $("div#carbox.prototype").clone();
+        $(newdiv).find("h2").text(car.brand + " " + car.model);
+        $(newdiv).removeClass("prototype");
+        $(newdiv).find("a").attr("href", "cardetails.html?carid="+car._id);
+        $(newdiv).find("img").attr("src", "http://localhost:5000/img/"+car.brand+"_"+car.model+"_"+car.category+"_front.jpg");
+        console.log($(newdiv).find("img").attr("src"));
+        $("#"+car.category+"cat").append(newdiv);
+    })
+};

@@ -42,14 +42,14 @@ div#carbox{
   border: none;
   border-radius: 35px;
   margin-top: 40px;
-  margin-left: 20px;
+  margin-right: 20px;
   height:300px;
   float: left;
   background-color: rgba(255, 255, 255, 0.863);
 }
 
-div#carbox:first-child{
-  margin-left: 0;
+div#carbox:nth-child(3n){
+  margin-right: 0;
 }
 
 div#carbox img{
@@ -83,6 +83,10 @@ div#carbox a{
   margin-left: 30%;
   margin-top: 20px;
   text-decoration: none;
+}
+
+div#carbox.prototype{
+  display: none;
 }
 
 h1#carlistheader{
