@@ -52,8 +52,13 @@ const CarSchema = new mongoose.Schema({
   about: {
     type: String,
   },
+  category: {
+    type: String,
+    required: true,
+  },
   multiplierPrice: {
     type: Number,
+    required: true,
   },
 });
 

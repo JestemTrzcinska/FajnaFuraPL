@@ -21,6 +21,7 @@ router.post(
       'password',
       'Słabe hasło! Wprowadź kombinację przynajmniej sześciu liter i cyfr.'
     ).isLength({ min: 6 }),
+    check('drivingLicense', 'Proszę o podanie prawidłowego maila.').not().isEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -28,7 +29,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, drivingLicense, email, password } = req.body;
 
     try {
       // See if the user exists
@@ -39,9 +40,17 @@ router.post(
         });
       }
 
+      let user2 = await User.findOne({ drivingLicense });
+      if (user2) {
+        return res.status(400).json({
+          errors: [{ msg: 'Użytkownik o podanym numerze prawa jazdy już istnieje.' }],
+        });
+      }
+
       user = new User({
         firstName,
         lastName,
+        drivingLicense,
         email,
         password,
       });
