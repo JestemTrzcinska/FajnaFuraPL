@@ -4,8 +4,8 @@
   "description": "A JavaScript project",
   "main": "./dist/main.js",
   "scripts": {
-    "start": "node ./node_modules/parcel-bundler/bin/cli serve ./src/mainpage.html --port 8080",
-    "build": "node ./node_modules/parcel-bundler/bin/cli build ./src/mainpage.html --out-dir ./dist/",
+    "start": "node ./node_modules/parcel-bundler/bin/cli serve ./src/layout/mainpage.html --port 8080",
+    "build": "node ./node_modules/parcel-bundler/bin/cli build ./src/layout/mainpage.html --out-dir ./dist/",
     "lint": "node ./node_modules/eslint/bin/eslint . --ext .js --fix"
   },
   "repository": {
