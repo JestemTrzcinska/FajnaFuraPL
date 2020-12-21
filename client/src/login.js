@@ -20,8 +20,8 @@ const register_send = async function (ev) {
   document.getElementById('phone').parentElement.classList.remove('error-msg2');
   document.getElementById('password').classList.remove('error');
   document.getElementById('password').parentElement.classList.remove('error-msg2');
-  document.getElementById('register_password2').classList.remove('error');
-  document.getElementById('register_password2').parentElement.classList.remove('error-msg2');
+  document.getElementById('password2').classList.remove('error');
+  document.getElementById('password2').parentElement.classList.remove('error-msg2');
   document.getElementById('rodo').classList.remove('error');
   document.getElementById('rodo').parentElement.classList.remove('error-msg2');
 
@@ -37,8 +37,6 @@ const register_send = async function (ev) {
 
   //let fails = register_validate();
 
-  window.onbeforeunload = 0;
-  //document.getElementById('form_register').submit();
   try {
     const res = await axios.post('http://localhost:5000/api/users', {
       firstName: document.getElementById('firstName').value,
@@ -47,9 +45,11 @@ const register_send = async function (ev) {
       phone: document.getElementById('phone').value,
       drivingLicense: document.getElementById('drivingLicense').value,
       password: document.getElementById('password').value,
+      password2: document.getElementById('password2').value,
+      rodo: document.getElementById('rodo').checked,
     });
     console.log(res);
-
+    window.onbeforeunload = 0;
     localStorage.setItem('token', res.data.token);
     console.log(localStorage.getItem('token'));
     console.log(res.data.token);
@@ -63,23 +63,8 @@ const register_send = async function (ev) {
         field.parentElement.classList.add('error-msg2');
         field.parentElement.setAttribute('data-errormsg', error.msg);
       })
-      /*fails.forEach(function (obj) {
-        let field = document.getElementById(obj.input);
-        field.classList.add('error');
-        field.parentElement.classList.add('error-msg2');
-        field.parentElement.setAttribute('data-errormsg', obj.msg);
-      })*/
     }
   }
-
-    // } else {
-    //   //Wyświetlenie błędów (ramki + wiadomości)
-    //   fails.forEach(function (obj) {
-    //     let field = document.getElementById(obj.input);
-    //     field.classList.add('error');
-    //     field.parentElement.classList.add('error-msg2');
-    //     field.parentElement.setAttribute('data-errormsg', obj.msg);
-    //   });
 };
 
 const login_send = function (ev) {
@@ -107,50 +92,6 @@ const login_send = function (ev) {
       field.parentElement.setAttribute('data-errormsg', obj.msg);
     });
   }
-};
-
-const register_validate = function (ev) {
-  let failures = [];
-  let firstName = document.getElementById('firstName');
-  let lastName = document.getElementById('lastName');
-  let email = document.getElementById('email');
-  let phone = document.getElementById('phone');
-  let password = document.getElementById('password');
-  let password2 = document.getElementById('register_password2');
-  let rodo = document.getElementById('rodo');
-
-  if (firstName.value === '') {
-    failures.push({ input: 'firstName', msg: 'Pole wymagane!' });
-  } else if (!firstName.value.match(/[a-z]/i)) {
-    failures.push({ input: 'firstName', msg: 'Nieprawidłowe dane!' });
-  }
-  if (lastName.value === '') {
-    failures.push({ input: 'lastName', msg: 'Pole wymagane!' });
-  } else if (!lastName.value.match(/[a-z]/i)) {
-    failures.push({ input: 'lastName', msg: 'Nieprawidłowe dane!' });
-  }
-  if (email.value === '') {
-    failures.push({ input: 'email', msg: 'Pole wymagane!' });
-  } else if (email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
-    failures.push({ input: 'email', msg: 'Nieprawidłowe dane!' });
-  }
-  if (phone.value === '') {
-    failures.push({ input: 'phone', msg: 'Pole wymagane!' });
-  }
-  if (password.value.length < 6) {
-    failures.push({ input: 'password', msg: 'Hasło za krótkie!' });
-  }
-  if (password2.value.length < 6) {
-    failures.push({ input: 'register_password2', msg: 'Hasło za krótkie!' });
-  }
-  if (password.value != password2.value) {
-    failures.push({ input: 'register_password2', msg: 'Hasła są różne!' });
-  }
-  if (!rodo.checked) {
-    failures.push({ input: 'rodo', msg: 'Pole wymagane!' });
-  }
-
-  return failures;
 };
 
 const login_validate = function (ev) {

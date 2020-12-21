@@ -17,8 +17,10 @@ router.post(
     check('firstName', 'Wymagane imię').not().isEmpty(),
     check('lastName', 'Wymagane nazwisko').not().isEmpty(),
     check('email', 'Wymagany prawidłowy email').isEmail(),
-    check('password','Wymagane silniejsze hasło').isLength({ min: 6 }),
+    check('password','Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
+    check('password2','Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
     check('drivingLicense', 'Wymagany numer prawa jazdy').not().isEmpty(),
+    check('rodo', 'Zgoda wymagana').equals('true'),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -26,7 +28,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { firstName, lastName, drivingLicense, email, password } = req.body;
+    const { firstName, lastName, drivingLicense, email, password, password2 } = req.body;
 
     try {
       // See if the user exists
@@ -35,8 +37,19 @@ router.post(
         return res.status(400).json({
           errors: [
             {
-              input: 'email',
+              param: 'email',
               msg: 'Podany email jest zajęty',
+            },
+          ],
+        });
+      }
+
+      if(password !== password2){
+        return res.status(400).json({
+          errors: [
+            {
+              param: 'password2',
+              msg: 'Podane hasła są różne',
             },
           ],
         });
@@ -47,7 +60,7 @@ router.post(
         return res.status(400).json({
           errors: [
             {
-              input: 'drivingLicense',
+              param: 'drivingLicense',
               msg: 'Podany numer prawa jazdy jest zajęty',
             },
           ],

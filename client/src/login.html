@@ -5,42 +5,43 @@
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   </head>
   <body>
     <div w3-include-html="http://localhost:5000/navbar.html"></div>
     <div id="formularze">
       <form action="profil.html" method="post" id="form_login">
         <h3>Logowanie</h3>
-        <div class="error-msg" data-errormsg=""><input type="email" id="login_email" placeholder="Podaj email" autofocus required></div>
-        <div class="error-msg" data-errormsg=""><input type="password" id="login_password" placeholder="Podaj hasło" minlength="6" required></div>
+        <div class="error-msg" data-errormsg=""><input type="email" id="login_email" placeholder="Podaj email" autofocus></div>
+        <div class="error-msg" data-errormsg=""><input type="password" id="login_password" placeholder="Podaj hasło"></div>
         <a href="/forgot">Zapomniałeś hasła?</a><br>
         <input type="button" id="login_submit" value="Zaloguj">
       </form>
       <form action="address.html" method="post" id="form_register">
         <h3>Rejestracja</h3>
         <div class="error-msg" data-errormsg="">
-          <input type="text" id="firstName" placeholder="Podaj imię" required>
+          <input type="text" id="firstName" placeholder="Podaj imię">
         </div>
         <div class="error-msg" data-errormsg="">
-          <input type="text" id="lastName" placeholder="Podaj nazwisko" required>
+          <input type="text" id="lastName" placeholder="Podaj nazwisko">
         </div>
         <div class="error-msg" data-errormsg="">
-          <input type="email" id="email" placeholder="Podaj email" required>
+          <input type="text" id="email" placeholder="Podaj email">
         </div>
         <div class="error-msg" data-errormsg="">
-          <input type="tel" id="phone" placeholder="Podaj numer telefonu">
+          <input type="text" id="phone" placeholder="Podaj numer telefonu">
         </div>
         <div class="error-msg" data-errormsg="">
-          <input type="text" id="drivingLicense" placeholder="Podaj numer prawa jazdy" required>
+          <input type="text" id="drivingLicense" placeholder="Podaj numer prawa jazdy">
         </div>
         <div class="error-msg" data-errormsg="">
-          <input type="password" id="password" placeholder="Podaj hasło" minlength="6" required>
+          <input type="password" id="password" placeholder="Podaj hasło">
         </div>
         <div class="error-msg" data-errormsg="">
-          <input type="password" id="register_password2" placeholder="Powtórz hasło" minlength="6" required>
+          <input type="password" id="password2" placeholder="Powtórz hasło">
         </div>
         <div class="error-msg" data-errormsg="">
-          <input type="checkbox" id="rodo" required>
+          <input type="checkbox" id="rodo">
           <span> Akceptuj <a href="#" id="rodo_link">RODO</a> (wymagane)</span>
         </div>
         <input type="button" id="register_submit" value="Zarejestruj">
