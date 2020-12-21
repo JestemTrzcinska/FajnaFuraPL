@@ -5,21 +5,36 @@
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   </head>
   <body>
     <div w3-include-html="http://localhost:5000/navbar.html"></div>
     <div id="address_div">
       <form class="" action="profil.html" method="post" id="form_address">
         <h3>Uzupełnij dane adresowe:</h3>
-        <input type="text" name="street" placeholder="Ulica" required>
-        <input type="text" name="house_number" placeholder="Numer domu" required>
-        <input type="text" name="apartment_number" placeholder="Numer mieszkania">
-        <input type="text" name="postal_code" placeholder="Kod pocztowy" required>
-        <input type="text" name="city" placeholder="Miasto" required>
-        <input type="text" name="country" placeholder="Kraj" required>
-        <input type="submit" name="" value="Zapisz">
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="street" placeholder="Ulica" required>
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="building" placeholder="Numer domu" required>
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="apartment" placeholder="Numer mieszkania">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="zipCode" placeholder="Kod pocztowy" required>
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="city" placeholder="Miasto" required>
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="country" placeholder="Kraj" required>
+        </div>
+        <input type="submit" id="address_submit" value="Zapisz">
       </form>
     </div>
+    <script src="address.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="loadnavbar.js"></script>
   </body>
 </html>
