@@ -70,3 +70,5 @@ client/package-lock.json
 .vs/ProjectSettings.json
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
+client/package-lock.json
+package-lock.json

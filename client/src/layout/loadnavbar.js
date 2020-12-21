@@ -47,7 +47,7 @@ function setCurrentPage() {
   url = url.split('.')[0];
   console.log(url);
   // console.log($("#cssmenu a[href='"+url+".html']").parent().html());
-  $("#cssmenu a[href='" + url + ".html']")
+  $("#cssmenu a[href='http://localhost:8080/" + url + ".html']")
     .parent()
     .addClass('active');
   if ((count = 5)) clearInterval(inv);
