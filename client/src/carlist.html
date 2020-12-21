@@ -2,21 +2,18 @@
 <html lang="pl">
   <head>
     <title>Lista samochodów - FajnaFura.pl</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="carlist.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <script
-      src="http://code.jquery.com/jquery-latest.min.js"
-      type="text/javascript"
-    ></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carlist.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div w3-include-html="http://localhost:5000/navbar.html"></div>
 
     <h1 id="carlistheader">Nasze samochody</h1>
-    <!--
+<!--
     <div id="categories">
       <a class="categorybutton activebut" onclick="changecars(this)" href="#">Kombi</a>
       <a class="categorybutton" onclick="changecars(this)" href="#">SUV</a>
@@ -26,36 +23,50 @@
     </div>
 -->
 
-    <div id="categories">
-      <a class="categorybutton activebut" href="#">Kombi</a>
-      <a class="categorybutton" href="#">SUV</a>
-      <a class="categorybutton" href="#">Hatchback</a>
-      <a class="categorybutton" href="#">Sedan</a>
-      <a class="categorybutton" href="#">Coupe</a>
-    </div>
+  <div id="categories">
+    <a class="categorybutton activebut" href="#">Kombi</a>
+    <a class="categorybutton" href="#">SUV</a>
+    <a class="categorybutton" href="#">Hatchback</a>
+    <a class="categorybutton" href="#">Sedan</a>
+    <a class="categorybutton" href="#">Coupe</a>
+  </div>
 
     <!-- Kombi     default view -->
-    <div id="Kombicat" class="category activecat"></div>
+    <div id="Kombicat" class="category activecat">
+      
+    </div>
     <!-- End Kombi -->
 
+
     <!-- SUV -->
-    <div id="SUVcat" class="category"></div>
+    <div id="SUVcat" class="category">
+      
+    </div>
     <!-- End SUV -->
 
+
     <!-- Hatchback -->
-    <div id="Hatchbackcat" class="category"></div>
+    <div id="Hatchbackcat" class="category">
+      
+    </div>
     <!-- End Hatchback -->
 
+
     <!-- Sedan -->
-    <div id="Sedancat" class="category"></div>
+    <div id="Sedancat" class="category">
+      
+    </div>
     <!-- End Sedan -->
 
+
     <!-- Coupe -->
-    <div id="Coupecat" class="category"></div>
+    <div id="Coupecat" class="category">
+      
+    </div>
     <!-- End Coupe -->
 
     <div id="carbox" class="prototype">
-      <img src="" alt="Car Image" />
+      <img src="" alt="Car Image">
       <div id="info">
         <h2></h2>
         <a href="cardetails.html">Sprawdź</a>
@@ -63,6 +74,7 @@
     </div>
 
     <script type="text/javascript" src="carlist.js"></script>
-    <script type="text/javascript" src="../layout/loadnavbar.js"></script>
+    <script type="text/javascript" src="loadnavbar.js"></script>
   </body>
+  
 </html>

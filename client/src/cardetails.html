@@ -2,13 +2,9 @@
 <html lang="pl">
   <head>
     <title>Szczegóły samochodu - FajnaFura.pl</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <script
-      src="http://code.jquery.com/jquery-latest.min.js"
-      type="text/javascript"
-    ></script>
   </head>
   <body>
     <div w3-include-html="http://localhost:5000/navbar.html"></div>
@@ -17,11 +13,11 @@
       <h1>Ford Focus</h1>
       <div id="cardetails_photos">
         <img
-          src="../../../public/img/Ford_Focus_Kombi_front.jpg"
+          src="http://localhost:5000/img/Ford_Focus_Kombi_front.jpg"
           alt="Front Image"
         />
         <img
-          src="../../../public/img/Ford_Focus_Kombi_rear.jpg"
+          src="http://localhost:5000/img/Ford_Focus_Kombi_rear.jpg"
           alt="Rear Image"
         />
       </div>
@@ -73,7 +69,7 @@
       </div>
       <div id="form_cardetails">
         <h2>Wybierz termin:</h2>
-        <form action="../rents/rent.html" method="post" id="form_cardetails2">
+        <form action="rent.html" method="post" id="form_cardetails2">
           <input type="date" name="date_from" id="date_from" required />
           <input type="date" name="date_to" id="date_to" required />
           <p>Dostępność:</p>
@@ -88,6 +84,6 @@
     </div>
     <script src="cardetails.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="../layout/loadnavbar.js"></script>
+    <script type="text/javascript" src="loadnavbar.js"></script>
   </body>
 </html>

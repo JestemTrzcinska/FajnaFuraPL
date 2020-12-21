@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Logowanie/Rejestracja - Fajna fura.pl</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div w3-include-html="http://localhost:5000/navbar.html"></div>
+    <div id="formularze">
+      <form action="profil.html" method="post" id="form_login">
+        <h3>Logowanie</h3>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="login_email" placeholder="Podaj email" autofocus>
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="password" id="login_password" placeholder="Podaj hasło">
+        </div>
+        <input type="button" id="login_submit" value="Zaloguj">
+      </form>
+      <form action="address.html" method="post" id="form_register">
+        <h3>Rejestracja</h3>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="firstName" placeholder="Podaj imię">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="lastName" placeholder="Podaj nazwisko">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="email" placeholder="Podaj email">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="phone" placeholder="Podaj numer telefonu">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="text" id="drivingLicense" placeholder="Podaj numer prawa jazdy">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="password" id="password" placeholder="Podaj hasło">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="password" id="password2" placeholder="Powtórz hasło">
+        </div>
+        <div class="error-msg" data-errormsg="">
+          <input type="checkbox" id="rodo">
+          <span> Akceptuj <a href="#" id="rodo_link">RODO</a> (wymagane)</span>
+        </div>
+        <input type="button" id="register_submit" value="Zarejestruj">
+      </form>
+    </div>
+    <div id="rodo_div">
+      <h3>RODO</h3>
+      <div id="rodo_text" src="rodo.html">
+        <h3>Fajna Fura - RODO</h3>
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat facilisis nulla, sed bibendum ante laoreet et. Nunc erat lectus, gravida ac pharetra vel, accumsan sit amet magna. Aliquam consectetur enim eget pharetra mattis. Curabitur sagittis volutpat mi eu interdum. Maecenas condimentum semper mi, vitae feugiat erat sodales sit amet. Donec ac neque blandit, egestas dui in, molestie orci. Donec sit amet odio at ante consequat laoreet. Aenean lobortis venenatis lectus eu luctus. Nulla facilisi. Proin pretium sit amet justo sed tincidunt. Sed id egestas ipsum. Pellentesque quis porttitor tortor, eget porta nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nunc non efficitur suscipit. In placerat euismod purus vitae pellentesque.<br><br>
+
+        In sit amet felis vitae dolor semper molestie a at turpis. Aenean rutrum sem neque, ultrices maximus orci aliquam ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin euismod venenatis feugiat. Maecenas ut tempus nisl. Nunc nec egestas tellus. Vestibulum id lacus turpis. Donec tincidunt ultricies ligula, eget cursus justo dignissim id. Vivamus est mi, eleifend vel lectus in, porttitor interdum dolor. Ut et condimentum nunc, id tristique nulla. Duis pellentesque est in rutrum semper. Vivamus molestie placerat nisl ut luctus. Suspendisse vestibulum neque erat. Nulla facilisi. Praesent ut semper metus, vel varius dui.<br><br>
+
+        Integer ornare ipsum gravida, eleifend tortor sed, ultricies nulla. Maecenas venenatis enim non odio dapibus ultricies. Phasellus non lectus tempus, placerat metus at, eleifend odio. Fusce dapibus blandit quam in volutpat. Phasellus dignissim ipsum nec tellus maximus finibus. Fusce bibendum urna at velit varius, non maximus lacus iaculis. Sed lacinia, eros et varius faucibus, lectus tellus vehicula dolor, ut congue purus nunc id elit. Nunc ultricies elementum mattis. Nunc id ligula dolor. Praesent ut venenatis eros, eget venenatis massa. Mauris malesuada turpis posuere, consectetur nulla ut, maximus dolor. Integer sed libero vehicula, faucibus dolor in, condimentum quam. Suspendisse bibendum luctus sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus eu nunc vel dui tempus pellentesque in in augue. Praesent sit amet consectetur ipsum.<br><br>
+
+        Nulla facilisi. Aliquam eu tristique est, ut congue tortor. In ut euismod velit. Aliquam a diam erat. Sed nec viverra tortor, non scelerisque libero. Praesent feugiat efficitur lacus, sit amet bibendum velit gravida ut. Nullam sit amet luctus turpis, in laoreet diam. Sed ac arcu vitae purus egestas dapibus. Morbi iaculis velit in aliquam pharetra. Morbi turpis mauris, molestie vitae viverra a, viverra a lectus.<br><br>
+
+        Mauris vitae elit augue. Vivamus pellentesque sed lacus vel convallis. Nullam vel ullamcorper risus. Aliquam feugiat elementum orci efficitur posuere. Curabitur fringilla eros sed tristique convallis. Curabitur et volutpat dolor, a consequat lacus. Etiam varius varius purus, a fermentum tellus tincidunt in. In rutrum blandit scelerisque. Suspendisse vel porta erat. Maecenas eleifend justo ante, ut suscipit ipsum porta ut. Morbi laoreet dui quis nisi interdum, non volutpat massa pharetra. Pellentesque placerat accumsan lacus sit amet egestas. In tristique lobortis erat sit amet bibendum.<br><br>
+
+        Phasellus dictum vitae ligula non volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi in enim eu elit convallis rhoncus. Maecenas ut sem eu tellus rutrum imperdiet at sed neque. In vitae est pretium, semper nulla ut, bibendum risus. Sed quis mattis nibh. Fusce fermentum justo lectus. Phasellus aliquet vulputate rutrum. Donec a finibus massa. Nulla tincidunt et lectus id congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in leo vehicula diam posuere molestie. Fusce et velit ac libero ullamcorper dapibus. Nulla congue odio orci, et faucibus massa convallis hendrerit. Vestibulum dignissim felis purus, ut aliquet mi dapibus eu.<br>
+
+        Ut imperdiet ultricies tortor. Cras rutrum mollis neque, et pulvinar libero tristique ut. Curabitur et molestie nunc, vitae sagittis magna. Sed ut scelerisque risus. Duis eu ante volutpat, volutpat mi non, posuere magna. Cras sed mauris cursus augue ornare bibendum. Phasellus aliquam diam tincidunt neque ultrices maximus. Duis tincidunt at orci a luctus. Nunc id velit at quam scelerisque tincidunt. Nam semper purus in finibus egestas. Cras porttitor nisl ut dui tincidunt, et mattis enim facilisis. Suspendisse blandit enim nec dolor bibendum, ultrices posuere justo fringilla.<br><br>
+
+        In non rutrum nisl. Nunc quis arcu eu libero vehicula molestie. Nullam hendrerit metus vestibulum magna finibus, ac sollicitudin elit placerat. Nam pretium purus metus, ut venenatis sapien ornare sit amet. Maecenas pellentesque, felis sit amet iaculis convallis, turpis orci aliquam urna, a aliquet elit metus ac ante. Cras nisi nisl, hendrerit in viverra in, viverra id neque. Fusce pretium ex sollicitudin fringilla mollis. Aenean at sagittis ipsum, ultrices elementum nibh. Etiam vitae porttitor diam. Integer fermentum nisi id ultricies eleifend. Aliquam sagittis tempus dolor non porttitor.<br><br>
+
+        In luctus massa consequat ipsum hendrerit rhoncus. Integer ultrices bibendum lorem id pellentesque. Maecenas condimentum ac odio eu mattis. Suspendisse orci dui, dignissim in quam quis, pellentesque imperdiet arcu. Nunc eu gravida tellus. Donec et blandit leo. Cras scelerisque, leo eu placerat tempus, elit nisi rutrum diam, ac hendrerit augue est sed diam. Sed eget tempor nisl, vitae lobortis quam. Etiam commodo maximus libero, at cursus mi placerat in. Nullam consequat egestas massa. Cras gravida vestibulum purus ac accumsan. Maecenas id orci fringilla, pretium tellus non, luctus felis. Nulla molestie est eu elit consequat congue. Quisque et urna sit amet nisl vestibulum venenatis.<br><br>
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum id elit eros. Pellentesque quis rutrum magna. Cras at congue tellus, facilisis egestas sapien. Nam at dui ut purus posuere elementum. Donec mollis ipsum eu dolor convallis, sed tristique turpis luctus. Etiam consequat ornare mi. Ut tincidunt, tortor eget ultricies pulvinar, justo magna sodales est, eu volutpat nisi lacus eu neque. Praesent posuere sagittis nisl id mattis. Aenean sapien risus, facilisis at elit sit amet, sagittis aliquet libero.<br>
+        </div>
+        <button type="button" id="rodo_button_accept">Akceptuj</button>
+        <button type="button" id="rodo_button_cancel">Anuluj</button>
+    </div>
+    <script src="login.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="loadnavbar.js"></script>
+  </body>
+</html>
