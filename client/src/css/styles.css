@@ -357,7 +357,7 @@ progress {
   margin-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
-  height: 400px;
+  min-height: 400px;
   background-color: rgba(255, 255, 255, 0.863);
   border: 2px solid black;
 }
@@ -403,9 +403,10 @@ progress {
 
 #form_login {
   width: 35%;
-  min-width: 300px;
+  min-width: 600px;
   float: left;
   padding: 20px;
+  height: 200px;
 }
 
 #form_register {
@@ -413,6 +414,7 @@ progress {
   min-width: 600px;
   float: right;
   padding: 20px;
+  height: 400px;
 }
 
 #rodo_div {
@@ -675,3 +677,37 @@ progress {
 }
 
 /* Slideshow container */
+
+@media screen and (max-width: 1400px) {
+  #formularze {
+    min-height: 650px;
+  }
+
+  #form_register {
+    height: 400px;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #formularze {
+    min-height: 650px;
+    padding: 0px;
+  }
+
+  #form_login {
+    min-width: 336px;
+    padding: 10px;
+  }
+
+  #form_register {
+    height: 400px;
+    min-width: 336px;
+    padding: 10px;
+    float: none;
+  }
+
+  #rodo_div {
+    margin: 0px;
+  }
+}
