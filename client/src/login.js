@@ -35,8 +35,6 @@ const register_send = async function (ev) {
     return message;
   };
 
-  //let fails = register_validate();
-
   try {
     const res = await axios.post('http://localhost:5000/api/users', {
       firstName: document.getElementById('firstName').value,
@@ -67,48 +65,35 @@ const register_send = async function (ev) {
   }
 };
 
-const login_send = function (ev) {
+const login_send = async function (ev) {
   //Czyszczenie poprzednich błędów
   document.getElementById('login_email').classList.remove('error');
   document.getElementById('login_email').parentElement.classList.remove('error-msg2');
   document.getElementById('login_password').classList.remove('error');
   document.getElementById('login_password').parentElement.classList.remove('error-msg2');
 
-  let fails = login_validate();
-
-  if (fails.length === 0) {
-    window.onbeforeunload = 0;
-    //document.getElementById('form_login').submit();
-    axios.post('http://localhost:5000/api/auth', {
+  try {
+    const res = await axios.post('http://localhost:5000/api/auth', {
       email: document.getElementById('login_email').value,
       password: document.getElementById('login_password').value,
     });
-  } else {
-    //Wyświetlenie błędów (ramki + wiadomości)
-    fails.forEach(function (obj) {
-      let field = document.getElementById(obj.input);
-      field.classList.add('error');
-      field.parentElement.classList.add('error-msg2');
-      field.parentElement.setAttribute('data-errormsg', obj.msg);
-    });
+    console.log(res);
+    window.onbeforeunload = 0;
+    localStorage.setItem('token', res.data.token);
+    console.log(localStorage.getItem('token'));
+    console.log(res.data.token);
+  } catch (err) {
+    console.log(err);
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => {
+        let field = document.getElementById('login_'+error.param);
+        field.classList.add('error');
+        field.parentElement.classList.add('error-msg2');
+        field.parentElement.setAttribute('data-errormsg', error.msg);
+      })
+    }
   }
-};
-
-const login_validate = function (ev) {
-  let failures = [];
-  let email = document.getElementById('login_email');
-  let password = document.getElementById('login_password');
-
-  if (email.value === '') {
-    failures.push({ input: 'login_email', msg: 'Pole wymagane!' });
-  } else if (email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
-    failures.push({ input: 'login_email', msg: 'Nieprawidłowe dane!' });
-  }
-  if (password.value === '') {
-    failures.push({ input: 'login_password', msg: 'Pole wymagane!' });
-  }
-
-  return failures;
 };
 
 const rodo_show = function (ev) {
