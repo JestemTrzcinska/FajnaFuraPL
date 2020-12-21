@@ -20,6 +20,7 @@ let changecars = function(el) {
         $("#Dane_wypozyczeniacat").addClass("activecat");
     else if(temp=="Dane personalne")
         $("#Dane_personalnecat").addClass("activecat");
+    
 };
 
 $(".categorybutton").each(function(){
