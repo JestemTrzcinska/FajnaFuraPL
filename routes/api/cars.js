@@ -1,8 +1,11 @@
 const express = require('express');
+const moment = require('moment');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 const Car = require('../../models/Car');
+const Rent = require('../../models/Rent');
+const { boolean } = require('joi');
 
 // @route   GET api/cars
 // @desc    GET cars
@@ -75,6 +78,7 @@ router.post(
       const status = '5fba6804cb6fc93abce4c728'; // niewypozyczony
 
       car = new Car({
+        status,
         licenseNumber,
         brand,
         model,
@@ -93,6 +97,61 @@ router.post(
 
       await car.save();
       res.json(car);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error.');
+    }
+  }
+);
+
+// @route   POST api/cars/isavailable
+// @desc    Check dates
+// @access  Public
+router.post(
+  '/isavailable',
+  [
+    check('_id', 'Proszę o podanie id samochodu').not().isEmpty(),
+    check('dateStart', 'Proszę o podanie daty poczatku wypozyczenia').isDate().toDate(),
+    check('dateEnd', 'Proszę o podanie daty konca wypozyczenia').isDate().toDate(),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const {
+      _id,
+      dateStart,
+      dateEnd
+    } = req.body;
+
+    try {
+      // See if the car exists
+      let car = await Car.findOne({ _id });
+      if (!car) {
+        return res.status(400).json({
+          errors: [
+            { msg: 'Samochód o podanym ID nie istnieje.' },
+          ],
+        });
+      }
+
+      let rent = await Rent.find({ car: _id })
+      if (!rent)  {
+        return res.json({ isAvailable: 1 });
+      }
+      
+      let is = 1;
+      rent.forEach((data) => {
+        if (moment(data.dateFrom).isBetween(dateStart,dateEnd) || moment(data.dateTo).isBetween(dateStart,dateEnd) || moment(dateStart).isBetween(data.dateFrom,data.dateTo)){
+          is = 0;
+          return;
+        }
+      });
+
+      return res.json({ isAvailable: is });
+
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server error.');
