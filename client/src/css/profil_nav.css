@@ -1,6 +1,5 @@
 div.category{
-  width: 940px;
-  height: 500px;
+
   margin: 0 auto 0 auto;
   display: none;
 
@@ -79,5 +78,94 @@ h1#carlistheader{
   text-align: center;
 }
 
+#dane {
+  width: 300px;
+  height: 300px;
+  padding: 0px;
+  border: 2px solid black;
+  position: absolute;
+  left: 58%;
+  top: 20%;
+  text-align: left;
+}
 
+#Dane_wypozyczenia
+{
+  position: absolute;
+  text-decoration: none;
+  padding: 0px;
+  top: 50%; 
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -120%);
+}
+
+#Dane_personalne
+{
+  position: absolute;
+  text-decoration: none;
+  padding: 0px;
+  top: 50%; 
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -120%);
+}
+
+#Dane_konta
+{
+  position: absolute;
+  text-decoration: none;
+  padding: 0px;
+  top: 50%; 
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -120%);
+}
+#Dane_kontacat
+{
+  padding:0px;
+}
+
+#profil_dane
+{
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 50px;
+  font-size: 22px;
+  height: 650px;
+  background-color: rgba(255, 255, 255, 0.863);
+}
+#dane_konta2
+{
+  border-radius: 50px;
+  width: 20%;
+  height: 650px;
+  background-color: #cecece;
+
+  position: absolute;
+  text-align: center;
+}
+#dane_konta2 ul
+{
+  list-style-type:none;
+  padding: 0px;
+  position: relative;
+  top:30px;
+}
+#dane_konta2 ul li
+{
+  height: 50px;
+}
+#dane_konta2 ul li:hover
+{
+  background-color:#aaacad;
+  border-radius: 15px;
+}
+
+#dane_konta2  ul li:active
+{
+  background-color:#cbcccc;
+
+}
 

@@ -264,100 +264,13 @@ progress {
   }
 }
 
-#dane {
-  width: 300px;
-  height: 300px;
-  padding: 0px;
-  border: 2px solid black;
-  position: absolute;
-  left: 58%;
-  top: 20%;
-  text-align: left;
-}
 
-#Dane_wypozyczenia
-{
-  width:300px;
-  height:300px;
-  padding:0px;
-  border:2px solid black;
-  position: absolute;
-  left: 58%;
-  top: 20%;
-  text-align: left;
-}
-
-#Dane_personalne
-{
-  width:300px;
-  height:300px;
-  padding:0px;
-  border:2px solid black;
-  position: absolute;
-  left: 58%;
-  top: 20%;
-  text-align: left;
-}
-
-#Dane_konta
-{
-  width: 300px;
-  height:50%;
-  padding:0px;
-  border:2px solid black;
-  position: absolute;
-  top: 20%;
-  text-align: left;
-}
-
-#profil_dane
-{
-  margin-top: 4%;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-radius: 50px;
-  font-size: 22px;
-  height: 650px;
-  background-color: rgba(255, 255, 255, 0.863);
-}
-#dane_konta2
-{
-  border-radius: 50px;
-  width: 20%;
-  height: 650px;
-  background-color: #cecece;
-
-  position: absolute;
-  text-align: center;
-}
-#dane_konta2 ul
-{
-  list-style-type:none;
-  padding: 0px;
-  position: relative;
-  top:30px;
-}
-#dane_konta2 ul li
-{
-  height: 50px;
-}
-#dane_konta2 ul li:hover
-{
-  background-color:#aaacad;
-  border-radius: 15px;
-}
-
-#dane_konta2  ul li:active
-{
-  background-color:#cbcccc;
-
-}
 
 #formularze {
   margin-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
-  min-height: 400px;
+  height: 400px;
   background-color: rgba(255, 255, 255, 0.863);
   border: 2px solid black;
 }
@@ -403,10 +316,9 @@ progress {
 
 #form_login {
   width: 35%;
-  min-width: 600px;
+  min-width: 300px;
   float: left;
   padding: 20px;
-  height: 200px;
 }
 
 #form_register {
@@ -414,7 +326,6 @@ progress {
   min-width: 600px;
   float: right;
   padding: 20px;
-  height: 400px;
 }
 
 #rodo_div {
@@ -677,37 +588,3 @@ progress {
 }
 
 /* Slideshow container */
-
-@media screen and (max-width: 1400px) {
-  #formularze {
-    min-height: 650px;
-  }
-
-  #form_register {
-    height: 400px;
-    float: none;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  #formularze {
-    min-height: 650px;
-    padding: 0px;
-  }
-
-  #form_login {
-    min-width: 336px;
-    padding: 10px;
-  }
-
-  #form_register {
-    height: 400px;
-    min-width: 336px;
-    padding: 10px;
-    float: none;
-  }
-
-  #rodo_div {
-    margin: 0px;
-  }
-}
