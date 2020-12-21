@@ -332,7 +332,7 @@ progress {
 }
 #dane_konta2 ul
 {
-  list-style-type:none; 
+  list-style-type:none;
   padding: 0px;
   position: relative;
   top:30px;
@@ -410,7 +410,7 @@ progress {
 
 #form_register {
   width: 35%;
-  min-width: 300px;
+  min-width: 600px;
   float: right;
   padding: 20px;
 }
@@ -580,13 +580,13 @@ progress {
 
  /* Slideshow container */
  @media screen {
- .slideshow-container 
+ .slideshow-container
  {
    max-width: 70%;
    max-height: 600px;
    position: absolute;
    left:15%;
-  
+
    margin: auto;
  }
 
@@ -675,4 +675,3 @@ progress {
 }
 
 /* Slideshow container */
-

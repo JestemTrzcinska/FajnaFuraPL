@@ -14,16 +14,11 @@ const User = require('../../models/User');
 router.post(
   '/',
   [
-    check('firstName', 'Proszę o podanie swojego imienia').not().isEmpty(),
-    check('lastName', 'Proszę o podanie swojego nazwiska.').not().isEmpty(),
-    check('email', 'Proszę o podanie prawidłowego maila.').isEmail(),
-    check(
-      'password',
-      'Słabe hasło! Wprowadź kombinację przynajmniej sześciu liter i cyfr.'
-    ).isLength({ min: 6 }),
-    check('drivingLicense', 'Proszę o podanie prawidłowego numeru prawa jazdy.')
-      .not()
-      .isEmpty(),
+    check('firstName', 'Wymagane imię').not().isEmpty(),
+    check('lastName', 'Wymagane nazwisko').not().isEmpty(),
+    check('email', 'Wymagany prawidłowy email').isEmail(),
+    check('password','Wymagane silniejsze hasło').isLength({ min: 6 }),
+    check('drivingLicense', 'Wymagany numer prawa jazdy').not().isEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -41,7 +36,7 @@ router.post(
           errors: [
             {
               input: 'email',
-              msg: 'Użytkownik o podanym emailu już istnieje.',
+              msg: 'Podany email jest zajęty',
             },
           ],
         });
@@ -53,7 +48,7 @@ router.post(
           errors: [
             {
               input: 'drivingLicense',
-              msg: 'Użytkownik o podanym numerze prawa jazdy już istnieje.',
+              msg: 'Podany numer prawa jazdy jest zajęty',
             },
           ],
         });
