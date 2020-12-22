@@ -51,6 +51,7 @@ const register_send = async function (ev) {
     localStorage.setItem('token', res.data.token);
     console.log(localStorage.getItem('token'));
     console.log(res.data.token);
+    location.replace("http://localhost:8080/address.html");
   } catch (err) {
     console.log(err);
     const errors = err.response.data.errors;
@@ -82,6 +83,7 @@ const login_send = async function (ev) {
     localStorage.setItem('token', res.data.token);
     console.log(localStorage.getItem('token'));
     console.log(res.data.token);
+    location.replace("http://localhost:8080/profil.html");
   } catch (err) {
     console.log(err);
     const errors = err.response.data.errors;

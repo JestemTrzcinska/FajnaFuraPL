@@ -2,6 +2,7 @@ import 'regenerator-runtime/runtime';
 
 const init = function () {
   document.getElementById('address_submit').addEventListener('click', address_send);
+  document.getElementById('address_cancel').addEventListener('click', address_cancel);
 };
 
 const address_send = async function (ev) {
@@ -40,6 +41,7 @@ const address_send = async function (ev) {
     });
     console.log(res);
     window.onbeforeunload = 0;
+    location.replace("http://localhost:8080/profil.html");
     /*localStorage.setItem('token', res.data.token);
     console.log(localStorage.getItem('token'));
     console.log(res.data.token);*/
@@ -56,5 +58,9 @@ const address_send = async function (ev) {
     }
   }
 };
+
+const address_cancel = function (ev) {
+  location.replace("http://localhost:8080/profil.html");
+}
 
 document.addEventListener('DOMContentLoaded', init);
