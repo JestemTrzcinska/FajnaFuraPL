@@ -9,12 +9,15 @@ table{
 }
 
 td{
-    width: 14%;
+    width: 25%;
     height: 60px;
 }
 
-td:last-child, td:nth-last-child(2){
-    width: 10%;
+tbody tr:first-child{
+    background-color: #13acf3 !important;
+    text-align: center;
+    font-weight: bold;
+    color: black;
 }
 
 tbody tr:nth-child(odd){
@@ -25,20 +28,12 @@ tbody tr:nth-child(even){
     background-color: rgba(145, 193, 234, 0.76);
 }
 
-thead{
-    background-color: #13acf3;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-}
-
 td #tablebutton{
     border:none;
     background-color: rgb(41, 55, 187);
     color: white;
     border-radius: 10px;
-    position: relative;
-    width: 80%;
+    width: 60%;
     height: 23px;
     font-size: 12px;
     font-weight: bold;
@@ -46,6 +41,7 @@ td #tablebutton{
     display: block;
     padding-top: 7px;
     text-decoration: none;
+    margin: 0 auto;
 }
 
 h1{
@@ -55,15 +51,6 @@ h1{
 #app{
     text-align: center;
     font-size: 20px;
-}
-
-#stopka{
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
-    border-top: 1px black solid;
-    background-color: rgb(63, 206, 75);
 }
 
 #header{

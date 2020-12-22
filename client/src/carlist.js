@@ -37,7 +37,11 @@ let readcars = function(data){
         $(newdiv).removeClass("prototype");
         $(newdiv).find("a").attr("href", "cardetails.html?carid="+car._id);
         $(newdiv).find("img").attr("src", "http://localhost:5000/img/"+car.brand+"_"+car.model+"_"+car.category+"_front.jpg");
-        console.log($(newdiv).find("img").attr("src"));
         $("#"+car.category+"cat").append(newdiv);
     })
 };
+
+let cartype = new URLSearchParams(window.location.search).get('cartype');
+if(cartype){
+    changecars($("#"+cartype+"but"));
+}

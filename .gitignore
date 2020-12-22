@@ -69,3 +69,6 @@ dist/
 .vs/ProjectSettings.json
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
+client/.vs/VSWorkspaceState.json
+client/.vs/slnx.sqlite
+client/.vs/client/v16/.suo
