@@ -31,6 +31,7 @@ router.post(
   [
     check('city', 'Proszę o podanie miasta').not().isEmpty(),
     check('street', 'Proszę o podanie ulicy').not().isEmpty(),
+    check('building', 'Proszę o podanie budynku').not().isEmpty(),
     check('zipCode', 'Proszę o podanie kodu pocztowego').not().isEmpty(),
     check('country', 'Proszę o podanie kraju').not().isEmpty(),
   ],

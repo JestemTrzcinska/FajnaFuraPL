@@ -294,20 +294,24 @@ progress {
 }
 
 #formularze .error,
-#form_cardetails .error {
+#form_cardetails .error,
+#form_address .error {
   border: 2px solid red;
 }
 
-#formularze .error-msg2::after {
+#formularze .error-msg2::after,
+#form_address .error-msg2::after {
   content: attr(data-errormsg);
 }
 
-#formularze .error-msg {
+#formularze .error-msg,
+#form_address .error-msg {
   width: 100%;
   color: red;
 }
 
-#formularze .error-msg span {
+#formularze .error-msg span,
+#form_address .error-msg span {
   color: black;
   margin-right: 1%;
 }
