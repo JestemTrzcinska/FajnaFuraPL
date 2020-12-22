@@ -264,13 +264,11 @@ progress {
   }
 }
 
-
-
 #formularze {
   margin-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
-  height: 400px;
+  min-height: 400px;
   background-color: rgba(255, 255, 255, 0.863);
   border: 2px solid black;
 }
@@ -316,9 +314,10 @@ progress {
 
 #form_login {
   width: 35%;
-  min-width: 300px;
+  min-width: 600px;
   float: left;
   padding: 20px;
+  height: 200px;
 }
 
 #form_register {
@@ -326,6 +325,7 @@ progress {
   min-width: 600px;
   float: right;
   padding: 20px;
+  height: 400px;
 }
 
 #rodo_div {
@@ -491,100 +491,188 @@ progress {
   width: 140px;
 }
 
- /* Slideshow container */
- @media screen {
- .slideshow-container
- {
-   max-width: 70%;
-   max-height: 600px;
-   position: absolute;
-   left:15%;
+/* Slider carousel */
+.carousel-caption {
+  position: absolute;
+  z-index: 1;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
 
-   margin: auto;
- }
+.carousel-caption div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
 
- /* Next & previous buttons */
- .prev, .next {
-   cursor: pointer;
-   position: absolute;
-   top: 50%;
-   width: auto;
-   padding: 16px;
-   margin-top: -22px;
-   color: white;
-   font-weight: bold;
-   font-size: 18px;
-   transition: 0.6s ease;
-   border-radius: 0 3px 3px 0;
-   user-select: none;
- }
-
- /* Position the "next button" to the right */
- .next {
-   right: 0;
-   border-radius: 3px 0 0 3px;
- }
-
- /* On hover, add a black background color with a little bit see-through */
- .prev:hover, .next:hover {
-   background-color: rgba(0,0,0,0.8);
- }
-
- /* Caption text */
- .text {
-   color: #f2f2f2;
-   font-size: 43px;
-   padding: 8px 12px;
-   position: absolute;
-   bottom: 50%;
-   width: 100%;
-   font-weight: bold;
-   text-align: center;
- }
-
- /* Number text (1/3 etc) */
- .numbertext {
-   color: #f2f2f2;
-   font-size: 12px;
-   padding: 8px 12px;
-   position: absolute;
-   top: 0;
- }
-
- /* The dots/bullets/indicators */
- .dot {
-   cursor: pointer;
-   height: 15px;
-   width: 15px;
-   margin: 0 2px;
-   background-color: #bbb;
-   border-radius: 50%;
-   display: inline-block;
-   transition: background-color 0.6s ease;
- }
-
- /* Fading animation */
- .fade {
-   -webkit-animation-name: fade;
-   -webkit-animation-duration: 1.5s;
-   animation-name: fade;
-   animation-duration: 1.5s;
- }
-
- @-webkit-keyframes fade {
-   from {opacity: .4}
-   to {opacity: 1}
- }
-
- @keyframes fade {
-   from {opacity: .4}
-   to {opacity: 1}
- }
-
- /* On smaller screens, decrease text size */
- @media only screen and (max-width: 300px) {
-   .prev, .next,.text {font-size: 11px}
- }
+.trickcenter {
+  font-weight: bold;
+  font-size: 44px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-15%, -50%);
+}
+.trickcenter_button {
+  font-weight: bold;
+  font-size: 44px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-15%);
+}
+.trickcenter_text {
+  font-weight: bold;
+  font-size: 42px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-15%, 19.5%);
 }
 
 /* Slideshow container */
+@media screen {
+  .slideshow-container {
+    max-width: 70%;
+    max-height: 600px;
+    position: absolute;
+    left: 15%;
+
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 43px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px;
+    }
+  }
+}
+
+@media screen and (max-width: 1620px) {
+  #formularze {
+    min-height: 650px;
+  }
+
+  #form_register {
+    height: 400px;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #formularze {
+    min-height: 650px;
+    padding: 0px;
+  }
+
+  #form_login {
+    min-width: 336px;
+    padding: 10px;
+  }
+
+  #form_register {
+    height: 400px;
+    min-width: 336px;
+    padding: 10px;
+    float: none;
+  }
+
+  #rodo_div {
+    margin: 0px;
+  }
+}
