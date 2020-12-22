@@ -65,7 +65,6 @@ typings/
 
 #dist
 dist/
-client/package-lock.json
 .vs/FajnaFuraPL/v16/.suo
 .vs/ProjectSettings.json
 .vs/slnx.sqlite
