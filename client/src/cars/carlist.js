@@ -45,7 +45,7 @@ let readcars = function (data) {
       .find('img')
       .attr(
         'src',
-        '../../../public/img/' +
+        '../../img/' +
           car.brand +
           '_' +
           car.model +
