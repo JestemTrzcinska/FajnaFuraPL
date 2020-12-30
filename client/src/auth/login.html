@@ -11,7 +11,7 @@
     ></script>
   </head>
   <body>
-    <div w3-include-html="http://localhost:5000/navbar.html"></div>
+    <div w3-include-html="../layout/navbar.html"></div>
     <div id="formularze">
       <form action="profil.html" method="post" id="form_login">
         <h3>Logowanie</h3>
@@ -182,7 +182,8 @@
       <button type="button" id="rodo_button_accept">Akceptuj</button>
       <button type="button" id="rodo_button_cancel">Anuluj</button>
     </div>
-    <script src="login.js"></script>
+    <script src="login.js" type="module"></script>
+    <!-- <script src="runtime.js" type="module"></script> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="../layout/loadnavbar.js"></script>
   </body>
