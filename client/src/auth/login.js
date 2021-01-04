@@ -1,41 +1,27 @@
-import 'regenerator-runtime/runtime';
+//import 'regenerator-runtime/runtime';
 
 const init = function () {
-  document
-    .getElementById('register_submit')
-    .addEventListener('click', register_send);
+  document.getElementById('register_submit').addEventListener('click', register_send);
   document.getElementById('login_submit').addEventListener('click', login_send);
   document.getElementById('rodo_link').addEventListener('click', rodo_show);
-  document
-    .getElementById('rodo_button_accept')
-    .addEventListener('click', rodo_check);
-  document
-    .getElementById('rodo_button_cancel')
-    .addEventListener('click', rodo_hide);
+  document.getElementById('rodo_button_accept').addEventListener('click', rodo_check);
+  document.getElementById('rodo_button_cancel').addEventListener('click', rodo_hide);
 };
 
 const register_send = async function (ev) {
   //Czyszczenie poprzednich błędów
   document.getElementById('firstName').classList.remove('error');
-  document
-    .getElementById('firstName')
-    .parentElement.classList.remove('error-msg2');
+  document.getElementById('firstName').parentElement.classList.remove('error-msg2');
   document.getElementById('lastName').classList.remove('error');
-  document
-    .getElementById('lastName')
-    .parentElement.classList.remove('error-msg2');
+  document.getElementById('lastName').parentElement.classList.remove('error-msg2');
   document.getElementById('email').classList.remove('error');
   document.getElementById('email').parentElement.classList.remove('error-msg2');
   document.getElementById('phone').classList.remove('error');
   document.getElementById('phone').parentElement.classList.remove('error-msg2');
   document.getElementById('password').classList.remove('error');
-  document
-    .getElementById('password')
-    .parentElement.classList.remove('error-msg2');
+  document.getElementById('password').parentElement.classList.remove('error-msg2');
   document.getElementById('password2').classList.remove('error');
-  document
-    .getElementById('password2')
-    .parentElement.classList.remove('error-msg2');
+  document.getElementById('password2').parentElement.classList.remove('error-msg2');
   document.getElementById('rodo').classList.remove('error');
   document.getElementById('rodo').parentElement.classList.remove('error-msg2');
 
@@ -50,7 +36,7 @@ const register_send = async function (ev) {
   };
 
   try {
-    const res = await axios.post('/api/users', {
+    const res = await axios.post('http://localhost:5000/api/users', {
       firstName: document.getElementById('firstName').value,
       lastName: document.getElementById('lastName').value,
       email: document.getElementById('email').value,
@@ -82,16 +68,12 @@ const register_send = async function (ev) {
 const login_send = async function (ev) {
   //Czyszczenie poprzednich błędów
   document.getElementById('login_email').classList.remove('error');
-  document
-    .getElementById('login_email')
-    .parentElement.classList.remove('error-msg2');
+  document.getElementById('login_email').parentElement.classList.remove('error-msg2');
   document.getElementById('login_password').classList.remove('error');
-  document
-    .getElementById('login_password')
-    .parentElement.classList.remove('error-msg2');
+  document.getElementById('login_password').parentElement.classList.remove('error-msg2');
 
   try {
-    const res = await axios.post('/api/auth', {
+    const res = await axios.post('http://localhost:5000/api/auth', {
       email: document.getElementById('login_email').value,
       password: document.getElementById('login_password').value,
     });
