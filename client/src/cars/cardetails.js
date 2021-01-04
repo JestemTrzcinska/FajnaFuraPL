@@ -1,5 +1,5 @@
 const init = function(){
-  document.getElementById('date_submit').addEventListener('click', date_send);
+  document.getElementById('date_check').addEventListener('click', date_send);
 }
 
 const date_send = function(ev){
@@ -10,24 +10,25 @@ const date_send = function(ev){
   let fails = date_validate();
 
   if(fails.length === 0){
-    document.getElementById('form_cardetails2').submit();
-    /*axios({
-      method: 'post',
-      url: '/rent.html',
-      data: {
-        date_from: document.getElementById('date_from').value,
-        date_to: document.getElementById('date_to').value
-      }
-    })*/
-    /*axios.post('/rent.html', {
-      firstName: document.getElementById('date_from').value,
-      lastName: document.getElementById('date_to').value
+    let carid = new URLSearchParams(window.location.search).get('carid');
+    axios.post('http://localhost:5000/api/cars/isavailable', {
+      _id: carid,
+      dateStart: document.getElementById('date_from').value,
+      dateEnd: document.getElementById('date_to').value
     })
     .then((response) => {
-      console.log(response.data);
+      if(response.data.isAvailable){
+        document.getElementById('available').style.color = "green";
+        document.getElementById('available').innerHTML = " Dostępny";
+      }
+      else{
+        document.getElementById('available').style.color = "red";
+        document.getElementById('available').innerHTML = " Niedostępny";
+      }
     }, (error) => {
-      console.log(error);
-    });*/
+      document.getElementById('available').style.color = "red";
+      document.getElementById('available').innerHTML = " Niedostępny";
+    });
   }
   else{
     //Wyświetlenie błędów (ramki + wiadomości)
@@ -65,26 +66,6 @@ const date_validate = function(ev){
   else if(date_to.value < date_from.value){
     failures.push({input:'date_to', msg:'Nieprawidłowe dane!'})
   }
-
-  //if(failures.length != 0){
-  //  return failures;
-  //}
-
-  /* Przyda się później przy sprawdzaniu z bazy
-  var success = 0;
-  for(var i = 0; i < objUsers.length; i++) {
-    if(email.value == objUsers[i].email && password.value == objUsers[i].password) {
-      alert(email.value + " zalogowany/zalogowana")
-      success = 1;
-    }
-  }
-
-  if(!success){
-    alert("Złe dane logowania!");
-    failures.push({input:'login_email', msg:'Błędne dane!'})
-    failures.push({input:'login_password', msg:'Błędne dane!'})
-  }
-  */
 
   return failures;
 }
