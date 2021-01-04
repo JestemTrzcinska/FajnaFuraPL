@@ -18,6 +18,8 @@ const register_send = async function (ev) {
   document.getElementById('email').parentElement.classList.remove('error-msg2');
   document.getElementById('phone').classList.remove('error');
   document.getElementById('phone').parentElement.classList.remove('error-msg2');
+  document.getElementById('drivingLicense').classList.remove('error');
+  document.getElementById('drivingLicense').parentElement.classList.remove('error-msg2');
   document.getElementById('password').classList.remove('error');
   document.getElementById('password').parentElement.classList.remove('error-msg2');
   document.getElementById('password2').classList.remove('error');
