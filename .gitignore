@@ -64,7 +64,7 @@ typings/
 .cache
 
 #dist
-
+dist/
 
 .vs/FajnaFuraPL/v16/.suo
 .vs/ProjectSettings.json
