@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <title>Lista samochodów - FajnaFura.pl</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="cennik.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+</head>
+<body>
+  <div w3-include-html="../layout/navbar.html"></div>
+  <h1>Cennik</h1>
+  <table>
+    <tr>
+      <td>Typ</td>
+      <td>Cena za dobę</td>
+      <td>Cena za miesiąc</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>Kombi</div>
+        <div id="Kombilist">W pakiecie: <br /></div>
+      </td>
+      <td>1 zł</td>
+      <td>30 zł</td>
+      <td><a id="tablebutton" href="../cars/carlist.html?cartype=Kombi">Flota</a></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>Hatchback</div>
+        <div id="Hatchbacklist">W pakiecie: <br /></div>
+      </td>
+      <td>1 zł</td>
+      <td>30 zł</td>
+      <td><a id="tablebutton" href="../cars/carlist.html?cartype=Hatchback">Flota</a></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>Sedan</div>
+        <div id="Sedanlist">W pakiecie: <br /></div>
+      </td>
+      <td>1 zł</td>
+      <td>30 zł</td>
+      <td><a id="tablebutton" href="../cars/carlist.html?cartype=Sedan">Flota</a></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>SUV</div>
+        <div id="SUVlist">W pakiecie: <br /></div>
+      </td>
+      <td>1 zł</td>
+      <td>30 zł</td>
+      <td><a id="tablebutton" href="../cars/carlist.html?cartype=SUV">Flota</a></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div>Coupe</div>
+        <div id="Coupelist">W pakiecie: <br /></div>
+      </td>
+      <td>1 zł</td>
+      <td>30 zł</td>
+      <td><a id="tablebutton" href="../cars/carlist.html?cartype=Coupe">Flota</a></td>
+    </tr>
+
+  </table>
+  <script type="text/javascript" src="../layout/loadnavbar.js"></script>
+  <script type="text/javascript" src="../cennik/cennik.js"></script>
+</body>
+</html>

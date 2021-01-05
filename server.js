@@ -11,11 +11,14 @@ app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => res.send('API Running'));
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8080"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8000'); // update to match the domain you will make the request from
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
 
 // Define Routes
 app.use('/api/address', require('./routes/api/address'));
@@ -26,6 +29,7 @@ app.use('/api/rents', require('./routes/api/rents'));
 app.use('/api/staff', require('./routes/api/staff'));
 app.use('/api/status', require('./routes/api/status'));
 app.use('/api/users', require('./routes/api/users'));
+app.use(express.static(__dirname + '/public'));
 
 const PORT = process.env.PORT || 5000;
 

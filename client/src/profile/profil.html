@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="profil_nav.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Fajna fura</title>
+  </head>
+  <body>
+    <div w3-include-html="../layout/navbar.html"></div>
+    <div id='profil_dane'>
+      <div id='dane_konta2' class="categories">
+        <ul>
+          <li><a class="categorybutton activebut" href="#">Dane konta</a></li>
+          <li><a class="categorybutton" href="#">Dane personalne</a></li>
+          <li><a class="categorybutton" href="#">Dane wypożyczenia</a></li>
+          <li><a class="categorybutton" href="../address/address.html">Uzupełnij dane</a></li>
+        </ul>
+      </div>
+      <div id="Dane_kontacat" class="category activecat">
+        <div class="d-flex justify-content-center"><h1> Dane konta</h1></div>
+        <img src="../../img/user.png" class="rounded float-right" alt="user">
+        <div class="d-flex justify-content-center" id="Dane_konta">
+          <table class="table" style="text-align: left;">
+            <thead>
+              <tr>
+                <th scope="row">Nazwa użytkownika</th>
+                <td>Stefano2020</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Email</th>
+                <td>Stefano3030@wp.pl</td>
+              </tr>
+              <tr>
+                <th scope="row">Hasło</th>
+                <td><button type="button" name="button">Zmień</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id='Dane_personalnecat' class="category">
+        <div class="d-flex justify-content-center"><h1> Dane personalne</h1></div>
+        <img src="../../img/user.png" class="rounded float-right" alt="user">
+        <div class="d-flex justify-content-center" id="Dane_konta">
+          <table class="table" style="text-align: left;">
+            <thead>
+              <tr>
+                <th scope="row">Imię</th>
+                <td>Stefano3030</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Nazwisko</th>
+                <td>Stefano3030@wp.pl</td>
+              </tr>
+              <tr>
+                <th scope="row">Numer prawa jazdy</th>
+                <td>73234414141</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="Dane_wypozyczeniacat" class="category">
+        <div class="d-flex justify-content-center"><h1> Dane wypożyczenia</h1></div>
+        <img src="../../img/user.png" class="rounded float-right" alt="user">
+        <div class="d-flex justify-content-center" id="Dane_konta">
+          <table class="table" style="text-align: left;">
+            <thead>
+              <tr>
+                <th scope="row">Wypożyczony samochód</th>
+                <td>Citroen Berlingo</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Historia wypożyczeń</th>
+                <td>-brak-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="profil.js"></script>
+    <script type="text/javascript" src="../layout/loadnavbar.js"></script>
+  </body>
+</html>

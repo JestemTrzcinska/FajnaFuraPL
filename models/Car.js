@@ -5,6 +5,10 @@ const CarSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'status',
   },
+  licenseNumber: {
+    type: String,
+    required: true,
+  },
   brand: {
     type: String,
     required: true,
@@ -21,27 +25,40 @@ const CarSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  licenseNumber: {
+  typeDrive: {
     type: String,
+    required: true,
+  },
+  airConditioning: {
+    type: String,
+    required: true,
+  },
+  typeFuel: {
+    type: String,
+    required: true,
+  },
+  engine: {
+    type: String,
+    required: true,
+  },
+  averageRange: {
+    type: Number,
+    required: true,
+  },
+  averageConsumption: {
+    type: Number,
     required: true,
   },
   about: {
     type: String,
   },
-  mileage: {
+  category: {
     type: String,
-  },
-  conditionOil: {
-    type: String,
-  },
-  conditionTires: {
-    type: String,
-  },
-  tirePressure: {
-    type: String,
+    required: true,
   },
   multiplierPrice: {
-    type: String,
+    type: Number,
+    required: true,
   },
 });
 

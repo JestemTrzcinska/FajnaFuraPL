@@ -14,13 +14,13 @@ const User = require('../../models/User');
 router.post(
   '/',
   [
-    check('firstName', 'Proszę o podanie swojego imienia').not().isEmpty(),
-    check('lastName', 'Proszę o podanie swojego nazwiska.').not().isEmpty(),
-    check('email', 'Proszę o podanie prawidłowego maila.').isEmail(),
-    check(
-      'password',
-      'Słabe hasło! Wprowadź kombinację przynajmniej sześciu liter i cyfr.'
-    ).isLength({ min: 6 }),
+    check('firstName', 'Wymagane imię').not().isEmpty(),
+    check('lastName', 'Wymagane nazwisko').not().isEmpty(),
+    check('email', 'Wymagany prawidłowy email').isEmail(),
+    check('password','Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
+    check('password2','Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
+    check('drivingLicense', 'Wymagany numer prawa jazdy').not().isEmpty(),
+    check('rodo', 'Zgoda wymagana').equals('true'),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -28,20 +28,49 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, drivingLicense, email, password, password2 } = req.body;
 
     try {
       // See if the user exists
       let user = await User.findOne({ email });
       if (user) {
         return res.status(400).json({
-          errors: [{ msg: 'Użytkownik o podanym emailu już istnieje.' }],
+          errors: [
+            {
+              param: 'email',
+              msg: 'Podany email jest zajęty',
+            },
+          ],
+        });
+      }
+
+      if(password !== password2){
+        return res.status(400).json({
+          errors: [
+            {
+              param: 'password2',
+              msg: 'Podane hasła są różne',
+            },
+          ],
+        });
+      }
+
+      let user2 = await User.findOne({ drivingLicense });
+      if (user2) {
+        return res.status(400).json({
+          errors: [
+            {
+              param: 'drivingLicense',
+              msg: 'Podany numer prawa jazdy jest zajęty',
+            },
+          ],
         });
       }
 
       user = new User({
         firstName,
         lastName,
+        drivingLicense,
         email,
         password,
       });
