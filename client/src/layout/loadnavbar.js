@@ -41,11 +41,11 @@ function setCurrentPage() {
   console.log(url);
   url = url.split('/');
 
-  url = url[url.length - 1];
+  url = url[url.length - 2]+"/"+url[url.length - 1];
   url = url.split('.')[0];
   console.log(url);
   // console.log($("#cssmenu a[href='"+url+".html']").parent().html());
-  $("#cssmenu a[href='/" + url + ".html']")
+  $("#cssmenu a[href='../" + url + ".html']")
     .parent()
     .addClass('active');
   if ((count = 5)) clearInterval(inv);

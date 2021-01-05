@@ -10,6 +10,10 @@ table{
 
 td{
     width: 25%;
+    height: 100px;
+}
+
+tr:first-child td{
     height: 60px;
 }
 
@@ -26,6 +30,12 @@ tbody tr:nth-child(odd){
 
 tbody tr:nth-child(even){
     background-color: rgba(145, 193, 234, 0.76);
+}
+
+tbody td:first-child div:nth-child(2){
+    font-size: 11px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 td #tablebutton{

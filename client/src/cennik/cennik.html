@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="cennik.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 </head>
 <body>
@@ -20,35 +21,50 @@
     </tr>
 
     <tr>
-      <td>Kombi</td>
+      <td>
+        <div>Kombi</div>
+        <div id="Kombilist">W pakiecie: <br /></div>
+      </td>
       <td>1 zł</td>
       <td>30 zł</td>
       <td><a id="tablebutton" href="http://localhost:8000/client/src/cars/carlist.html?cartype=Kombi">Flota</a></td>
     </tr>
 
     <tr>
-      <td>Hatchback</td>
+      <td>
+        <div>Hatchback</div>
+        <div id="Hatchbacklist">W pakiecie: <br /></div>
+      </td>
       <td>1 zł</td>
       <td>30 zł</td>
       <td><a id="tablebutton" href="http://localhost:8000/client/src/cars/carlist.html?cartype=Hatchback">Flota</a></td>
     </tr>
 
     <tr>
-      <td>Sedan</td>
+      <td>
+        <div>Sedan</div>
+        <div id="Sedanlist">W pakiecie: <br /></div>
+      </td>
       <td>1 zł</td>
       <td>30 zł</td>
       <td><a id="tablebutton" href="http://localhost:8000/client/src/cars/carlist.html?cartype=Sedan">Flota</a></td>
     </tr>
 
     <tr>
-      <td>SUV</td>
+      <td>
+        <div>SUV</div>
+        <div id="SUVlist">W pakiecie: <br /></div>
+      </td>
       <td>1 zł</td>
       <td>30 zł</td>
       <td><a id="tablebutton" href="http://localhost:8000/client/src/cars/carlist.html?cartype=SUV">Flota</a></td>
     </tr>
 
     <tr>
-      <td>Coupe</td>
+      <td>
+        <div>Coupe</div>
+        <div id="Coupelist">W pakiecie: <br /></div>
+      </td>
       <td>1 zł</td>
       <td>30 zł</td>
       <td><a id="tablebutton" href="http://localhost:8000/client/src/cars/carlist.html?cartype=Coupe">Flota</a></td>
@@ -56,5 +72,6 @@
 
   </table>
   <script type="text/javascript" src="../layout/loadnavbar.js"></script>
+  <script type="text/javascript" src="../cennik/cennik.js"></script>
 </body>
 </html>
