@@ -1,5 +1,6 @@
 const init = function(){
   document.getElementById('date_check').addEventListener('click', date_send);
+  document.getElementById('date_submit').addEventListener('click', submit_send);
 }
 
 const date_send = function(ev){
@@ -68,6 +69,46 @@ const date_validate = function(ev){
   }
 
   return failures;
+}
+
+const submit_send = function(ev){
+  //Czyszczenie poprzednich błędów
+  document.getElementById('date_from').classList.remove('error');
+  document.getElementById('date_to').classList.remove('error');
+
+  let fails = date_validate();
+
+  if(fails.length === 0){
+    let carid = new URLSearchParams(window.location.search).get('carid');
+    axios.post('http://localhost:5000/api/cars/isavailable', {
+      _id: carid,
+      dateStart: document.getElementById('date_from').value,
+      dateEnd: document.getElementById('date_to').value
+    })
+    .then((response) => {
+      if(response.data.isAvailable){
+        let dateStart = document.getElementById('date_from').value;
+        let dateEnd = document.getElementById('date_to').value;
+        document.getElementById('available').style.color = "green";
+        document.getElementById('available').innerHTML = " Dostępny";
+        location.replace("../rents/rent.html?from="+dateStart+"&to="+dateEnd);
+      }
+      else{
+        document.getElementById('available').style.color = "red";
+        document.getElementById('available').innerHTML = " Niedostępny";
+      }
+    }, (error) => {
+      document.getElementById('available').style.color = "red";
+      document.getElementById('available').innerHTML = " Niedostępny";
+    });
+  }
+  else{
+    //Wyświetlenie błędów (ramki + wiadomości)
+    fails.forEach(function(obj){
+      let field = document.getElementById(obj.input);
+      field.classList.add('error');
+    })
+  }
 }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -14,12 +14,19 @@
   <body>
     <div w3-include-html="../layout/navbar.html"></div>
 
-    <div id="kontakt">
-      <h3>(Tu będzie podsumowanie i zatwierdzenie rezerwacji)</h3>
-      <div id="date_summary"></div>
+    <div id="rent">
+      <div id="date_summary">
+        <h3>Podsumowanie</h3>
+        <p>Data rozpoczęcia: <span id="summ_date_from"></span> </p>
+        <p>Data zakończenia: <span id="summ_date_to"></span> </p>
+        <p>Łączna cena: <span id="summ_price"></span> </p>
+        <button type="button" id="rent_send">Zatwierdź</button>
+        <button type="button" id="rent_cancel">Anuluj</button>
+      </div>
       <div id="rent_car">
         <h3>Wybrany samochód:</h3>
         <img src="../../img/fordfocus.jpg" alt="Car Image" />
+        <p><span id="summ_car_name"></span> </p>
       </div>
     </div>
     <script src="rent.js"></script>
