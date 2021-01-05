@@ -41,7 +41,7 @@ const address_send = async function (ev) {
     });
     console.log(res);
     window.onbeforeunload = 0;
-    location.replace("http://localhost:8000/client/src/profile/profil.html");
+    location.replace("../profile/profil.html");
     /*localStorage.setItem('token', res.data.token);
     console.log(localStorage.getItem('token'));
     console.log(res.data.token);*/
@@ -60,7 +60,7 @@ const address_send = async function (ev) {
 };
 
 const address_cancel = function (ev) {
-  location.replace("http://localhost:8000/client/src/profile/profil.html");
+  location.replace("../profile/profil.html");
 }
 
 document.addEventListener('DOMContentLoaded', init);
