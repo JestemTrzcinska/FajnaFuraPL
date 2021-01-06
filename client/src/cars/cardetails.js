@@ -16,8 +16,6 @@ const init = function(){
   let carid = new URLSearchParams(window.location.search).get('carid');
   axios.get('http://localhost:5000/api/cars/'+carid)
   .then((response) => {
-    console.log("odebrałem!");
-    console.log(response);
     brand = response.data.brand;
     model = response.data.model;
     year = response.data.year;
@@ -153,7 +151,7 @@ const submit_send = function(ev){
         let dateEnd = document.getElementById('date_to').value;
         document.getElementById('available').style.color = "green";
         document.getElementById('available').innerHTML = " Dostępny";
-        location.replace("../rents/rent.html?from="+dateStart+"&to="+dateEnd);
+        location = "../rents/rent.html?carid="+carid+"&from="+dateStart+"&to="+dateEnd;
       }
       else{
         document.getElementById('available').style.color = "red";
