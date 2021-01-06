@@ -1,4 +1,29 @@
 const init = function(){
+  let brand = "Ford";
+  let model = "Focus";
+  let year = 2000;
+  let sits = 5;
+  let doors = 5;
+  let typeDrive = "na przednią oś";
+  let typeTransmission = "Manualna";
+  let airConditioning = "Tak";
+  let typeFuel = "Diesel";
+  let engine = "TDI 1.6";
+  let averageRange = 1200;
+  let averageConsumption = 6.5;
+  let category = "Hatchback";
+
+  document.getElementById('det_typeTransmission').innerText = typeTransmission;
+  document.getElementById('det_averageRange').innerText = averageRange;
+  document.getElementById('det_airConditioning').innerText = airConditioning;
+  document.getElementById('det_sits').innerText = sits;
+  document.getElementById('det_doors').innerText = doors;
+  document.getElementById('det_typeFuel').innerText = typeFuel;
+  document.getElementById('det_year').innerText = year;
+  document.getElementById('det_typeDrive').innerText = typeDrive;
+  document.getElementById('det_engine').innerText = engine;
+  document.getElementById('det_averageConsumption').innerText = averageConsumption;
+
   document.getElementById('date_check').addEventListener('click', date_send);
   document.getElementById('date_submit').addEventListener('click', submit_send);
 }

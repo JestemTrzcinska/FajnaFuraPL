@@ -463,11 +463,11 @@ progress {
   background-color: rgb(200, 220, 255);
 }
 
-#cardetails_info #info_left {
+#cardetails_info .info_left {
   float: left;
 }
 
-#cardetails_info #info_right {
+#cardetails_info .info_right {
   float: right;
 }
 
@@ -571,7 +571,7 @@ progress {
   left: 50%;
   transform: translate(-50%, -55%);
 }
-.kreski 
+.kreski
 {
 
 }
