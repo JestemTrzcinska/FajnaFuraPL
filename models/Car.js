@@ -25,7 +25,15 @@ const CarSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  doors: {
+    type: Number,
+    required: true,
+  },
   typeDrive: {
+    type: String,
+    required: true,
+  },
+  typeTransmission: {
     type: String,
     required: true,
   },
