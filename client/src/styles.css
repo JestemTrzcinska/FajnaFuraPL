@@ -575,6 +575,21 @@ progress {
 {
 
 }
+.cos
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+.informacje
+{
+  margin:0px;
+  height: 300px;
+  position: absolute;
+  width: 100%;
+  top: 86%;
+}
 
 /* Slideshow container */
 @media screen {
