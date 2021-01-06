@@ -522,6 +522,11 @@ progress {
   font-weight: bold;
 }
 
+#rent_done_div {
+  display: none;
+  text-align: center;
+}
+
 /* Slider carousel */
 .carousel-caption {
   position: absolute;

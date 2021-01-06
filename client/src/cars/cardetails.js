@@ -57,8 +57,6 @@ const init = function(){
     document.getElementById('det_name').innerText = brand+" "+model;
   });
 
-
-
   document.getElementById('date_check').addEventListener('click', date_send);
   document.getElementById('date_submit').addEventListener('click', submit_send);
 }
