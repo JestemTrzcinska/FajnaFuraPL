@@ -1,28 +1,65 @@
 const init = function(){
-  let brand = "Ford";
-  let model = "Focus";
-  let year = 2000;
-  let sits = 5;
-  let doors = 5;
-  let typeDrive = "na przednią oś";
-  let typeTransmission = "Manualna";
-  let airConditioning = "Tak";
-  let typeFuel = "Diesel";
-  let engine = "TDI 1.6";
-  let averageRange = 1200;
-  let averageConsumption = 6.5;
-  let category = "Hatchback";
+  let model = "";
+  let brand = "błąd!";
+  let year = "błąd!";
+  let sits = "błąd!";
+  let doors = "błąd!";
+  let typeDrive = "błąd!";
+  let typeTransmission = "błąd!";
+  let airConditioning = "błąd!";
+  let typeFuel = "błąd!";
+  let engine = "błąd!";
+  let averageRange = "błąd!";
+  let averageConsumption = "błąd!";
+  let category = "błąd!";
 
-  document.getElementById('det_typeTransmission').innerText = typeTransmission;
-  document.getElementById('det_averageRange').innerText = averageRange;
-  document.getElementById('det_airConditioning').innerText = airConditioning;
-  document.getElementById('det_sits').innerText = sits;
-  document.getElementById('det_doors').innerText = doors;
-  document.getElementById('det_typeFuel').innerText = typeFuel;
-  document.getElementById('det_year').innerText = year;
-  document.getElementById('det_typeDrive').innerText = typeDrive;
-  document.getElementById('det_engine').innerText = engine;
-  document.getElementById('det_averageConsumption').innerText = averageConsumption;
+  let carid = new URLSearchParams(window.location.search).get('carid');
+  axios.get('http://localhost:5000/api/cars/'+carid)
+  .then((response) => {
+    console.log("odebrałem!");
+    console.log(response);
+    brand = response.data.brand;
+    model = response.data.model;
+    year = response.data.year;
+    sits = response.data.sits;
+    doors = response.data.doors;
+    typeDrive = response.data.typeDrive;
+    typeTransmission = response.data.typeTransmission;
+    airConditioning = response.data.airConditioning;
+    typeFuel = response.data.typeFuel;
+    engine = response.data.engine;
+    averageRange = response.data.averageRange;
+    averageConsumption = response.data.averageConsumption;
+    category = response.data.category;
+
+    document.getElementById('det_typeTransmission').innerText = typeTransmission;
+    document.getElementById('det_averageRange').innerText = averageRange;
+    document.getElementById('det_airConditioning').innerText = airConditioning;
+    document.getElementById('det_sits').innerText = sits;
+    document.getElementById('det_doors').innerText = doors;
+    document.getElementById('det_typeFuel').innerText = typeFuel;
+    document.getElementById('det_year').innerText = year;
+    document.getElementById('det_typeDrive').innerText = typeDrive;
+    document.getElementById('det_engine').innerText = engine;
+    document.getElementById('det_averageConsumption').innerText = averageConsumption;
+    document.getElementById('det_name').innerText = brand+" "+model;
+    document.getElementById('det_photo_front').src = "../../img/"+brand+"_"+model+"_"+category+"_front.jpg";
+    document.getElementById('det_photo_rear').src = "../../img/"+brand+"_"+model+"_"+category+"_rear.jpg";
+  }, (error) => {
+    document.getElementById('det_typeTransmission').innerText = typeTransmission;
+    document.getElementById('det_averageRange').innerText = averageRange;
+    document.getElementById('det_airConditioning').innerText = airConditioning;
+    document.getElementById('det_sits').innerText = sits;
+    document.getElementById('det_doors').innerText = doors;
+    document.getElementById('det_typeFuel').innerText = typeFuel;
+    document.getElementById('det_year').innerText = year;
+    document.getElementById('det_typeDrive').innerText = typeDrive;
+    document.getElementById('det_engine').innerText = engine;
+    document.getElementById('det_averageConsumption').innerText = averageConsumption;
+    document.getElementById('det_name').innerText = brand+" "+model;
+  });
+
+
 
   document.getElementById('date_check').addEventListener('click', date_send);
   document.getElementById('date_submit').addEventListener('click', submit_send);
