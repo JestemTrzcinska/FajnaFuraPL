@@ -5,7 +5,21 @@ const { check, validationResult } = require('express-validator');
 
 const Car = require('../../models/Car');
 const Rent = require('../../models/Rent');
-const { boolean } = require('joi');
+
+// @route   GET api/cars/:id
+// @desc    GET specific car by id
+// @access  Public
+
+router.get('/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const car = await Car.findById(id).populate('status');
+    res.json(car);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 // @route   GET api/cars
 // @desc    GET cars
