@@ -10,10 +10,6 @@ div.activecat{
   
 }
 
-div#categories{
-
-}
-
 a.categorybutton
 {
   text-decoration: none!important;
@@ -142,8 +138,7 @@ h1#carlistheader{
   width: 20%;
   height: 650px;
   background-color: #cecece;
-
-  position: absolute;
+  float: left;
   text-align: center;
 }
 #dane_konta2 ul
@@ -166,6 +161,44 @@ h1#carlistheader{
 #dane_konta2  ul li:active
 {
   background-color:#cbcccc;
-
 }
 
+#Dane_wypozyczeniacat tr{
+  width: 80%;
+}
+
+#Dane_wypozyczeniacat{
+  width: 80%;
+  margin: 0;
+  float: left;
+}
+
+#Dane_wypozyczeniacat #Dane_konta{
+  position: relative;
+  transform: none;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#Dane_wypozyczeniacat td{
+  width: 25%;
+  font-size: 18px;
+}
+
+#Dane_wypozyczeniacat thead{
+  font-weight: bold;
+}
+
+#Dane_wypozyczeniacat td:first-child{
+  width: 30%;
+}
+
+#Dane_wypozyczeniacat td:last-child{
+  width: 20%;
+}
+
+#historyprototype{
+  display: none;
+}
