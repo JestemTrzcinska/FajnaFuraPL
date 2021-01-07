@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 
 const bcrypt = require('bcryptjs');
@@ -8,6 +9,19 @@ const config = require('config');
 
 const User = require('../../models/User');
 const Rent = require('../../models/Rent');
+
+// @route     GET api/users
+// @desc      Get user by id
+// @access    Public
+router.get('/', [auth], async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password').populate('address');
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 // @route   POST api/users/:id
 // @desc    GET rents history
