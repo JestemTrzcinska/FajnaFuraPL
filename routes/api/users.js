@@ -15,17 +15,16 @@ const Rent = require('../../models/Rent');
 
 router.get('/history/:id', async (req, res) => {
   try {
-    if(! await User.findById(req.params.id)) {
+    if (!(await User.findById(req.params.id))) {
       return res.status(400).json({
-        errors: [
-          { msg: 'Użytkownik o podanym ID nie istnieje.' },
-        ],
+        errors: [{ msg: 'Użytkownik o podanym ID nie istnieje.' }],
       });
     }
 
-    let rents = await Rent.find({ user: req.params.id }).populate('status');
+    let rents = await Rent.find({ user: req.params.id })
+      .populate('status')
+      .populate('car');
     res.json(rents);
-
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -41,8 +40,8 @@ router.post(
     check('firstName', 'Wymagane imię').not().isEmpty(),
     check('lastName', 'Wymagane nazwisko').not().isEmpty(),
     check('email', 'Wymagany prawidłowy email').isEmail(),
-    check('password','Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
-    check('password2','Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
+    check('password', 'Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
+    check('password2', 'Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
     check('drivingLicense', 'Wymagany numer prawa jazdy').not().isEmpty(),
     check('rodo', 'Zgoda wymagana').equals('true'),
   ],
@@ -52,7 +51,14 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { firstName, lastName, drivingLicense, email, password, password2 } = req.body;
+    const {
+      firstName,
+      lastName,
+      drivingLicense,
+      email,
+      password,
+      password2,
+    } = req.body;
 
     try {
       // See if the user exists
@@ -68,7 +74,7 @@ router.post(
         });
       }
 
-      if(password !== password2){
+      if (password !== password2) {
         return res.status(400).json({
           errors: [
             {
