@@ -16,7 +16,7 @@ let changecars = function(el) {
     let temp = $(el).text();
     if(temp=="Dane konta")
         $("#Dane_kontacat").addClass("activecat");
-    else if(temp=="Dane wypożyczenia")
+    else if(temp=="Historia wypożyczeń")
         $("#Dane_wypozyczeniacat").addClass("activecat");
     else if(temp=="Dane personalne")
         $("#Dane_personalnecat").addClass("activecat");
