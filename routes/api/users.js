@@ -7,6 +7,30 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 
 const User = require('../../models/User');
+const Rent = require('../../models/Rent');
+
+// @route   POST api/users/:id
+// @desc    GET rents history
+// @access  Public
+
+router.get('/history/:id', async (req, res) => {
+  try {
+    if(! await User.findById(req.params.id)) {
+      return res.status(400).json({
+        errors: [
+          { msg: 'Użytkownik o podanym ID nie istnieje.' },
+        ],
+      });
+    }
+
+    let rents = await Rent.find({ user: req.params.id }).populate('status');
+    res.json(rents);
+
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 // @route   POST api/users
 // @desc    Register user
