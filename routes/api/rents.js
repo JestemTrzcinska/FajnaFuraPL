@@ -1,4 +1,5 @@
 const express = require('express');
+const moment = require('moment');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
@@ -6,6 +7,41 @@ const { check, validationResult } = require('express-validator');
 const Car = require('../../models/Car');
 const Rent = require('../../models/Rent');
 const Status = require('../../models/Status');
+
+
+// @route   GET api/rents/cost/
+// @desc    GET rent cost
+// @access  Public
+router.get('/cost',
+[
+  check('id').not().isEmpty(),
+  check('dateStart').isDate().toDate(),
+  check('dateEnd').isDate().toDate(),
+
+],
+ async (req, res) => {
+  const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+  try {
+    const car = await Car.findById(req.query.id, ['dayPrice']) 
+
+    if (!car) {
+      return res
+        .status(400)
+        .json({ errors: [{ msg: 'Nie ma samochodu o podanym id.' }] });
+    }
+
+    const days = moment.duration(moment(req.query.dateEnd).diff(moment(req.query.dateStart))).asDays();
+    
+    res.json({rentCost: days * car.dayPrice});
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 // @route   GET api/rents
 // @desc    GET all rents
