@@ -55,7 +55,7 @@ router.post(
     check('averageRange', 'Proszę o podanie sredniego zasiegu').not().isEmpty(),
     check('averageConsumption', 'Proszę o podanie sredniego spalania').not().isEmpty(),
     check('category', 'Proszę o podanie kategorii samochodu').not().isEmpty(),
-    check('multiplierPrice', 'Proszę o podanie mnoznika').not().isEmpty(),
+    check('dayPrice', 'Proszę o podanie mnoznika').not().isEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -79,7 +79,7 @@ router.post(
       averageConsumption,
       about,
       category,
-      multiplierPrice,
+      dayPrice,
     } = req.body;
 
     try {
@@ -112,7 +112,7 @@ router.post(
         averageConsumption,
         about,
         category,
-        multiplierPrice,
+        dayPrice,
       });
 
       await car.save();
