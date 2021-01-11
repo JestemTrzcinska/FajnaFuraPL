@@ -2,6 +2,12 @@
 
 axios.get('http://localhost:5000/api/users/').then(response => {
     document.getElementById('firstName').innerText = response.data.firstName;
+    document.getElementById('lastName').innerText = response.data.lastName;
+    document.getElementById('drivingLicense').innerText = response.data.drivingLicense;
+    document.getElementById('email').innerText = response.data.email;
+    document.getElementById('address').innerText = response.data.address;
+    document.getElementById('credit').innerText = response.data.credit;
+
 }).catch(err => {
     console.log(err);
 });

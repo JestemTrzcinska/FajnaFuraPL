@@ -84,38 +84,49 @@ h1#carlistheader{
   top: 20%;
   text-align: left;
 }
-
+#obrazek
+{
+ float: right;
+}
 #Dane_wypozyczenia
 {
-  position: absolute;
+  
   text-decoration: none;
   padding: 0px;
-  top: 50%; 
-  left: 50%;
+  width: 40%;
+  /* top: 50%; 
+  left: 50%; */
   text-align: center;
-  transform: translate(-50%, -120%);
+  justify-content: center;
+  
 }
 
 #Dane_personalne
 {
-  position: absolute;
+  
   text-decoration: none;
-  padding: 0px;
-  top: 50%; 
-  left: 50%;
+  padding: 3%;
+  width: 40%;
+  /* top: 50%; 
+  left: 50%; */
   text-align: center;
-  transform: translate(-50%, -120%);
+  justify-content: center;
+  
 }
 
 #Dane_konta
 {
-  position: absolute;
+  
   text-decoration: none;
-  padding: 0px;
-  top: 50%; 
-  left: 50%;
+  padding: 3%;
+  width: 40%;
+  /* top: 50%; 
+  left: 50%; */
   text-align: center;
-  transform: translate(-50%, -120%);
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  
 }
 #Dane_kontacat
 {
@@ -124,6 +135,7 @@ h1#carlistheader{
 
 #profil_dane
 {
+  display: flex;
   margin-top: 4%;
   margin-left: 5%;
   margin-right: 5%;
@@ -138,7 +150,7 @@ h1#carlistheader{
   width: 20%;
   height: 650px;
   background-color: #cecece;
-  float: left;
+  /* float: left; */
   text-align: center;
 }
 #dane_konta2 ul
