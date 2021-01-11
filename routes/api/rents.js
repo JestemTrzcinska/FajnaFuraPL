@@ -7,6 +7,8 @@ const Car = require('../../models/Car');
 const Rent = require('../../models/Rent');
 const Status = require('../../models/Status');
 
+var mongoose = require('mongoose');
+
 // @route   GET api/rents
 // @desc    GET all rents
 // @access  Public
@@ -37,7 +39,7 @@ router.post(
   '/',
   [auth],
   [
-    check('carLicenseNumber', 'Proszę wybrać samochód.').exists(),
+    check('carID', 'Proszę wybrać samochód.').exists(),
     check('status', 'Należy podać status.').exists(),
   ],
   async (req, res) => {
@@ -46,23 +48,15 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      carLicenseNumber,
-      dateFrom,
-      dateTo,
-      status,
-      infoBefore,
-      infoAfter,
-    } = req.body;
+    const { carID, dateFrom, dateTo, status, infoBefore, infoAfter } = req.body;
 
     try {
       // See if the car exists
-      let carFromDB = await Car.findOne({ licenseNumber: carLicenseNumber });
+
+      let carFromDB = await Car.findById(carID);
       if (!carFromDB) {
         return res.status(400).json({
-          errors: [
-            { msg: 'Samochód o podanym numerze rejestracyjnym nie istnieje.' },
-          ],
+          errors: [{ msg: 'Samochód o tym ID nie istnieje.' }],
         });
       }
 
