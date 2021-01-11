@@ -51,6 +51,8 @@ function setCurrentPage() {
   console.log(localStorage.getItem('token'));
   if(localStorage.getItem('token') != null)
     document.getElementById('navbar_last_span').innerText = "Wyloguj się";
+  else
+    document.getElementById('navbar_last_span').innerText = "Zaloguj się/Zarejestruj się";
   if ((count = 5)) clearInterval(inv);
   count++;
 }
