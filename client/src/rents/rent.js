@@ -21,7 +21,13 @@ const init = function () {
   let url_to = new URLSearchParams(window.location.search).get('to');
   document.getElementById('summ_date_from').innerText = url_from;
   document.getElementById('summ_date_to').innerText = url_to;
-  document.getElementById('summ_price').innerText = "100 zł";
+
+  axios.get('http://localhost:5000/api/rents/cost/?id='+carid+'&dateStart='+url_from+'&dateEnd='+url_to)
+  .then((response) => {
+    document.getElementById('summ_price').innerText = response.data.rentCost+" zł";
+  }, (error) => {
+    document.getElementById('summ_price').innerText = "błąd!";
+  });
 
   document.getElementById('rent_send').addEventListener('click', rent_send);
   document.getElementById('rent_cancel').addEventListener('click', rent_cancel);
