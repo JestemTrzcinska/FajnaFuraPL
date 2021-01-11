@@ -35,15 +35,33 @@ const init = function () {
 };
 
 const rent_send = function(ev) {
-  console.log("rent_send");
-  document.getElementById('date_summary').style.display = "none";
-  document.getElementById('rent_car').style.display = "none";
-  document.getElementById('rent_done_div').style.display = "block";
+  let carid = new URLSearchParams(window.location.search).get('carid');
+  let url_from = new URLSearchParams(window.location.search).get('from');
+  let url_to = new URLSearchParams(window.location.search).get('to');
+
+  axios.post('http://localhost:5000/api/rents', {
+    car: carid,
+    user: "5ff39f477e3e6d0898d2f10e",
+    dateFrom: url_from,
+    dateTo: url_to,
+    status: "Nieopłacona",
+  })
+  .then((response) => {
+    document.getElementById('date_summary').style.display = "none";
+    document.getElementById('rent_car').style.display = "none";
+    document.getElementById('rent_done_div').style.display = "block";
+  }, (error) => {
+    document.getElementById('date_summary').style.display = "none";
+    document.getElementById('rent_car').style.display = "none";
+    document.getElementById('rent_done_div').style.display = "block";
+  });
 };
 
 const rent_cancel = function(ev) {
-  let carid = new URLSearchParams(window.location.search).get('carid');
-  location.replace("../cars/cardetails.html?carid="+carid);
+  //let carid = new URLSearchParams(window.location.search).get('carid');
+  //location.replace("../cars/cardetails.html?carid="+carid);
+
+  history.back();
 };
 
 const rent_done = function(ev) {
