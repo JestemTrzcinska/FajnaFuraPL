@@ -15,7 +15,18 @@ const Rent = require('../../models/Rent');
 // @access    Public
 router.get('/', [auth], async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select('-password').populate('address');
+    const user = await User.findById(req.user.id)
+      .select('-password')
+      .populate('address');
+
+    if (!user) {
+      return res
+        .status(400)
+        .json({
+          errors: [{ msg: 'Użytkownik o podanym ID nie istnieje.' }],
+        });
+    }
+
     res.json(user);
   } catch (err) {
     console.error(err.message);
@@ -29,7 +40,8 @@ router.get('/', [auth], async (req, res) => {
 
 router.get('/history/:id', async (req, res) => {
   try {
-    if (!(await User.findById(req.params.id))) {
+    const user = await User.findById(req.params.id)
+    if (!user) {
       return res.status(400).json({
         errors: [{ msg: 'Użytkownik o podanym ID nie istnieje.' }],
       });
