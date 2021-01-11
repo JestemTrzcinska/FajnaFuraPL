@@ -119,10 +119,10 @@ const date_validate = function(ev){
   if(date_to.value === ""){
     failures.push({input:'date_to', msg:'Pole wymagane!'})
   }
-  else if(date_to.value < today){
+  else if(date_to.value <= today){
     failures.push({input:'date_to', msg:'Nieprawidłowe dane!'})
   }
-  else if(date_to.value < date_from.value){
+  else if(date_to.value <= date_from.value){
     failures.push({input:'date_to', msg:'Nieprawidłowe dane!'})
   }
 

@@ -1,5 +1,17 @@
 "use strict";
 
+axios.get('http://localhost:5000/api/users/').then(response => {
+    document.getElementById('firstName').innerText = response.data.firstName;
+    document.getElementById('lastName').innerText = response.data.lastName;
+    document.getElementById('drivingLicense').innerText = response.data.drivingLicense;
+    document.getElementById('email').innerText = response.data.email;
+    document.getElementById('address').innerText = response.data.address;
+    document.getElementById('credit').innerText = response.data.credit;
+
+}).catch(err => {
+    console.log(err);
+});
+
 let changecars = function(el) {
     $(".categorybutton").each(function() {
         if($(this).hasClass("activebut")){
@@ -12,7 +24,7 @@ let changecars = function(el) {
         if($(this).hasClass("activecat"))
             $(this).removeClass("activecat");
     });
-    
+
     let temp = $(el).text();
     if(temp=="Dane konta")
         $("#Dane_kontacat").addClass("activecat");
@@ -20,7 +32,7 @@ let changecars = function(el) {
         $("#Dane_wypozyczeniacat").addClass("activecat");
     else if(temp=="Dane personalne")
         $("#Dane_personalnecat").addClass("activecat");
-    
+
 };
 
 $(".categorybutton").each(function(){

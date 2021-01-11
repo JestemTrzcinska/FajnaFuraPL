@@ -64,7 +64,7 @@ const CarSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  multiplierPrice: {
+  dayPrice: {
     type: Number,
     required: true,
   },
