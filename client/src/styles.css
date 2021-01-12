@@ -240,6 +240,10 @@ progress {
   float: right;
 }
 
+#cssmenu a[href='../profile/profil.html']{
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   #cssmenu ul li {
     float: none;

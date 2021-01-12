@@ -49,9 +49,10 @@ function setCurrentPage() {
     .parent()
     .addClass('active');
   console.log(localStorage.getItem('token'));
-  if(localStorage.getItem('token') != null)
+  if(localStorage.getItem('token') != null) {
     document.getElementById('navbar_last_span').innerText = "Wyloguj się";
-  else
+    $("#cssmenu a[href='../profile/profil.html']").css("display", "block");
+  } else
     document.getElementById('navbar_last_span').innerText = "Zaloguj się/Zarejestruj się";
   if ((count = 5)) clearInterval(inv);
   count++;

@@ -2,7 +2,7 @@ div.category{
 
   margin: 0 auto 0 auto;
   display: none;
-
+  width: 75%;
 }
 
 div.activecat{

@@ -157,4 +157,28 @@ router.post(
   }
 );
 
+// @route   POST api/users/credit
+// @desc    Update users credit
+// @access  Public
+router.post('/credit', [auth], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  try {
+    const { credit } = req.body;
+
+    const user = await User.findOneAndUpdate(
+      { _id: req.user.id },
+      { $set: credit },
+      { new: true }
+    );
+
+    return res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error.');
+  }
+});
+
 module.exports = router;
