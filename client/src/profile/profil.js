@@ -1,6 +1,11 @@
 "use strict";
 
-axios.get('http://localhost:5000/api/users/').then(response => {
+const headers = {
+  'x-auth-token': localStorage.getItem('token')
+}
+axios.get('http://localhost:5000/api/users', {
+  headers: headers
+}).then(response => {
     document.getElementById('firstName').innerText = response.data.firstName;
     document.getElementById('lastName').innerText = response.data.lastName;
     document.getElementById('drivingLicense').innerText = response.data.drivingLicense;
