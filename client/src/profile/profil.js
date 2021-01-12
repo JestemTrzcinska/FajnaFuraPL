@@ -46,7 +46,9 @@ $(".categorybutton").each(function(){
     });
 });
 
-axios.get('http://localhost:5000/api/users/history/5fdf5a6edd3c7d1e38707155').then(response => {
+axios.get('http://localhost:5000/api/users/history', {
+    headers: headers
+}).then(response => {
     loadhistory(response.data);
 }).catch(err => {
     console.log(err);
