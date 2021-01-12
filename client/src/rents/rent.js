@@ -39,12 +39,16 @@ const rent_send = function(ev) {
   let url_from = new URLSearchParams(window.location.search).get('from');
   let url_to = new URLSearchParams(window.location.search).get('to');
 
+  const headers = {
+    'x-auth-token': localStorage.getItem('token')
+  }
   axios.post('http://localhost:5000/api/rents', {
-    car: carid,
-    user: "5ff39f477e3e6d0898d2f10e",
+    carID: carid,
     dateFrom: url_from,
     dateTo: url_to,
     status: "Nieopłacona",
+  }, {
+    headers: headers
   })
   .then((response) => {
     document.getElementById('date_summary').style.display = "none";
