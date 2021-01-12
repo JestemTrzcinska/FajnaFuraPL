@@ -48,7 +48,6 @@ function setCurrentPage() {
   $("#cssmenu a[href='../" + url + ".html']")
     .parent()
     .addClass('active');
-  console.log(localStorage.getItem('token'));
   if(localStorage.getItem('token') != null) {
     document.getElementById('navbar_last_span').innerText = "Wyloguj się";
     $("#cssmenu a[href='../profile/profil.html']").css("display", "block");

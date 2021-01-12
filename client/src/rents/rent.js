@@ -32,6 +32,7 @@ const init = function () {
   document.getElementById('rent_send').addEventListener('click', rent_send);
   document.getElementById('rent_cancel').addEventListener('click', rent_cancel);
   document.getElementById('rent_done_but').addEventListener('click', rent_done);
+  document.getElementById('rent_error_but').addEventListener('click', rent_cancel);
 };
 
 const rent_send = function(ev) {
@@ -57,14 +58,11 @@ const rent_send = function(ev) {
   }, (error) => {
     document.getElementById('date_summary').style.display = "none";
     document.getElementById('rent_car').style.display = "none";
-    document.getElementById('rent_done_div').style.display = "block";
+    document.getElementById('rent_error_div').style.display = "block";
   });
 };
 
 const rent_cancel = function(ev) {
-  //let carid = new URLSearchParams(window.location.search).get('carid');
-  //location.replace("../cars/cardetails.html?carid="+carid);
-
   history.back();
 };
 

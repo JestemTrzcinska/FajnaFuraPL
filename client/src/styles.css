@@ -531,6 +531,15 @@ progress {
   text-align: center;
 }
 
+#rent_error_div {
+  display: none;
+  text-align: center;
+}
+
+#rent_error_div h3 {
+  color: red;
+}
+
 /* Slider carousel */
 .carousel-caption {
   position: absolute;
