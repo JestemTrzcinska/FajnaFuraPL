@@ -106,11 +106,13 @@ h1#carlistheader{
   
   text-decoration: none;
   padding: 3%;
-  width: 60%;
+  width: 50%;
   /* top: 50%; 
   left: 50%; */
   text-align: center;
   justify-content: center;
+  #display: flex;
+  #flex-direction: row;
   
 }
 
@@ -118,14 +120,14 @@ h1#carlistheader{
 {
   
   text-decoration: none;
-  padding: 0px;
-  width: 60%;
+  padding: 3%;
+  width: 50%;
   /* top: 50%; 
   left: 50%; */
   text-align: center;
   justify-content: center;
-  display: flex;
-  flex-direction: row;
+  #display: flex;
+  #flex-direction: row;
   
 }
 #Dane_kontacat
