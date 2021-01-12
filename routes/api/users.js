@@ -32,11 +32,11 @@ router.get('/', [auth], async (req, res) => {
   }
 });
 
-// @route   POST api/users/:id
+// @route   POST api/users/
 // @desc    GET rents history
 // @access  Public
 
-router.get('/history/:id', [auth], async (req, res) => {
+router.get('/history/', [auth], async (req, res) => {
   try {
     const rents = await Rent.find({ user: req.user.id })
       .populate('status')
