@@ -20,11 +20,9 @@ router.get('/', [auth], async (req, res) => {
       .populate('address');
 
     if (!user) {
-      return res
-        .status(400)
-        .json({
-          errors: [{ msg: 'Użytkownik o podanym ID nie istnieje.' }],
-        });
+      return res.status(400).json({
+        errors: [{ msg: 'Użytkownik o podanym ID nie istnieje.' }],
+      });
     }
 
     res.json(user);
@@ -38,18 +36,17 @@ router.get('/', [auth], async (req, res) => {
 // @desc    GET rents history
 // @access  Public
 
-router.get('/history/:id', async (req, res) => {
+router.get('/history/:id', [auth], async (req, res) => {
   try {
-    const user = await User.findById(req.params.id)
-    if (!user) {
-      return res.status(400).json({
-        errors: [{ msg: 'Użytkownik o podanym ID nie istnieje.' }],
-      });
-    }
-
-    let rents = await Rent.find({ user: req.params.id })
+    const rents = await Rent.find({ user: req.params.id })
       .populate('status')
       .populate('car');
+
+    if (!rents) {
+      return res.status(400).json({
+        errors: [{ msg: 'Zalogowany użytkownik nie ma wypożyczeń.' }],
+      });
+    }
     res.json(rents);
   } catch (err) {
     console.error(err.message);
