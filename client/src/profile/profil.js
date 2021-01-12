@@ -11,7 +11,7 @@ axios.get('http://localhost:5000/api/users', {
     document.getElementById('drivingLicense').innerText = response.data.drivingLicense;
     document.getElementById('email').innerText = response.data.email;
     document.getElementById('address').innerText = response.data.address;
-    document.getElementById('credit').innerText = response.data.credit;
+    document.getElementById('credit').innerText = response.data.credit+" zł";
 
 }).catch(err => {
     console.log(err);

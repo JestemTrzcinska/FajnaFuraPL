@@ -31,6 +31,9 @@ const address_send = async function (ev) {
   };
 
   try {
+    const headers = {
+      'x-auth-token': localStorage.getItem('token')
+    }
     const res = await axios.post('http://localhost:5000/api/address', {
       street: document.getElementById('street').value,
       building: document.getElementById('building').value,
@@ -38,6 +41,8 @@ const address_send = async function (ev) {
       zipCode: document.getElementById('zipCode').value,
       city: document.getElementById('city').value,
       country: document.getElementById('country').value,
+    }, {
+      headers: headers
     });
     console.log(res);
     window.onbeforeunload = 0;
