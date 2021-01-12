@@ -38,7 +38,7 @@ router.get('/', [auth], async (req, res) => {
 
 router.get('/history/:id', [auth], async (req, res) => {
   try {
-    const rents = await Rent.find({ user: req.params.id })
+    const rents = await Rent.find({ user: req.user.id })
       .populate('status')
       .populate('car');
 
