@@ -10,7 +10,10 @@ axios.get('http://localhost:5000/api/users', {
     document.getElementById('lastName').innerText = response.data.lastName;
     document.getElementById('drivingLicense').innerText = response.data.drivingLicense;
     document.getElementById('email').innerText = response.data.email;
-    document.getElementById('address').innerText = response.data.address;
+    if(response.data.address.apartment != null)
+      document.getElementById('address').innerHTML = response.data.address.street+" "+response.data.address.building+"/"+response.data.address.apartment+"<br>"+response.data.address.zipCode+" "+response.data.address.city+"<br>"+response.data.address.country;
+    else
+      document.getElementById('address').innerHTML = response.data.address.street+" "+response.data.address.building+"<br>"+response.data.address.zipCode+" "+response.data.address.city+"<br>"+response.data.address.country;
     document.getElementById('credit').innerText = response.data.credit+" zł";
 
 }).catch(err => {
