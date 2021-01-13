@@ -1,5 +1,4 @@
 div.category{
-
   margin: 0 auto 0 auto;
   display: none;
   width: 75%;
@@ -7,28 +6,15 @@ div.category{
 
 div.activecat{
   display: block;
-  
-}
-
-a.categorybutton
-{
-  text-decoration: none!important;
-  color:black;
-}
-
-a.activebut{
-  
-  text-decoration: none;
-  color: black;
 }
 
 div#carbox{
-  width:300px;
+  width: 300px;
   border: none;
   border-radius: 35px;
   margin-top: 40px;
   margin-left: 20px;
-  height:300px;
+  height: 300px;
   float: left;
   background-color: rgba(255, 255, 255, 0.863);
 }
@@ -84,59 +70,50 @@ h1#carlistheader{
   top: 20%;
   text-align: left;
 }
-#obrazek
-{
+
+#obrazek{
  float: right;
 }
-#Dane_wypozyczenia
-{
-  
+
+#Dane_wypozyczenia{
   text-decoration: none;
   padding: 0px;
   width: 40%;
-  /* top: 50%; 
+  /* top: 50%;
   left: 50%; */
   text-align: center;
   justify-content: center;
-  
 }
 
-#Dane_personalne
-{
-  
+#Dane_personalne{
   text-decoration: none;
   padding: 3%;
   width: 50%;
-  /* top: 50%; 
+  /* top: 50%;
   left: 50%; */
   text-align: center;
   justify-content: center;
   #display: flex;
   #flex-direction: row;
-  
 }
 
-#Dane_konta
-{
-  
+#Dane_konta{
   text-decoration: none;
   padding: 3%;
   width: 50%;
-  /* top: 50%; 
+  /* top: 50%;
   left: 50%; */
   text-align: center;
   justify-content: center;
   #display: flex;
   #flex-direction: row;
-  
 }
-#Dane_kontacat
-{
+
+#Dane_kontacat{
   padding:0px;
 }
 
-#profil_dane
-{
+#profil_dane{
   display: flex;
   margin-top: 4%;
   margin-left: 5%;
@@ -146,8 +123,8 @@ h1#carlistheader{
   height: 650px;
   background-color: rgba(255, 255, 255, 0.863);
 }
-#dane_konta2
-{
+
+#dane_konta2{
   border-radius: 50px;
   width: 20%;
   height: 650px;
@@ -155,25 +132,25 @@ h1#carlistheader{
   /* float: left; */
   text-align: center;
 }
-#dane_konta2 ul
-{
+
+#dane_konta2 ul{
   list-style-type:none;
   padding: 0px;
   position: relative;
   top:30px;
 }
-#dane_konta2 ul li
-{
+
+#dane_konta2 ul li{
   height: 50px;
+  cursor: pointer;
 }
-#dane_konta2 ul li:hover
-{
+
+#dane_konta2 ul li:hover{
   background-color:#aaacad;
   border-radius: 15px;
 }
 
-#dane_konta2  ul li:active
-{
+#dane_konta2  ul li:active{
   background-color:#cbcccc;
 }
 

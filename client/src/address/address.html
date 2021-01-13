@@ -11,29 +11,35 @@
   <body>
     <div w3-include-html="../layout/navbar.html"></div>
     <div id="address_div">
-      <form class="" action="profil.html" method="post" id="form_address">
-        <h3>Uzupełnij dane adresowe:</h3>
-        <div class="error-msg" data-errormsg="">
-          <input type="text" id="street" placeholder="Ulica">
-        </div>
-        <div class="error-msg" data-errormsg="">
-          <input type="text" id="building" placeholder="Numer domu">
-        </div>
-        <div class="error-msg" data-errormsg="">
-          <input type="text" id="apartment" placeholder="Numer mieszkania">
-        </div>
-        <div class="error-msg" data-errormsg="">
-          <input type="text" id="zipCode" placeholder="Kod pocztowy">
-        </div>
-        <div class="error-msg" data-errormsg="">
-          <input type="text" id="city" placeholder="Miasto">
-        </div>
-        <div class="error-msg" data-errormsg="">
-          <input type="text" id="country" placeholder="Kraj">
-        </div>
-        <input type="button" id="address_submit" value="Zapisz">
-        <input type="button" id="address_cancel" value="Anuluj">
-      </form>
+      <div id='address_cat'>
+        <ul>
+          <li onclick="location.href='../profile/profil.html'">Powrót do profilu</li>
+        </ul>
+      </div>
+      <div id="address_form_div">
+        <form id="form_address">
+          <h3>Uzupełnij dane adresowe:</h3>
+          <div class="error-msg" data-errormsg="">
+            <input type="text" id="street" placeholder="Ulica">
+          </div>
+          <div class="error-msg" data-errormsg="">
+            <input type="text" id="building" placeholder="Numer domu">
+          </div>
+          <div class="error-msg" data-errormsg="">
+            <input type="text" id="apartment" placeholder="Numer mieszkania">
+          </div>
+          <div class="error-msg" data-errormsg="">
+            <input type="text" id="zipCode" placeholder="Kod pocztowy">
+          </div>
+          <div class="error-msg" data-errormsg="">
+            <input type="text" id="city" placeholder="Miasto">
+          </div>
+          <div class="error-msg" data-errormsg="">
+            <input type="text" id="country" placeholder="Kraj">
+          </div>
+          <input type="button" id="address_submit" value="Zapisz">
+        </form>
+      </div>
     </div>
     <script src="address.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

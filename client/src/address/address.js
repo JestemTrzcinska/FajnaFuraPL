@@ -64,8 +64,4 @@ const address_send = async function (ev) {
   }
 };
 
-const address_cancel = function (ev) {
-  location = "../profile/profil.html";
-}
-
 document.addEventListener('DOMContentLoaded', init);

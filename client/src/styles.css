@@ -361,11 +361,11 @@ progress {
 }
 
 #form_address {
-  width: 20%;
   min-width: 330px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1%;
 }
 
 #address_div {
@@ -374,9 +374,41 @@ progress {
   margin-right: 5%;
   border-radius: 50px;
   font-size: 22px;
-  padding: 2%;
   height: 650px;
   background-color: rgba(255, 255, 255, 0.863);
+}
+
+#address_form_div {
+  width: 80%;
+  float: right;
+}
+
+#address_cat {
+  border-radius: 50px;
+  width: 20%;
+  height: 650px;
+  background-color: #cecece;
+  text-align: center;
+  float: left;
+}
+
+#address_cat ul {
+  list-style-type:none;
+  padding: 0px;
+  position: relative;
+  top: 30px;
+}
+#address_cat ul li {
+  height: 50px;
+  cursor: pointer;
+}
+#address_cat ul li:hover {
+  background-color: #aaacad;
+  border-radius: 15px;
+}
+
+#address_cat  ul li:active {
+  background-color: #cbcccc;
 }
 
 #form_rent {
