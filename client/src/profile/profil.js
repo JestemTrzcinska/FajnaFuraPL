@@ -1,5 +1,9 @@
 "use strict";
 
+const init = function () {
+  document.getElementById('credit_submit').addEventListener('click', credit_send);
+};
+
 const headers = {
   'x-auth-token': localStorage.getItem('token')
 }
@@ -43,6 +47,8 @@ let changecars = function(el) {
         $("#Dane_wypozyczeniacat").addClass("activecat");
     else if(temp=="Dane personalne")
         $("#Dane_personalnecat").addClass("activecat");
+    else if(temp=="Dodaj środki")
+        $("#Dodaj_srodkicat").addClass("activecat");
 
 };
 
@@ -73,3 +79,26 @@ let loadhistory = function(data){
         $("#Dane_wypozyczeniacat tbody").append(newentry);
     })
 }
+
+const credit_send = async function (ev) {
+  const headers = {
+    'x-auth-token': localStorage.getItem('token')
+  }
+  await axios.post('http://localhost:5000/api/users/credit', {
+    credit: document.getElementById('credit_input').value,
+  }, {
+    headers: headers
+  })
+  .then((response) => {
+    console.log("POST wysłany pomyślnie");
+    console.log(response);
+    //changecars($("#dane_konta2 li:first-child"))
+
+    //lepiej użyć tego aby saldo mogło się odświeżyć w profilu
+    location.replace("profil.html");
+  }, (error) => {
+    console.log(error);
+  });
+};
+
+document.addEventListener('DOMContentLoaded', init);

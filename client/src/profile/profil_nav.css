@@ -190,6 +190,13 @@ h1#carlistheader{
   width: 20%;
 }
 
+#Dodaj_srodkidiv {
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
 #historyprototype{
   display: none;
 }
