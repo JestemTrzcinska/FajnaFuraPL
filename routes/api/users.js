@@ -169,10 +169,14 @@ router.post('/credit', [auth], async (req, res) => {
   const { credit } = req.body;
 
   try {
+    const userFromDB = await User.findById(req.user.id);
+
+    let newCredit = parseInt(userFromDB.credit) + parseInt(credit);
+
     const user = await User.findOneAndUpdate(
       { _id: req.user.id },
-      { $set: { credit: credit } },
-      { new: true }
+      { $set: { credit: newCredit } },
+      { new: true, useFindAndModify: false }
     );
 
     return res.json(user);
