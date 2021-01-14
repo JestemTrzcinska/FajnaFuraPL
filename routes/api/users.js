@@ -165,12 +165,13 @@ router.post('/credit', [auth], async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
-  try {
-    const { credit } = req.body;
 
+  const { credit } = req.body;
+
+  try {
     const user = await User.findOneAndUpdate(
       { _id: req.user.id },
-      { $set: credit },
+      { $set: { credit: credit } },
       { new: true }
     );
 
