@@ -5,8 +5,10 @@ const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 
 const Car = require('../../models/Car');
+const User = require('../../models/User');
 const Rent = require('../../models/Rent');
 const Status = require('../../models/Status');
+
 
 // @route   GET api/rents/cost/
 // @desc    GET rent cost
@@ -77,6 +79,8 @@ router.post(
   [
     check('carID', 'Proszę wybrać samochód.').exists(),
     check('status', 'Należy podać status.').exists(),
+    check('dateFrom').isDate().toDate(),
+    check('dateTo').isDate().toDate()
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -85,6 +89,10 @@ router.post(
     }
 
     const { carID, dateFrom, dateTo, status, infoBefore, infoAfter } = req.body;
+
+    const days = moment
+        .duration(moment(dateTo).diff(moment(dateFrom)))
+        .asDays();
 
     try {
       // See if the car exists
@@ -95,12 +103,6 @@ router.post(
           errors: [{ msg: 'Samochód o tym ID nie istnieje.' }],
         });
       }
-
-      await Car.findOneAndUpdate(
-        { _id: carFromDB.id },
-        { $set: { status: '5fb4fb37afc856316849d9ee' } }, // wypozyczony
-        { new: true, useFindAndModify: false }
-      );
 
       // See if the status exists
       let statusFromDB = await Status.findOne({ name: status });
@@ -122,6 +124,29 @@ router.post(
           ],
         });
       }
+
+      const price = carFromDB.dayPrice * days;
+      let user = await User.findById(req.user.id, ['credit'])
+      const balance = user.credit;
+
+      if (balance < price) {
+        return res.status(400).json({
+          errors: [{ msg: 'Niewystarczające środki na koncie.' }],
+        });
+      }
+
+      await User.findOneAndUpdate(
+        { _id: req.user.id },
+        { $set: { credit: balance - price } },
+        { new: true, useFindAndModify: false }
+      );
+
+      await Car.findOneAndUpdate(
+        { _id: carFromDB.id },
+        { $set: { status: '5fb4fb37afc856316849d9ee' } }, // wypozyczony
+        { new: true, useFindAndModify: false }
+      );
+
 
       rent = new Rent({
         car: carFromDB.id,
