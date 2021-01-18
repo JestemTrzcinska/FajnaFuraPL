@@ -548,6 +548,12 @@ progress {
 
 #rent #date_summary {
   float: left;
+  max-width: 60%;
+}
+
+#rent #summ_infoBefore {
+  max-height: 280px;
+  max-width: 90%;
 }
 
 #rent #rent_car {
@@ -570,6 +576,10 @@ progress {
 
 #rent_error_div h3 {
   color: red;
+}
+
+#rent_error_msg {
+  font-weight: bold;
 }
 
 /* Slider carousel */

@@ -47,7 +47,8 @@ const rent_send = function(ev) {
     carID: carid,
     dateFrom: url_from,
     dateTo: url_to,
-    status: "Nieopłacona",
+    infoBefore: document.getElementById('summ_infoBefore').value,
+    status: "W trakcie realizacji",
   }, {
     headers: headers
   })
@@ -58,6 +59,8 @@ const rent_send = function(ev) {
   }, (error) => {
     document.getElementById('date_summary').style.display = "none";
     document.getElementById('rent_car').style.display = "none";
+    if(error.response.data.errors)
+      document.getElementById('rent_error_msg').innerText = error.response.data.errors[0].msg;
     document.getElementById('rent_error_div').style.display = "block";
   });
 };

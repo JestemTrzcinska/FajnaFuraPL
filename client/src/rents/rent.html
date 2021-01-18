@@ -18,6 +18,8 @@
         <p>Data rozpoczęcia: <span id="summ_date_from">wczytywanie...</span> </p>
         <p>Data zakończenia: <span id="summ_date_to">wczytywanie...</span> </p>
         <p>Łączna cena: <span id="summ_price">obliczanie...</span> </p>
+        <p>Uwagi do wypożyczenia:</p>
+        <p><textarea id="summ_infoBefore" rows="4" cols="40"></textarea></p>
         <button type="button" id="rent_send">Zatwierdź</button>
         <button type="button" id="rent_cancel">Anuluj</button>
       </div>
@@ -35,7 +37,7 @@
       </div>
       <div id="rent_error_div">
         <h3>Wystąpił błąd podczas wysyłania żądania wypożyczenia</h3>
-        <p>Spróbuj ponownie za jakiś czas lub napisz do nas</p>
+        <p id="rent_error_msg">Spróbuj ponownie za jakiś czas lub napisz do nas</p>
         <p>Kontakt do biura: biuro@fajnafura.pl</p>
         <button id="rent_error_but">OK</button>
       </div>
