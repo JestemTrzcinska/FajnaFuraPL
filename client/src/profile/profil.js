@@ -1,9 +1,12 @@
 'use strict';
 
-
 const init = function () {
-  document.getElementById('credit_submit').addEventListener('click', credit_send);
-  document.getElementById('chngpsswd_submit').addEventListener('click', changePassword);
+  document
+    .getElementById('credit_submit')
+    .addEventListener('click', credit_send);
+  document
+    .getElementById('chngpsswd_submit')
+    .addEventListener('click', changePassword);
 };
 
 const headers = {
@@ -69,10 +72,8 @@ let changecars = function (el) {
     $('#Dane_wypozyczeniacat').addClass('activecat');
   else if (temp == 'Dane personalne')
     $('#Dane_personalnecat').addClass('activecat');
-  else if (temp == 'Dodaj środki')
-    $('#Dodaj_srodkicat').addClass('activecat')
-  else if (temp == 'Zmień hasło')
-    $('#Zmien_haslocat').addClass('activecat');
+  else if (temp == 'Dodaj środki') $('#Dodaj_srodkicat').addClass('activecat');
+  else if (temp == 'Zmień hasło') $('#Zmien_haslocat').addClass('activecat');
 };
 
 $('.categorybutton').each(function () {
@@ -155,12 +156,15 @@ const changePassword = async function (params) {
     )
     .then(
       (response) => {
+        console.log('POST wysłany pomyślnie');
         console.log(response);
+        location.replace('profil.html');
       },
       (error) => {
         console.log(error);
-        if(error.response.data.errors)
-          document.getElementById('chngpsswd_error').innerText = error.response.data.errors[0].msg;
+        if (error.response.data.errors)
+          document.getElementById('chngpsswd_error').innerText =
+            error.response.data.errors[0].msg;
       }
     );
 };
