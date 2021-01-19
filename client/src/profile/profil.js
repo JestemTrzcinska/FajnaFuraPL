@@ -1,6 +1,5 @@
 'use strict';
 
-const { header } = require('express-validator');
 
 const init = function () {
   document
