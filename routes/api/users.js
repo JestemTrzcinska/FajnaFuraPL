@@ -186,4 +186,69 @@ router.post('/credit', [auth], async (req, res) => {
   }
 });
 
+// @route   POST api/users/changePassword
+// @desc    Update users password
+// @access  Private
+router.post(
+  '/changePassword',
+  [auth],
+  [
+    check('password', 'Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
+    check('password2', 'Wymagane min 6 znaków w haśle').isLength({ min: 6 }),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { password, password2 } = req.body;
+
+    try {
+      if (password !== password2) {
+        return res.status(400).json({
+          errors: [
+            {
+              param: 'password2',
+              msg: 'Podane hasła są różne',
+            },
+          ],
+        });
+      }
+
+      let user = await User.findOneAndUpdate(
+        { _id: req.user.id },
+        { $set: { password: password } },
+        { new: true, useFindAndModify: false }
+      );
+
+      // Encrypt password
+      const salt = await bcrypt.genSalt(10);
+      user.password = await bcrypt.hash(password, salt);
+      await user.save(); // in the db
+
+      // // Return jsonwebtoken
+      // const payload = {
+      //   user: {
+      //     id: user.id,
+      //   },
+      // };
+      // jwt.sign(
+      //   payload,
+      //   config.get('jwtSecret'),
+      //   { expiresIn: 360000 },
+      //   (err, token) => {
+      //     if (err) throw err;
+      //     res.json({ token });
+      //   }
+      // );
+
+      return res.json(user);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error.');
+    }
+  }
+);
+
 module.exports = router;
