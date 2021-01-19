@@ -202,7 +202,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { password, password2 } = req.body;
+    const { oldPassword, password, password2 } = req.body;
 
     try {
       if (password !== password2) {
@@ -211,6 +211,43 @@ router.post(
             {
               param: 'password2',
               msg: 'Podane hasła są różne',
+            },
+          ],
+        });
+      }
+
+      const userFromDB = await User.findById(req.user.id);
+      const passwordFromDB = userFromDB.password;
+
+      // Validate user by asking to input old password
+      const compareWithOldPassword = await bcrypt.compare(
+        oldPassword,
+        passwordFromDB
+      );
+
+      if (compareWithOldPassword === false) {
+        return res.status(400).json({
+          errors: [
+            {
+              param: 'oldPassword',
+              msg: 'Stare hasło jest nieprawidłowe',
+            },
+          ],
+        });
+      }
+
+      // Check if user is trying to use the same password as a new one
+      const compareWithPasswordFromDB = await bcrypt.compare(
+        password,
+        passwordFromDB
+      );
+
+      if (compareWithPasswordFromDB === true) {
+        return res.status(400).json({
+          errors: [
+            {
+              param: 'password',
+              msg: 'Podane nowe hasło jest takie samo jak poprzednie',
             },
           ],
         });
