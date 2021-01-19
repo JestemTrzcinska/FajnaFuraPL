@@ -19,6 +19,7 @@
         <ul>
           <li class="categorybutton activebut">Dane konta</li>
           <li class="categorybutton">Dane personalne</li>
+          <li class="categorybutton">Zmień hasło</li>
           <li class="categorybutton">Historia wypożyczeń</li>
           <li class="categorybutton">Dodaj środki</li>
           <li class="categorybutton" onclick="location.href='../address/address.html'">Uzupełnij dane</li>
@@ -116,6 +117,23 @@
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div id="Zmien_haslocat" class="category">
+        <div class="d-flex justify-content-center"><h1> Zmień hasło</h1></div>
+        <div class="d-flex justify-content-center" id="Dodaj_srodkidiv">
+          <table class="table" style="text-align: center;">
+            <tbody>
+              <tr>
+                <td><input type="password" id="chngpsswd_oldpassword" placeholder="Podaj aktualne hasło"></td>
+                <td><input type="password" id="chngpsswd_password" placeholder="Podaj nowe hasło"></td>
+                <td><input type="password" id="chngpsswd_password2" placeholder="Powtórz nowe hasło"></td>
+                <td><input type="button" id="chngpsswd_submit" value="Zmień"></td>
+              </tr>
+            </tbody>
+          </table>    
+        </div>
+        <p id="chngpsswd_error"></p>
       </div>
     </div>
     <script type="text/javascript" src="profil.js"></script>

@@ -200,3 +200,8 @@ h1#carlistheader{
 #historyprototype{
   display: none;
 }
+
+#chngpsswd_error {
+  color: red;
+  text-align: center;
+}

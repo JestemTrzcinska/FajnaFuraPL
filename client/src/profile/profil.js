@@ -2,9 +2,8 @@
 
 
 const init = function () {
-  document
-    .getElementById('credit_submit')
-    .addEventListener('click', credit_send);
+  document.getElementById('credit_submit').addEventListener('click', credit_send);
+  document.getElementById('chngpsswd_submit').addEventListener('click', changePassword);
 };
 
 const headers = {
@@ -70,7 +69,10 @@ let changecars = function (el) {
     $('#Dane_wypozyczeniacat').addClass('activecat');
   else if (temp == 'Dane personalne')
     $('#Dane_personalnecat').addClass('activecat');
-  else if (temp == 'Dodaj środki') $('#Dodaj_srodkicat').addClass('activecat');
+  else if (temp == 'Dodaj środki')
+    $('#Dodaj_srodkicat').addClass('activecat')
+  else if (temp == 'Zmień hasło')
+    $('#Zmien_haslocat').addClass('activecat');
 };
 
 $('.categorybutton').each(function () {
@@ -143,8 +145,9 @@ const changePassword = async function (params) {
     .post(
       'http://localhost:5000/api/users/changePassword',
       {
-        password: document.getElementById('password_input').value, // Konrad
-        password2: document.getElementById('password2_input').value, // Konrad
+        oldPassword: document.getElementById('chngpsswd_oldpassword').value,
+        password: document.getElementById('chngpsswd_password').value,
+        password2: document.getElementById('chngpsswd_password2').value,
       },
       {
         headers: headers,
@@ -156,6 +159,8 @@ const changePassword = async function (params) {
       },
       (error) => {
         console.log(error);
+        if(error.response.data.errors)
+          document.getElementById('chngpsswd_error').innerText = error.response.data.errors[0].msg;
       }
     );
 };
