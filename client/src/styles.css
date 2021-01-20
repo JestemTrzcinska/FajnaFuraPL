@@ -771,6 +771,42 @@ progress {
   }
 }
 
+@media screen and (max-width: 900px) {
+  #kontakt_tresc {
+    margin-top: 5%;
+    width: 100%;
+    min-width: 0px;
+  }
+
+  #kontakt_tresc_lewo {
+    float: none;
+    text-align: center;
+  }
+
+  #kontakt_tresc_prawo {
+    float: none;
+    text-align: center;
+  }
+
+  #kontakt img {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #kontakt {
+    height: 500px;
+  }
+
+  #kontakt_tresc {
+    font-size: 18px;
+  }
+
+  #kontakt img {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 360px) {
   #formularze {
     min-height: 650px;
