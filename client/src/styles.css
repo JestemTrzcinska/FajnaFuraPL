@@ -660,6 +660,7 @@ progress {
       height: 650px;
   }
 
+
 .informacje
 {
   margin:0px;
@@ -668,6 +669,13 @@ progress {
   width: 100%;
   top: 86%;
 }
+@media (min-width: 768px) {
+  .jumbotron {
+      font-size: 2vw;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
 
 /* Slideshow container */
 @media screen {
