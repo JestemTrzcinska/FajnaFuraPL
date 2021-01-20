@@ -75,6 +75,27 @@ h1#carlistheader{
  float: right;
 }
 
+
+@media screen and (max-width: 920px) {
+  #obrazek_znika{
+    display:none;
+  }
+}
+@media screen and (max-width: 720px) {
+  #dane_konta2{
+    font-weight: bold;
+    
+  }
+}
+@media screen and (max-width: 500px) {
+  #table{
+    max-width: 200px
+    
+  }
+}
+
+
+
 #Dane_wypozyczenia{
   text-decoration: none;
   padding: 0px;
@@ -100,7 +121,7 @@ h1#carlistheader{
 #Dane_konta{
   text-decoration: none;
   padding: 3%;
-  width: 50%;
+  
   /* top: 50%;
   left: 50%; */
   text-align: center;

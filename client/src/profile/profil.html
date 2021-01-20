@@ -14,22 +14,21 @@
   </head>
   <body>
     <div w3-include-html="../layout/navbar.html"></div>
-    <div id='profil_dane'>
-      <div id='dane_konta2' class="categories">
+    <div id='profil_dane' class="row">
+      <div id='dane_konta2' class="categories col-3">
         <ul>
-          <li class="categorybutton activebut">Dane konta</li>
-          <li class="categorybutton">Dane personalne</li>
-          <li class="categorybutton">Zmień hasło</li>
-          <li class="categorybutton">Historia wypożyczeń</li>
-          <li class="categorybutton">Dodaj środki</li>
-          <li class="categorybutton" onclick="location.href='../address/address.html'">Uzupełnij dane</li>
+          <li class="categorybutton activebut" style="font-size:1.6vw;">Dane konta</li>
+          <li class="categorybutton" style="font-size:1.6vw;">Dane personalne</li>
+          <li class="categorybutton" style="font-size:1.6vw;">Zmień hasło</li>
+          <li class="categorybutton" style="font-size:1.6vw;">Historia wypożyczeń</li>
+          <li class="categorybutton" style="font-size:1.6vw;">Dodaj środki</li>
+          <li class="categorybutton" style="font-size:1.6vw;" onclick="location.href='../address/address.html'">Uzupełnij dane</li>
         </ul>
       </div>
-      <div id="Dane_kontacat" class="category activecat">
-        <div class="d-flex align-items-start"><h1> Dane konta</h1></div>
-        <div id="obrazek" class="d-flex justify-content-end"><img src="../../img/user.png"  alt="user"></div>
-        <div class="d-flex justify-content-center" id="Dane_konta">
-
+      <div id="Dane_kontacat" class="category col-9 activecat ">
+        <div class="d-flex align-items-start col-12"><h1> Dane konta</h1></div>
+        <div id="obrazek" class="d-flex justify-content-end col-6"><img id="obrazek_znika" src="../../img/user.png"  alt="user"></div>
+        <div class="col-6" id="Dane_konta">
 
           <table class="table" style="text-align: left;">
 
@@ -49,24 +48,25 @@
               </tr>
             </tbody>
           </table>
+        
 
         </div>
       </div>
-      <div id='Dane_personalnecat' class="category">
+      <div id='Dane_personalnecat' class="category col-9">
         <div class="d-flex align-items-start"><h1> Dane personalne</h1></div>
-        <div id="obrazek" class="d-flex justify-content-end"><img src="../../img/user.png"  alt="user"></div>
-        <div class="d-flex justify-content-center" id="Dane_konta">
+        <div id="obrazek" class="d-flex justify-content-end col-6"><img id="obrazek_znika" src="../../img/user.png"  alt="user"></div>
+        <div class="col-6" id="Dane_konta">
           <table class="table" style="text-align: left;">
             <thead>
               <tr >
                 <th scope="row" >Imię</th>
-                <td id="firstName">Stefano3030</td>
+                <td id="firstName"></td>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">Nazwisko</th>
-                <td id="lastName">Stefano3030@wp.pl</td>
+                <td id="lastName"></td>
               </tr>
               <tr>
                 <th scope="row">Adres</th>
@@ -74,7 +74,7 @@
               </tr>
               <tr>
                 <th scope="row">Numer prawa jazdy</th>
-                <td id="drivingLicense">73234414141</td>
+                <td id="drivingLicense"></td>
               </tr>
 
             </tbody>
@@ -82,9 +82,9 @@
         </div>
       </div>
 
-      <div id="Dane_wypozyczeniacat" class="category">
+      <div id="Dane_wypozyczeniacat" class="category col-9">
         <div class="d-flex justify-content-center"><h1> Historia wypożyczeń</h1></div>
-        <div class="d-flex justify-content-center" id="Dane_konta">
+        <div lass="col-6" id="Dane_konta">
           <table class="table" style="text-align: left;">
             <thead>
               <td>Samochód</td>
