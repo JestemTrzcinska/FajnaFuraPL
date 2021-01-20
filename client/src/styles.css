@@ -472,7 +472,9 @@ progress {
 
 #cardetails_photos {
   width: 30%;
-  float: left;
+  min-width: 250px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 #cardetails_photos img {
@@ -480,13 +482,14 @@ progress {
 }
 
 #cardetails_info {
-  width: 50%;
-  float: left;
+  width: 350px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10%;
 }
 
 #cardetails_info_div {
   width: 350px;
-  margin: auto;
 }
 
 #cardetails_info_div div {
@@ -519,8 +522,10 @@ progress {
 
 #form_cardetails {
   min-width: 140px;
-  width: 20%;
-  float: right;
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10%;
 }
 
 #form_cardetails p {
@@ -529,6 +534,10 @@ progress {
 
 #form_cardetails input {
   width: 140px;
+}
+
+#form_cardetails h2 {
+  margin-top: 0px;
 }
 
 #rent {
@@ -771,6 +780,33 @@ progress {
   }
 }
 
+@media screen and (max-width: 1550px) {
+  #cardetails_info {
+    margin-left: 2%;
+  }
+
+  #form_cardetails {
+    margin-left: 2%;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  #cardetails_photos {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #form_cardetails {
+    float: right;
+  }
+
+  #cardetails {
+    height: 800px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   #kontakt_tresc {
     margin-top: 5%;
@@ -793,6 +829,27 @@ progress {
   }
 }
 
+@media screen and (max-width: 800px) {
+  #form_cardetails {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+  }
+
+  #cardetails_info {
+    margin-top: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #cardetails {
+    height: 950px;
+  }
+}
+
 @media screen and (max-width: 520px) {
   #kontakt {
     height: 500px;
@@ -807,7 +864,7 @@ progress {
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 380px) {
   #formularze {
     min-height: 650px;
     padding: 0px;
@@ -827,5 +884,17 @@ progress {
 
   #rodo_div {
     margin: 0px;
+  }
+
+  #cardetails_info {
+    width: 310px;
+  }
+
+  #cardetails_info_div {
+    width: 310px;
+  }
+
+  #cardetails_photos {
+    width: 80%;
   }
 }
