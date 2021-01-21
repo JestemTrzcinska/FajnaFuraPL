@@ -664,7 +664,7 @@ progress {
   padding: 2rem 1rem !important;
   margin-top:5%;
   height: 300px;
-  
+  margin-bottom: 0 !important;
   
 }
 @media (min-width: 768px) {
