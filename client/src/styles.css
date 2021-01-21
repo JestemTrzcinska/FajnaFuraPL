@@ -663,11 +663,9 @@ progress {
 
 .informacje
 {
-  margin:0px;
+  margin-top:5%;
   height: 300px;
-  position: absolute;
-  width: 100%;
-  top: 86%;
+  
 }
 @media (min-width: 768px) {
   .jumbotron {
