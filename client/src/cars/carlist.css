@@ -32,6 +32,18 @@ a.categorybutton{
   font-weight: bold;
 }
 
+@media screen and (max-width: 768px){
+  div#categories{
+    width: auto;
+    height: 50px;
+    margin: 20px auto 0px auto;
+  }
+
+  a.categorybutton{
+    width: 112px;
+  }
+}
+
 a.activebut{
   background-color: #8afff3;
   color: black;
