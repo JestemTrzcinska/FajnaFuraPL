@@ -593,7 +593,7 @@ progress {
 
 /* Slider carousel */
 .carousel-caption {
-  
+
 }
 
 .carousel-caption div {
@@ -605,8 +605,6 @@ progress {
 .trickcenter {
   font-weight: bold;
   font-size: 44px;
-  
-  
 }
 
 @media screen and (min-width: 601px) {
@@ -630,13 +628,13 @@ progress {
 .trickcenter_button {
   font-weight: bold;
   font-size: 44px;
-  
+
 }
 
 
 .logo
 {
-  
+
 }
 .kreski
 {
@@ -644,12 +642,12 @@ progress {
 }
 @media only screen and (min-width: 768px) {
   /* For desktop: */
-  
+
 }
 .row
 {
-  
-      
+
+
 }
 .cos
   {
@@ -868,6 +866,13 @@ progress {
   }
 }
 
+@media screen and (max-width: 700px) {
+  #rodo_div {
+    margin: 0px;
+    margin-top: 5px;
+  }
+}
+
 @media screen and (max-width: 520px) {
   #kontakt {
     height: 500px;
@@ -898,10 +903,6 @@ progress {
     min-width: 336px;
     padding: 10px;
     float: none;
-  }
-
-  #rodo_div {
-    margin: 0px;
   }
 
   #cardetails_info {
