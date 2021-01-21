@@ -661,8 +661,10 @@ progress {
 
 .informacje
 {
+  padding: 2rem 1rem !important;
   margin-top:5%;
   height: 300px;
+  
   
 }
 @media (min-width: 768px) {
