@@ -119,8 +119,8 @@ h1#carlistheader{
   left: 50%; */
   text-align: center;
   justify-content: center;
-  #display: flex;
-  #flex-direction: row;
+  /*display: flex;
+  flex-direction: row;*/
 }
 
 #Dane_konta{
@@ -131,8 +131,10 @@ h1#carlistheader{
   left: 50%; */
   text-align: center;
   justify-content: center;
-  #display: flex;
-  #flex-direction: row;
+  /*display: flex;
+  flex-direction: row;*/
+  overflow: auto;
+  height: 90%;
 }
 
 #Dane_kontacat{
@@ -188,6 +190,7 @@ h1#carlistheader{
   width: 80%;
   margin: 0;
   float: left;
+  height: 100%;
 }
 
 #Dane_wypozyczeniacat #Dane_konta{
