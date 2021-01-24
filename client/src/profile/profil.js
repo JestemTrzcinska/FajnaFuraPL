@@ -1,12 +1,9 @@
 'use strict';
 
 const init = function () {
-  document
-    .getElementById('credit_submit')
-    .addEventListener('click', credit_send);
-  document
-    .getElementById('chngpsswd_submit')
-    .addEventListener('click', changePassword);
+  document.getElementById('credit_submit').addEventListener('click', credit_send);
+  document.getElementById('chngpsswd_submit').addEventListener('click', changePassword);
+  document.getElementById('infoAfter_submit').addEventListener('click', updateInfoAfter);
 };
 
 const headers = {
@@ -74,6 +71,7 @@ let changecars = function (el) {
     $('#Dane_personalnecat').addClass('activecat');
   else if (temp == 'Dodaj środki') $('#Dodaj_srodkicat').addClass('activecat');
   else if (temp == 'Zmień hasło') $('#Zmien_haslocat').addClass('activecat');
+  else if (temp == 'Dodaj komentarz(test)') $('#Dodaj_komentarzcat').addClass('activecat');
 };
 
 $('.categorybutton').each(function () {
@@ -127,9 +125,6 @@ const credit_send = async function (ev) {
       (response) => {
         console.log('POST wysłany pomyślnie');
         console.log(response);
-        //changecars($("#dane_konta2 li:first-child"))
-
-        //lepiej użyć tego aby saldo mogło się odświeżyć w profilu
         location.replace('profil.html');
       },
       (error) => {
@@ -164,6 +159,36 @@ const changePassword = async function (params) {
         console.log(error);
         if (error.response.data.errors)
           document.getElementById('chngpsswd_error').innerText =
+            error.response.data.errors[0].msg;
+      }
+    );
+};
+
+const updateInfoAfter = async function (params) {
+  const headers = {
+    'x-auth-token': localStorage.getItem('token'),
+  };
+  await axios
+    .post(
+      'http://localhost:5000/api/rents/updateinfoAfter',
+      {
+        id: document.getElementById('infoAfter_id').value,
+        infoAfter: document.getElementById('infoAfter_input').value,
+      },
+      {
+        headers: headers,
+      }
+    )
+    .then(
+      (response) => {
+        console.log('POST wysłany pomyślnie');
+        console.log(response);
+        location.replace('profil.html');
+      },
+      (error) => {
+        console.log(error);
+        if (error.response.data.errors)
+          document.getElementById('infoAfter_error').innerText =
             error.response.data.errors[0].msg;
       }
     );
