@@ -891,10 +891,25 @@ progress {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
   #rodo_div {
     margin: 0px;
     margin-top: 5px;
+  }
+
+  #formularze {
+    padding: 0px;
+    height: 680px;
+  }
+
+  #form_login {
+    width: 90%;
+    min-width: 0px;
+  }
+
+  #form_register {
+    width: 90%;
+    min-width: 0px;
   }
 }
 
