@@ -234,3 +234,15 @@ h1#carlistheader{
   color: red;
   text-align: center;
 }
+
+.commentprototype{
+  display: none;
+}
+
+#Dane_wypozyczeniacat textarea{
+  width: 90%;
+}
+
+#infoAfter_id{
+  display: none;
+}

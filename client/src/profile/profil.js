@@ -92,7 +92,14 @@ axios
   });
 
 let loadhistory = function (data) {
+  var today = new Date();
+  var day = String(today.getDate()).padStart(2, '0');
+  var month = String(today.getMonth() + 1).padStart(2, '0');
+  var year = today.getFullYear();
+  today = year + '-' + month + '-' + day;
+
   data.forEach(function (entry) {
+    let iscomment = false;
     let newentry = $('.historyprototype').clone();
     $(newentry)
       .find('td:nth-child(1)')
@@ -104,6 +111,16 @@ let loadhistory = function (data) {
     $(newentry).find('td:nth-child(4)').text(entry.status.name);
     $(newentry).removeClass('historyprototype');
     $('#Dane_wypozyczeniacat tbody').append(newentry);
+
+    
+    if(today == dateto && !iscomment && !entry.infoAfter){
+      console.log(entry.infoAfter);
+      let newentry = $('.commentprototype');
+      $(newentry).find('#infoAfter_id').attr('value', entry._id);
+      $(newentry).removeClass('commentprototype');
+      $('#Dane_wypozyczeniacat tbody').append(newentry);
+      iscomment = true;
+    }
   });
 };
 
@@ -165,6 +182,7 @@ const changePassword = async function (params) {
 };
 
 const updateInfoAfter = async function (params) {
+  console.log($("#infoAfter_id").attr('value'));
   const headers = {
     'x-auth-token': localStorage.getItem('token'),
   };
@@ -172,7 +190,7 @@ const updateInfoAfter = async function (params) {
     .post(
       'http://localhost:5000/api/rents/updateinfoAfter',
       {
-        id: document.getElementById('infoAfter_id').value,
+        id: $("#infoAfter_id").attr('value'),
         infoAfter: document.getElementById('infoAfter_input').value,
       },
       {
@@ -183,13 +201,13 @@ const updateInfoAfter = async function (params) {
       (response) => {
         console.log('POST wysłany pomyślnie');
         console.log(response);
-        location.replace('profil.html');
+        //location.replace('profil.html');
+        $('.comment').html("<td colspan='4'>Komentarz został dodany</td>");
       },
       (error) => {
         console.log(error);
         if (error.response.data.errors)
-          document.getElementById('infoAfter_error').innerText =
-            error.response.data.errors[0].msg;
+          console.log(error.response.data.errors[0].msg);
       }
     );
 };
