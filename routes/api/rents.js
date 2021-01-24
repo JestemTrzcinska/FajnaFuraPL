@@ -188,7 +188,16 @@ router.post(
     try {
 
       // See if the rent already exists
-      let rentFromDB = await Rent.findOne({ _id: id });
+      let rentFromDB
+      
+      try {
+      rentFromDB = await Rent.findOne({ _id: id });
+      } catch (err) {
+        return res.status(400).json({
+          errors: [{ msg: 'Nieprawidlowe id' }],
+        });
+      }
+
       if (!rentFromDB) {
         return res.status(400).json({
           errors: [{ msg: 'Wypozyczenie o podanym id nie istnieje.' }],
@@ -201,6 +210,7 @@ router.post(
         { new: true, useFindAndModify: false }
       );
 
+      res.json({msg: "Zaktualizowano infoAfter"})
 
     } catch (err) {
       console.error(err.message);
