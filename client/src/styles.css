@@ -136,6 +136,7 @@ progress {
   background: #13acf3;
   width: auto;
 }
+
 #cssmenu ul {
   list-style: none;
   margin: 0;
@@ -144,6 +145,7 @@ progress {
   display: block;
   zoom: 1;
 }
+
 #cssmenu ul:after {
   content: ' ';
   display: block;
@@ -152,11 +154,13 @@ progress {
   clear: both;
   visibility: hidden;
 }
+
 #cssmenu ul li {
   display: inline-block;
   padding: 0;
   margin: 0;
 }
+
 #zaloguj ul li {
   display: inline-block;
   padding: 0;
@@ -164,12 +168,15 @@ progress {
   position: absolute;
   left: 0;
 }
+
 #cssmenu.align-right ul li {
   float: right;
 }
+
 #cssmenu.align-center ul {
   text-align: center;
 }
+
 #cssmenu ul li a {
   color: #ffffff;
   text-decoration: none;
@@ -186,12 +193,15 @@ progress {
   -o-transition: color 0.25s;
   transition: color 0.25s;
 }
+
 #cssmenu ul li a:hover {
   color: #128aec;
 }
+
 #cssmenu ul li a:hover:before {
   width: 100%;
 }
+
 #cssmenu ul li a:after {
   content: '';
   display: block;
@@ -203,6 +213,7 @@ progress {
   background: #ffffff;
   opacity: 0.5;
 }
+
 #cssmenu ul li a:before {
   content: '';
   display: block;
@@ -218,20 +229,25 @@ progress {
   -o-transition: width 0.25s;
   transition: width 0.25s;
 }
+
 #cssmenu ul li.last > a:after,
 #cssmenu ul li:last-child > a:after {
   display: none;
 }
+
 #cssmenu ul li.active a {
   color: #333333;
 }
+
 #cssmenu ul li.active a:before {
   width: 100%;
 }
+
 #cssmenu.align-right li.last > a:after,
 #cssmenu.align-right li:last-child > a:after {
   display: block;
 }
+
 #cssmenu.align-right li:first-child a:after {
   display: none;
 }
@@ -437,9 +453,13 @@ progress {
 }
 
 #kontakt_tresc {
-  margin-top: 5%;
+  margin-top: 2%;
   width: 60%;
   min-width: 750px;
+}
+
+#kontakt_tresc_gora {
+  margin-bottom: 2%;
 }
 
 #kontakt_tresc_lewo {
@@ -620,7 +640,7 @@ progress {
     font-weight: bold;
     font-size: 16px;
   }
-  #test{
+  #test {
     display:none;
   }
 }
@@ -628,7 +648,6 @@ progress {
 .trickcenter_button {
   font-weight: bold;
   font-size: 44px;
-
 }
 
 
@@ -649,23 +668,20 @@ progress {
 
 
 }
-.cos
-  {
-      display: flex;
-      margin-top: 4%;
-      margin-left: 5%;
-      margin-right: 5%;
-      height: 650px;
-  }
+.cos {
+  display: flex;
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 650px;
+}
 
 
-.informacje
-{
+.informacje {
   padding: 2rem 1rem !important;
   margin-top:5%;
   /*height: 300px;*/
   margin-bottom: 0 !important;
-  
 }
 @media (min-width: 768px) {
   .jumbotron {
@@ -685,7 +701,6 @@ progress {
     max-height: 600px;
     position: absolute;
     left: 15%;
-
     margin: auto;
   }
 
@@ -826,10 +841,18 @@ progress {
 }
 
 @media screen and (max-width: 900px) {
+  #kontakt {
+    height: 770px;
+  }
+
   #kontakt_tresc {
     margin-top: 5%;
     width: 100%;
     min-width: 0px;
+  }
+
+  #kontakt_tresc_gora {
+    text-align: center;
   }
 
   #kontakt_tresc_lewo {
@@ -877,7 +900,7 @@ progress {
 
 @media screen and (max-width: 520px) {
   #kontakt {
-    height: 500px;
+    height: 600px;
   }
 
   #kontakt_tresc {
