@@ -167,4 +167,46 @@ router.post(
   }
 );
 
+// @route   POST api/rents/updateinfoAfter
+// @desc    Test route
+// @access  Public
+router.post(
+  '/updateinfoAfter',
+  [auth],
+  [
+    check('id', 'Nalezy podac id zamowienia.').exists(),
+    check('infoAfter', 'Nalezy podac tekst.').exists()
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { id, infoAfter } = req.body;
+
+    try {
+
+      // See if the rent already exists
+      let rentFromDB = await Rent.findOne({ _id: id });
+      if (!rentFromDB) {
+        return res.status(400).json({
+          errors: [{ msg: 'Wypozyczenie o podanym id nie istnieje.' }],
+        });
+      };
+
+      await Rent.findOneAndUpdate(
+        { _id: id },
+        { $set: { infoAfter: infoAfter } },
+        { new: true, useFindAndModify: false }
+      );
+
+
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error.');
+    }
+  }
+);
+
 module.exports = router;
