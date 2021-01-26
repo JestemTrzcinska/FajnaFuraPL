@@ -1,14 +1,14 @@
-div.category{
+div.category {
   margin: 0 auto 0 auto;
   display: none;
   width: 75%;
 }
 
-div.activecat{
+div.activecat {
   display: block;
 }
 
-div#carbox{
+div#carbox {
   width: 300px;
   border: none;
   border-radius: 35px;
@@ -19,11 +19,11 @@ div#carbox{
   background-color: rgba(255, 255, 255, 0.863);
 }
 
-div#carbox:first-child{
+div#carbox:first-child {
   margin-left: 0;
 }
 
-div#carbox img{
+div#carbox img {
   border: 1px black solid;
   width: 94%;
   margin-left: 3%;
@@ -32,20 +32,20 @@ div#carbox img{
   margin-top: 20px;
 }
 
-div#carbox #info a, h2{
+div#carbox #info a, h2 {
   width: 90%;
   text-align: center;
   margin-left: 5%;
 
 }
 
-div#carbox #info{
+div#carbox #info {
   display: block;
   width: 100%;
   text-align: center;
 }
 
-div#carbox a{
+div#carbox a {
   display: block;
   width: 30%;
   height: 35px;
@@ -56,7 +56,7 @@ div#carbox a{
   text-decoration: none;
 }
 
-h1#carlistheader{
+h1#carlistheader {
   text-align: center;
 }
 
@@ -71,58 +71,45 @@ h1#carlistheader{
   text-align: left;
 }
 
-#obrazek{
+#obrazek {
  float: right;
 }
 
-.categorybutton
-{
+.categorybutton {
   font-size: 18px;
   font-weight: bold;
 }
 
-
-#Dane_wypozyczenia{
+#Dane_wypozyczenia {
   text-decoration: none;
   padding: 0px;
   width: 40%;
-  /* top: 50%;
-  left: 50%; */
   text-align: center;
   justify-content: center;
 }
 
-#Dane_personalne{
+#Dane_personalne {
   text-decoration: none;
   padding: 3%;
   width: 50%;
-  /* top: 50%;
-  left: 50%; */
   text-align: center;
   justify-content: center;
-  /*display: flex;
-  flex-direction: row;*/
 }
 
-#Dane_konta{
+#Dane_konta {
   text-decoration: none;
   padding: 3%;
-
-  /* top: 50%;
-  left: 50%; */
   text-align: center;
   justify-content: center;
-  /*display: flex;
-  flex-direction: row;*/
   overflow: auto;
   height: 90%;
 }
 
-#Dane_kontacat{
+#Dane_kontacat {
   padding:0px;
 }
 
-#profil_dane{
+#profil_dane {
   display: flex;
   margin-top: 4%;
   margin-left: 5%;
@@ -133,48 +120,47 @@ h1#carlistheader{
   background-color: rgba(255, 255, 255, 0.863);
 }
 
-#dane_konta2{
+#dane_konta2 {
   border-radius: 50px;
   width: 20%;
   height: 650px;
   background-color: #cecece;
-  /* float: left; */
   text-align: center;
 }
 
-#dane_konta2 ul{
+#dane_konta2 ul {
   list-style-type:none;
   padding: 0px;
   position: relative;
   top:30px;
 }
 
-#dane_konta2 ul li{
+#dane_konta2 ul li {
   height: 50px;
   cursor: pointer;
 }
 
-#dane_konta2 ul li:hover{
+#dane_konta2 ul li:hover {
   background-color:#aaacad;
   border-radius: 15px;
 }
 
-#dane_konta2  ul li:active{
+#dane_konta2  ul li:active {
   background-color:#cbcccc;
 }
 
-#Dane_wypozyczeniacat tr{
+#Dane_wypozyczeniacat tr {
   width: 80%;
 }
 
-#Dane_wypozyczeniacat{
+#Dane_wypozyczeniacat {
   width: 80%;
   margin: 0;
   float: left;
   height: 100%;
 }
 
-#Dane_wypozyczeniacat #Dane_konta{
+#Dane_wypozyczeniacat #Dane_konta {
   position: relative;
   transform: none;
   top: 0;
@@ -183,20 +169,20 @@ h1#carlistheader{
   width: 90%;
 }
 
-#Dane_wypozyczeniacat td{
+#Dane_wypozyczeniacat td {
   width: 25%;
   font-size: 18px;
 }
 
-#Dane_wypozyczeniacat thead{
+#Dane_wypozyczeniacat thead {
   font-weight: bold;
 }
 
-#Dane_wypozyczeniacat td:first-child{
+#Dane_wypozyczeniacat td:first-child {
   width: 30%;
 }
 
-#Dane_wypozyczeniacat td:last-child{
+#Dane_wypozyczeniacat td:last-child {
   width: 20%;
 }
 
@@ -207,7 +193,7 @@ h1#carlistheader{
   width: 70%;
 }
 
-#historyprototype{
+#historyprototype {
   display: none;
 }
 
@@ -216,15 +202,15 @@ h1#carlistheader{
   text-align: center;
 }
 
-.commentprototype{
+.commentprototype {
   display: none;
 }
 
-#Dane_wypozyczeniacat textarea{
+#Dane_wypozyczeniacat textarea {
   width: 90%;
 }
 
-#infoAfter_id{
+#infoAfter_id {
   display: none;
 }
 
@@ -242,11 +228,13 @@ h1#carlistheader{
     min-height: 900px;
   }
 }
+
 @media screen and (max-width: 720px) {
   #dane_konta2{
     font-weight: bold;
   }
 }
+
 @media screen and (max-width: 500px) {
   #table{
     max-width: 200px

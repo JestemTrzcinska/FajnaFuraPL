@@ -21,38 +21,34 @@
           <li class="categorybutton">Dane personalne</li>
           <li class="categorybutton">Zmień hasło</li>
           <li class="categorybutton">Historia wypożyczeń</li>
-          <li class="categorybutton">Dodaj komentarz(test)</li>
           <li class="categorybutton">Dodaj środki</li>
           <li class="categorybutton" onclick="location.href='../address/address.html'">Uzupełnij dane</li>
         </ul>
       </div>
+      
       <div id="Dane_kontacat" class="category col-9 activecat ">
         <div class="d-flex align-items-start col-12"><h1> Dane konta</h1></div>
         <div id="obrazek" class="d-flex justify-content-end col-6"><img id="obrazek_znika" src="../../img/user.png"  alt="user"></div>
         <div id="Dane_konta">
-
           <table class="table" style="text-align: left;">
-
             <tbody>
-              <tr >
+              <tr>
                 <th scope="row ">Email</th>
-                <td id="email">@wp.pl</td>
+                <td id="email">wczytywanie...</td>
               </tr>
               <tr>
-                <tr>
-                  <th scope="row">Środki na koncie</th>
-                  <td id="credit"></td>
-                </tr>
-                <tr>
+                <th scope="row">Środki na koncie</th>
+                <td id="credit"></td>
+              </tr>
+              <tr>
                 <th scope="row">Hasło</th>
                 <td><button type="button" class="btn btn-secondary"  name="button">Zmień</button></td>
               </tr>
             </tbody>
           </table>
-
-
         </div>
       </div>
+
       <div id='Dane_personalnecat' class="category col-9">
         <div class="d-flex align-items-start"><h1> Dane personalne</h1></div>
         <div id="obrazek" class="d-flex justify-content-end col-6"><img id="obrazek_znika" src="../../img/user.png"  alt="user"></div>
@@ -77,7 +73,6 @@
                 <th scope="row">Numer prawa jazdy</th>
                 <td id="drivingLicense"></td>
               </tr>
-
             </tbody>
           </table>
         </div>
@@ -141,24 +136,7 @@
         </div>
         <p id="chngpsswd_error"></p>
       </div>
-<!--
-      <div id="Dodaj_komentarzcat" class="category">
-        <div class="d-flex justify-content-center"><h1> Dodaj komentarz</h1></div>
-        statyczne id wypożyczenia do testów: <input type="text" id="infoAfter_id" value="6009782b4d7ffa377c745be8">
-        <div class="d-flex justify-content-center" id="Dodaj_srodkidiv">
-          <table class="table" style="text-align: center;">
-            <tbody>
-              <tr>
-                <td>Wpisz komentarz:</td>
-                <td><textarea id="infoAfter_input"></textarea></td>
-                <td><input type="button" id="infoAfter_submit" value="Zatwierdź"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p id="infoAfter_error"></p>
-      </div>
-    -->
+
     </div>
     <script type="text/javascript" src="profil.js"></script>
     <script type="text/javascript" src="../layout/loadnavbar.js"></script>
