@@ -911,6 +911,10 @@ progress {
   #kontakt img {
     width: 80%;
   }
+
+  #rent {
+    height: 750px;
+  }
 }
 
 @media screen and (max-width: 380px) {
