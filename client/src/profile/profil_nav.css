@@ -75,29 +75,10 @@ h1#carlistheader{
  float: right;
 }
 
-
-@media screen and (max-width: 920px) {
-  #obrazek_znika{
-    display:none;
-  }
-}
-@media screen and (max-width: 720px) {
-  #dane_konta2{
-    font-weight: bold;
-    font-size:6vw;
-    
-  }
-}
-@media screen and (max-width: 500px) {
-  #table{
-    max-width: 200px
-    
-  }
-}
-
 .categorybutton
 {
-  font-size:1.7vw;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 
@@ -126,7 +107,7 @@ h1#carlistheader{
 #Dane_konta{
   text-decoration: none;
   padding: 3%;
-  
+
   /* top: 50%;
   left: 50%; */
   text-align: center;
@@ -245,4 +226,30 @@ h1#carlistheader{
 
 #infoAfter_id{
   display: none;
+}
+
+@media screen and (max-width: 920px) {
+  #obrazek_znika{
+    display:none;
+  }
+
+  #dane_konta2 {
+    width: 100%;
+    height: 400px;
+  }
+
+  #profil_dane{
+    min-height: 900px;
+  }
+}
+@media screen and (max-width: 720px) {
+  #dane_konta2{
+    font-weight: bold;
+  }
+}
+@media screen and (max-width: 500px) {
+  #table{
+    max-width: 200px
+
+  }
 }
