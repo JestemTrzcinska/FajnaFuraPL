@@ -20,7 +20,10 @@
         <p>Łączna cena: <span id="summ_price">obliczanie...</span> </p>
         <p>Uwagi do wypożyczenia:</p>
         <p><textarea id="summ_infoBefore" rows="4" cols="40"></textarea></p>
-        <p><input type="checkbox"> Akceptuję <a href="/regulamin">regulamin</a> wypożyczenia</p>
+        <p><div class="error-msg" data-errormsg="">
+          <input type="checkbox" id="summ_checkbox">
+          <span> Akceptuję <a href="/regulamin">regulamin</a> wypożyczenia</span>
+        </div></p>
         <button type="button" id="rent_send">Zatwierdź</button>
         <button type="button" id="rent_cancel">Anuluj</button>
       </div>

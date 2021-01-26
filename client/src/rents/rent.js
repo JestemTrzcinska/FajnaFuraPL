@@ -36,33 +36,42 @@ const init = function () {
 };
 
 const rent_send = function(ev) {
-  let carid = new URLSearchParams(window.location.search).get('carid');
-  let url_from = new URLSearchParams(window.location.search).get('from');
-  let url_to = new URLSearchParams(window.location.search).get('to');
+  field = document.getElementById('summ_checkbox');
+  if(field.checked) {
+    let carid = new URLSearchParams(window.location.search).get('carid');
+    let url_from = new URLSearchParams(window.location.search).get('from');
+    let url_to = new URLSearchParams(window.location.search).get('to');
 
-  const headers = {
-    'x-auth-token': localStorage.getItem('token')
+    const headers = {
+      'x-auth-token': localStorage.getItem('token')
+    }
+    axios.post('http://localhost:5000/api/rents', {
+      carID: carid,
+      dateFrom: url_from,
+      dateTo: url_to,
+      infoBefore: document.getElementById('summ_infoBefore').value,
+      status: "W trakcie realizacji",
+    }, {
+      headers: headers
+    })
+    .then((response) => {
+      document.getElementById('date_summary').style.display = "none";
+      document.getElementById('rent_car').style.display = "none";
+      document.getElementById('rent_done_div').style.display = "block";
+    }, (error) => {
+      document.getElementById('date_summary').style.display = "none";
+      document.getElementById('rent_car').style.display = "none";
+      if(error.response.data.errors)
+        document.getElementById('rent_error_msg').innerText = error.response.data.errors[0].msg;
+      document.getElementById('rent_error_div').style.display = "block";
+    });
   }
-  axios.post('http://localhost:5000/api/rents', {
-    carID: carid,
-    dateFrom: url_from,
-    dateTo: url_to,
-    infoBefore: document.getElementById('summ_infoBefore').value,
-    status: "W trakcie realizacji",
-  }, {
-    headers: headers
-  })
-  .then((response) => {
-    document.getElementById('date_summary').style.display = "none";
-    document.getElementById('rent_car').style.display = "none";
-    document.getElementById('rent_done_div').style.display = "block";
-  }, (error) => {
-    document.getElementById('date_summary').style.display = "none";
-    document.getElementById('rent_car').style.display = "none";
-    if(error.response.data.errors)
-      document.getElementById('rent_error_msg').innerText = error.response.data.errors[0].msg;
-    document.getElementById('rent_error_div').style.display = "block";
-  });
+  else {
+    field.classList.add('error');
+    field.parentElement.classList.add('error-msg2');
+    field.parentElement.setAttribute('data-errormsg', "wymagane");
+    console.log("Nie weszło dalej");
+  }
 };
 
 const rent_cancel = function(ev) {

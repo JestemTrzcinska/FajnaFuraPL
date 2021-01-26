@@ -315,25 +315,30 @@ progress {
 
 #formularze .error,
 #form_cardetails .error,
+#date_summary .error,
 #form_address .error {
   border: 2px solid red;
 }
 
 #formularze .error-msg2::after,
+#date_summary .error-msg2::after,
 #form_address .error-msg2::after {
   content: attr(data-errormsg);
 }
 
 #formularze .error-msg,
+#date_summary .error-msg,
 #form_address .error-msg {
   width: 100%;
   color: red;
 }
 
 #formularze .error-msg span,
+#date_summary .error-msg span,
 #form_address .error-msg span {
   color: black;
   margin-right: 1%;
+  font-weight: normal;
 }
 
 #form_login {
