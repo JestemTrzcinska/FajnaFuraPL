@@ -403,6 +403,8 @@ progress {
   border-radius: 50px;
   width: 20%;
   height: 650px;
+  font-size: 18px;
+  font-weight: bold;
   background-color: #cecece;
   text-align: center;
   float: left;
@@ -414,10 +416,13 @@ progress {
   position: relative;
   top: 30px;
 }
+
 #address_cat ul li {
-  height: 50px;
+  height: 40px;
   cursor: pointer;
+  padding-top: 15px;
 }
+
 #address_cat ul li:hover {
   background-color: #aaacad;
   border-radius: 15px;
@@ -611,11 +616,6 @@ progress {
   font-weight: bold;
 }
 
-/* Slider carousel */
-.carousel-caption {
-
-}
-
 .carousel-caption div {
   display: table-cell;
   vertical-align: middle;
@@ -634,12 +634,12 @@ progress {
   }
 }
 
-
 @media screen and (max-width: 1050px) {
   div.trickcenter_text {
     font-weight: bold;
     font-size: 16px;
   }
+
   #test {
     display:none;
   }
@@ -650,24 +650,6 @@ progress {
   font-size: 44px;
 }
 
-
-.logo
-{
-
-}
-.kreski
-{
-
-}
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-
-}
-.row
-{
-
-
-}
 .cos {
   display: flex;
   margin-top: 4%;
@@ -676,25 +658,19 @@ progress {
   height: 650px;
 }
 
-
 .informacje {
   padding: 2rem 1rem !important;
   margin-top:5%;
   /*height: 300px;*/
   margin-bottom: 0 !important;
 }
+
 @media (min-width: 768px) {
   .jumbotron {
       font-size: 2vw;
   }
 }
 
-
-
-
-/* Medium devices (desktops, 992px and up) */
-
-/* Slideshow container */
 @media screen {
   .slideshow-container {
     max-width: 70%;
@@ -792,7 +768,6 @@ progress {
     }
   }
 
-  /* On smaller screens, decrease text size */
   @media only screen and (max-width: 300px) {
     .prev,
     .next,
@@ -867,6 +842,17 @@ progress {
 
   #kontakt img {
     width: 70%;
+  }
+
+  #address_form_div {
+    width: 100%;
+    float: none;
+  }
+
+  #address_cat {
+    width: 100%;
+    height: 120px;
+    float: none;
   }
 }
 

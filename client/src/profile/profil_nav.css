@@ -138,6 +138,7 @@ h1#carlistheader {
 #dane_konta2 ul li {
   height: 50px;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 #dane_konta2 ul li:hover {
