@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 
 const Address = require('../../models/Address');
+const User = require('../../models/User');
 
 // @route   GET api/address
 // @desc    Get all addresss
@@ -28,6 +30,7 @@ router.get('/', async (req, res) => {
 // @access  Public
 router.post(
   '/',
+  [auth],
   [
     check('city', 'Proszę o podanie miasta').not().isEmpty(),
     check('street', 'Proszę o podanie ulicy').not().isEmpty(),
@@ -44,7 +47,7 @@ router.post(
 
     try {
       // See if the address exists
-      let address = await Address.findOne({
+      /*let address = await Address.findOne({
         city,
         street,
         building,
@@ -54,7 +57,7 @@ router.post(
         return res.status(400).json({
           errors: [{ msg: 'Podany adres już istnieje.' }],
         });
-      }
+      }*/
 
       // Check zipCode is zip code XX-XXX
       // City and country can be from some list
@@ -67,8 +70,14 @@ router.post(
         zipCode,
         country,
       });
-
       await address.save();
+
+      await User.findOneAndUpdate(
+        { _id: req.user.id },
+        { $set: { address: address.id } }, // wypozyczony
+        { new: true, useFindAndModify: false }
+      );
+
       res.json(address);
     } catch (err) {
       console.error(err.message);

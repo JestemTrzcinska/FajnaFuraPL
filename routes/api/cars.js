@@ -5,7 +5,21 @@ const { check, validationResult } = require('express-validator');
 
 const Car = require('../../models/Car');
 const Rent = require('../../models/Rent');
-const { boolean } = require('joi');
+
+// @route   GET api/cars/:id
+// @desc    GET specific car by id
+// @access  Public
+
+router.get('/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const car = await Car.findById(id).populate('status');
+    res.json(car);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 // @route   GET api/cars
 // @desc    GET cars
@@ -32,14 +46,16 @@ router.post(
     check('model', 'Proszę o podanie modelu samochodu').not().isEmpty(),
     check('year', 'Proszę o podanie roku produkcji samochodu').not().isEmpty(),
     check('sits', 'Proszę o podanie liczby siedzen w samochodzie').not().isEmpty(),
-    check('typeDrive', 'Proszę o podanie rodzaju skrzyni biegów').not().isEmpty(),
+    check('sits', 'Proszę o podanie liczby drzwi w samochodzie').not().isEmpty(),
+    check('typeTransmission', 'Proszę o podanie rodzaju skrzyni biegów').not().isEmpty(),
+    check('typeDrive', 'Proszę o podanie rodzaju napędu').not().isEmpty(),
     check('airConditioning', 'Proszę o podanie rodzaju klimatyzacji').not().isEmpty(),
     check('typeFuel', 'Proszę o podanie rodzaju paliwa').not().isEmpty(),
     check('engine', 'Proszę o podanie rodzaju silnika').not().isEmpty(),
     check('averageRange', 'Proszę o podanie sredniego zasiegu').not().isEmpty(),
     check('averageConsumption', 'Proszę o podanie sredniego spalania').not().isEmpty(),
     check('category', 'Proszę o podanie kategorii samochodu').not().isEmpty(),
-    check('multiplierPrice', 'Proszę o podanie mnoznika').not().isEmpty(),
+    check('dayPrice', 'Proszę o podanie mnoznika').not().isEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -53,6 +69,8 @@ router.post(
       model,
       year,
       sits,
+      doors,
+      typeTransmission,
       typeDrive,
       airConditioning,
       typeFuel,
@@ -61,7 +79,7 @@ router.post(
       averageConsumption,
       about,
       category,
-      multiplierPrice,
+      dayPrice,
     } = req.body;
 
     try {
@@ -84,6 +102,8 @@ router.post(
         model,
         year,
         sits,
+        doors,
+        typeTransmission,
         typeDrive,
         airConditioning,
         typeFuel,
@@ -92,7 +112,7 @@ router.post(
         averageConsumption,
         about,
         category,
-        multiplierPrice,
+        dayPrice,
       });
 
       await car.save();
@@ -141,7 +161,7 @@ router.post(
       if (!rent)  {
         return res.json({ isAvailable: 1 });
       }
-      
+
       let is = 1;
       rent.forEach((data) => {
         if (moment(data.dateFrom).isBetween(dateStart,dateEnd) || moment(data.dateTo).isBetween(dateStart,dateEnd) || moment(dateStart).isBetween(data.dateFrom,data.dateTo)){

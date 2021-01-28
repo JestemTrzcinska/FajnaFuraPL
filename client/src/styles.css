@@ -136,6 +136,7 @@ progress {
   background: #13acf3;
   width: auto;
 }
+
 #cssmenu ul {
   list-style: none;
   margin: 0;
@@ -144,6 +145,7 @@ progress {
   display: block;
   zoom: 1;
 }
+
 #cssmenu ul:after {
   content: ' ';
   display: block;
@@ -152,11 +154,13 @@ progress {
   clear: both;
   visibility: hidden;
 }
+
 #cssmenu ul li {
   display: inline-block;
   padding: 0;
   margin: 0;
 }
+
 #zaloguj ul li {
   display: inline-block;
   padding: 0;
@@ -164,12 +168,15 @@ progress {
   position: absolute;
   left: 0;
 }
+
 #cssmenu.align-right ul li {
   float: right;
 }
+
 #cssmenu.align-center ul {
   text-align: center;
 }
+
 #cssmenu ul li a {
   color: #ffffff;
   text-decoration: none;
@@ -186,12 +193,15 @@ progress {
   -o-transition: color 0.25s;
   transition: color 0.25s;
 }
+
 #cssmenu ul li a:hover {
   color: #128aec;
 }
+
 #cssmenu ul li a:hover:before {
   width: 100%;
 }
+
 #cssmenu ul li a:after {
   content: '';
   display: block;
@@ -203,6 +213,7 @@ progress {
   background: #ffffff;
   opacity: 0.5;
 }
+
 #cssmenu ul li a:before {
   content: '';
   display: block;
@@ -218,26 +229,35 @@ progress {
   -o-transition: width 0.25s;
   transition: width 0.25s;
 }
+
 #cssmenu ul li.last > a:after,
 #cssmenu ul li:last-child > a:after {
   display: none;
 }
+
 #cssmenu ul li.active a {
   color: #333333;
 }
+
 #cssmenu ul li.active a:before {
   width: 100%;
 }
+
 #cssmenu.align-right li.last > a:after,
 #cssmenu.align-right li:last-child > a:after {
   display: block;
 }
+
 #cssmenu.align-right li:first-child a:after {
   display: none;
 }
 
 #cssmenu ul li:last-child {
   float: right;
+}
+
+#cssmenu a[href='../profile/profil.html']{
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -295,25 +315,30 @@ progress {
 
 #formularze .error,
 #form_cardetails .error,
+#date_summary .error,
 #form_address .error {
   border: 2px solid red;
 }
 
 #formularze .error-msg2::after,
+#date_summary .error-msg2::after,
 #form_address .error-msg2::after {
   content: attr(data-errormsg);
 }
 
 #formularze .error-msg,
+#date_summary .error-msg,
 #form_address .error-msg {
   width: 100%;
   color: red;
 }
 
 #formularze .error-msg span,
+#date_summary .error-msg span,
 #form_address .error-msg span {
   color: black;
   margin-right: 1%;
+  font-weight: normal;
 }
 
 #form_login {
@@ -357,11 +382,11 @@ progress {
 }
 
 #form_address {
-  width: 20%;
   min-width: 330px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1%;
 }
 
 #address_div {
@@ -370,9 +395,46 @@ progress {
   margin-right: 5%;
   border-radius: 50px;
   font-size: 22px;
-  padding: 2%;
   height: 650px;
   background-color: rgba(255, 255, 255, 0.863);
+}
+
+#address_form_div {
+  width: 80%;
+  float: right;
+}
+
+#address_cat {
+  border-radius: 50px;
+  width: 20%;
+  height: 650px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #cecece;
+  text-align: center;
+  float: left;
+}
+
+#address_cat ul {
+  list-style-type:none;
+  padding: 0px;
+  position: relative;
+  top: 30px;
+}
+
+#address_cat ul li {
+  height: 40px;
+  cursor: pointer;
+  padding-top: 15px;
+}
+
+#address_cat ul li:hover {
+  background-color: #aaacad;
+  border-radius: 15px;
+}
+
+#address_cat  ul li:active {
+  background-color: #cbcccc;
 }
 
 #form_rent {
@@ -401,9 +463,13 @@ progress {
 }
 
 #kontakt_tresc {
-  margin-top: 5%;
+  margin-top: 2%;
   width: 60%;
   min-width: 750px;
+}
+
+#kontakt_tresc_gora {
+  margin-bottom: 2%;
 }
 
 #kontakt_tresc_lewo {
@@ -436,7 +502,9 @@ progress {
 
 #cardetails_photos {
   width: 30%;
-  float: left;
+  min-width: 250px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 #cardetails_photos img {
@@ -444,13 +512,14 @@ progress {
 }
 
 #cardetails_info {
-  width: 50%;
-  float: left;
+  width: 350px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10%;
 }
 
 #cardetails_info_div {
   width: 350px;
-  margin: auto;
 }
 
 #cardetails_info_div div {
@@ -463,11 +532,11 @@ progress {
   background-color: rgb(200, 220, 255);
 }
 
-#cardetails_info #info_left {
+#cardetails_info .info_left {
   float: left;
 }
 
-#cardetails_info #info_right {
+#cardetails_info .info_right {
   float: right;
 }
 
@@ -483,8 +552,10 @@ progress {
 
 #form_cardetails {
   min-width: 140px;
-  width: 20%;
-  float: right;
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10%;
 }
 
 #form_cardetails p {
@@ -495,13 +566,59 @@ progress {
   width: 140px;
 }
 
-/* Slider carousel */
-.carousel-caption {
-  position: absolute;
-  z-index: 1;
-  display: table;
-  width: 100%;
-  height: 100%;
+#form_cardetails h2 {
+  margin-top: 0px;
+}
+
+#rent {
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 50px;
+  font-size: 22px;
+  padding: 2%;
+  height: 650px;
+  background-color: rgba(255, 255, 255, 0.863);
+}
+
+#rent img {
+  width: 70%;
+}
+
+#rent #date_summary {
+  float: left;
+  max-width: 60%;
+}
+
+#rent #summ_infoBefore {
+  max-height: 280px;
+  max-width: 90%;
+}
+
+#rent #rent_car {
+  float: right;
+}
+
+#rent span {
+  font-weight: bold;
+}
+
+#rent_done_div {
+  display: none;
+  text-align: center;
+}
+
+#rent_error_div {
+  display: none;
+  text-align: center;
+}
+
+#rent_error_div h3 {
+  color: red;
+}
+
+#rent_error_msg {
+  font-weight: bold;
 }
 
 .carousel-caption div {
@@ -513,39 +630,58 @@ progress {
 .trickcenter {
   font-weight: bold;
   font-size: 44px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-15%, -50%);
 }
+
+@media screen and (min-width: 601px) {
+  div.trickcenter_text {
+    font-weight: bold;
+    font-size: 44px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  div.trickcenter_text {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  #test {
+    display:none;
+  }
+}
+
 .trickcenter_button {
   font-weight: bold;
   font-size: 44px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-15%);
-}
-.trickcenter_text {
-  font-weight: bold;
-  font-size: 42px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-15%, 19.5%);
 }
 
-/* Slideshow container */
+.cos {
+  display: flex;
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 650px;
+}
+
+.informacje {
+  padding: 2rem 1rem !important;
+  margin-top:5%;
+  /*height: 300px;*/
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+      font-size: 2vw;
+  }
+}
+
 @media screen {
   .slideshow-container {
     max-width: 70%;
     max-height: 600px;
     position: absolute;
     left: 15%;
-
     margin: auto;
   }
 
@@ -637,7 +773,6 @@ progress {
     }
   }
 
-  /* On smaller screens, decrease text size */
   @media only screen and (max-width: 300px) {
     .prev,
     .next,
@@ -658,7 +793,136 @@ progress {
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 1550px) {
+  #cardetails_info {
+    margin-left: 2%;
+  }
+
+  #form_cardetails {
+    margin-left: 2%;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  #cardetails_photos {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #form_cardetails {
+    float: right;
+  }
+
+  #cardetails {
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #kontakt {
+    height: 770px;
+  }
+
+  #kontakt_tresc {
+    margin-top: 5%;
+    width: 100%;
+    min-width: 0px;
+  }
+
+  #kontakt_tresc_gora {
+    text-align: center;
+  }
+
+  #kontakt_tresc_lewo {
+    float: none;
+    text-align: center;
+  }
+
+  #kontakt_tresc_prawo {
+    float: none;
+    text-align: center;
+  }
+
+  #kontakt img {
+    width: 70%;
+  }
+
+  #address_form_div {
+    width: 100%;
+    float: none;
+  }
+
+  #address_cat {
+    width: 100%;
+    height: 120px;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #form_cardetails {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+  }
+
+  #cardetails_info {
+    margin-top: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #cardetails {
+    height: 950px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  #rodo_div {
+    margin: 0px;
+    margin-top: 5px;
+  }
+
+  #formularze {
+    padding: 0px;
+    height: 680px;
+  }
+
+  #form_login {
+    width: 90%;
+    min-width: 0px;
+  }
+
+  #form_register {
+    width: 90%;
+    min-width: 0px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #kontakt {
+    height: 600px;
+  }
+
+  #kontakt_tresc {
+    font-size: 18px;
+  }
+
+  #kontakt img {
+    width: 80%;
+  }
+
+  #rent {
+    height: 750px;
+  }
+}
+
+@media screen and (max-width: 380px) {
   #formularze {
     min-height: 650px;
     padding: 0px;
@@ -676,7 +940,15 @@ progress {
     float: none;
   }
 
-  #rodo_div {
-    margin: 0px;
+  #cardetails_info {
+    width: 310px;
+  }
+
+  #cardetails_info_div {
+    width: 310px;
+  }
+
+  #cardetails_photos {
+    width: 80%;
   }
 }
