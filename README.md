@@ -13,6 +13,8 @@ $ npm install
 $ npm run server
 ```
 
+Run live server in your source-code editor
+
 ## Technologies
 
 Project is created with:
@@ -21,4 +23,4 @@ Project is created with:
 - HTML, CSS
 - MongoDB
 - Mongoose
-- tbc
+- NodeJS
