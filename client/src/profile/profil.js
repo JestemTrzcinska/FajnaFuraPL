@@ -97,10 +97,9 @@ axios
 
 let loadhistory = function (data) {
   var today = new Date();
-  var day = String(today.getDate()).padStart(2, '0');
-  var month = String(today.getMonth() + 1).padStart(2, '0');
-  var year = today.getFullYear();
-  today = year + '-' + month + '-' + day;
+  var day = parseInt(String(today.getDate()).padStart(2, '0'));
+  var month = parseInt(String(today.getMonth() + 1).padStart(2, '0'));
+  var year = parseInt(today.getFullYear());
   let count = 0;
 
   data.forEach(function (entry) {
@@ -116,8 +115,10 @@ let loadhistory = function (data) {
     $(newentry).removeClass('historyprototype');
     $('#Dane_wypozyczeniacat tbody').append(newentry);
 
-    
-    if(!entry.infoAfter){
+    let dday = parseInt(dateto.split("-")[2]);
+    let dmonth = parseInt(dateto.split("-")[1]);
+    let dyear = parseInt(dateto.split("-")[0]);
+    if(!entry.infoAfter && ( (dyear == year && ( (dday <= day && dmonth == month) || dmonth < month) ) || dyear < year ) ) {
       console.log(entry.infoAfter);
       let newentry = $('.commentprototype').clone();
       $(newentry).find('#infoAfter_id').attr('value', entry._id);
