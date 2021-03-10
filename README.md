@@ -13,7 +13,9 @@ $ npm install
 $ npm run server
 ```
 
-Run live server in your source-code editor
+Run Live Server in your source-code editor [Live Server VS Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+Install and perform the add-on Allow CORS to your web browser [Allow CORS for Google Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=pl)
 
 ## Technologies
 
@@ -24,3 +26,4 @@ Project is created with:
 - MongoDB
 - Mongoose
 - NodeJS
+- ExpressJS
