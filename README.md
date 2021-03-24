@@ -2,7 +2,7 @@
 
 ## General info
 
-A student project about renting cars.
+A student project about renting cars. Created in class during one semester by Maciej Marek, Konrad Polak, Jakub Dąbrowski (frontend), Patrycja Trzcińska, Mateusz Siwiński (backend).
 
 ## Setup
 
